@@ -1,0 +1,103 @@
+footer{
+	// background-color: definido no loop de cores no final desse doc
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 45px;
+	width: 100%;
+	@include transition(transform 0.2s ease-out);
+	@include transform(translateY(100%));
+	@include display(flex);	
+	@include justify-content(space-between);
+	@include align-content(center);
+	vertical-align: middle;
+
+	&.visivel{
+		@include transform(translateY(0%));
+	}
+
+	@media screen and (max-width: 600px) {
+		position: static;
+		@include transform(translateY(0%));
+		@include transition(none 0s linear);
+
+		&.visivel{
+			@include transform(none);
+
+		}
+	}
+
+	a{
+		color: white;
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 20px;
+		line-height: 0;
+		@include display(flex);
+		@include align-items(center);
+
+		img{
+			height: 35%;
+			width: auto;
+			vertical-align: middle;
+		}
+		&.anterior{
+			img{
+				@include transform(rotate(180deg));
+				margin-right: 10px;
+			}
+		}
+
+		&.proximo{
+			img{
+				margin-left: 10px;
+			}
+		}
+	}
+
+	div.btsumario{
+		height: 100%;
+		color: white;
+		padding: 14px;
+		vertical-align: middle;
+		line-height: 0;
+		@include display(flex);
+		@include align-items(center);
+		img{
+			height: 100%;
+			width: auto;
+		}
+		span{
+			margin-left: 10px;
+			@media screen and (max-width: 600px) {
+				display: none;
+			}
+		}
+
+
+		// background-color: definido no loop no final
+	}
+}
+     
+
+
+
+// variacao de paleta cromatica
+body{
+	@each $livros in $cores-livros{
+		$i: index($cores-livros, $livros);
+		&#livro#{$i}{
+			footer{
+				background-image: url(../imagens/bgportal_#{$i}.jpg);
+				background-color: transparentize(nth($livros, 1), 0.1);
+				
+				div.btsumario{
+					background-color: nth($livros, 2);
+
+				}
+			}
+			#sumariofooter{background-color: nth($livros, 1)}
+		}
+	}
+}

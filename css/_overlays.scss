@@ -1,0 +1,119 @@
+#overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: none;
+	@include flex-wrap(nowrap);
+	@include justify-content(center);
+	@include align-items(flex-start);
+	&.db{
+		@include display(flex);
+	}
+
+	div.escurecer{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0,0,0,0.9);
+		opacity: 0;
+		@include transition(opacity 0.2s linear);
+		&.visivel{
+			opacity: 1;
+		}	
+	}
+
+	// botao para fechar overlay
+	div.fechar-overlay{
+		position: fixed;
+		top: 0;
+		right: 0;
+		margin: 5px;
+		width: 45px;
+		height: 45px;
+		@media screen and (max-width: 900px) {
+			width: 36px;
+			height: 36px;
+			margin: 5px 20px;
+
+
+		}
+		opacity: 0;
+		@include transition(opacity 0.2s linear);
+		&.visivel{
+			opacity: 1;
+		}
+		div > div{
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			top: 50%;
+			left: 0;
+			background-color: white;
+			&:nth-child(1){
+				@include  transform(translateY(-50%) rotate(45deg));
+			}
+			&:nth-child(2){
+				@include  transform(translateY(-50%) rotate(-45deg));
+			}
+		}
+		&:hover{
+			cursor: pointer;
+		}
+	}
+
+	// retangulo de transicao
+	.transicao{
+		position: fixed;
+		background-color: white;
+		&.esconder{
+			display: none;
+		}
+	}
+
+	.modais{
+		margin: 20px;
+		margin-top: 55px;
+		padding-bottom: 100px;	
+		@media screen and (max-width: 900px) {
+			margin-top: 46px;
+		}
+		position: relative;
+		overflow: scroll;
+		max-height: 100%;
+		// @include display(flex);
+		// @include flex-wrap(nowrap);
+		// @include justify-content(center);
+
+		// modal
+		& > div{
+			max-width: 640px;
+			display: inline-block;
+			opacity: 0;
+			// @include transition(opacity 0.2s linear);
+			&.visivel{
+				opacity: 1;
+			}
+			&.minicurriculos{
+				background-color: white;
+				color: $cinza-texto;
+				padding: 36px;
+				@media screen and (max-width: 900px) {
+					padding: 24px 18px;
+				}
+				h2.nome{
+					font-size: 1.5em;
+				}
+				p.descricao{
+					+ h2.nome{
+						margin-top: 24px;
+					}
+				}
+			}
+		}
+	}
+
+}

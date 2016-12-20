@@ -1,0 +1,32 @@
+@import 'bourbon/bourbon';
+@import 'padroes';
+
+$cores-livros: (
+	(#e33825, #75150b),
+	(#3c3c3b, #0E0E0E),
+	(#1f4187, #152C5B),
+	(#86bc25, #486413),
+	(#5c002d, #350019),
+	(#ee7d00, #985100)
+);
+
+$cinza-texto: #666;
+
+$container-capa: 1200px;
+$container-capitulo: 960px;
+
+@import 'portal';
+@import 'capa';
+@import 'article';
+@import 'footer';
+@import 'overlays';
+
+// variavel que organiza os z-index
+$ordem-profundidade: article, footer, #headerfixo, header, #overlay;
+
+@each $elemento in $ordem-profundidade{
+	#{$elemento}{
+		$i: index($ordem-profundidade, $elemento);
+		z-index: $i;
+	}
+}

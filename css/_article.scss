@@ -1,0 +1,121 @@
+article{
+
+	display: block;
+	width: 720px;
+	margin: 50px auto 100px;
+	
+	// links
+	a, a:link, a:active, a:visited {
+		text-decoration: none;
+		outline: none;
+
+		&:hover {text-decoration: underline;}
+	}
+
+	// paragrafos
+	p {margin: 30px 0 0}
+
+	h1, h2, h3, h4, h5 {
+		margin: 0;
+		text-align: left;
+		line-height: 1.24em;
+		@extend %fonte-destaque;
+		font-weight: bold;
+	}
+
+	// titulos
+	h1 {
+		font-size: 28px;
+	}
+
+	h2 {
+		font-size: 24px;
+		margin: 25px 0 0;
+	}
+	article h2 {
+
+	 }
+	// p + h2, figure + h2,
+	// blockquote + h2, table + h2 {margin: 20px 0 0}
+
+	h3 {
+		font-size: 20px;
+		margin: 25px 0 0;
+	}
+	// h2 + h3 {margin: 30px 0 0}
+
+	h4 {
+		margin: 25px 0 0; 
+	}
+	h4 + p {
+		margin-top: 0
+	}
+
+
+	// blockquote / citacoes
+	blockquote {
+		margin: 30px 0 0 60px;
+		font-size: 15px;
+		color: transparentize(black, 0.3);
+
+		p:first-of-type {margin: 0}
+	}
+
+	// tabelas
+	table, .containertable table {
+		text-align: left;
+		margin: 30px 0 0 0;
+		// @extend .table, .table-bordered;
+
+		p {margin: 0}
+
+		caption {display: table-caption; margin-top: 0}
+	}
+
+	.containertable {
+		width: 100%;
+		overflow: scroll;
+	}
+
+
+	// linha divisoria
+	hr {
+		border-color: #ccc;
+		margin: 30px 0 50px;
+	}
+
+	// imagens
+	figure {
+		width: 100%;
+		background: #f0f0f0;
+		padding: 20px 20px 12px;
+		margin: 30px 0 0 0;
+
+		img {
+			max-width: 100%;
+			height: auto;
+			margin: 0 auto;
+			display: block;
+			text-align: center;
+		}
+
+		p {margin: 0;}
+
+		figcaption {
+			margin: 10px 0 0 0;
+			font-style: italic;
+		}
+	}
+
+
+	// notas de rodape
+	.notarodape {
+		opacity: 0.5;
+		display: inline-block;
+	}
+
+	a.linknotarodape {
+		display: inline-block;
+		// color: $roxo;
+	}
+}

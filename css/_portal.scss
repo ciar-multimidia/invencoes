@@ -1,0 +1,198 @@
+body.portal {
+	background: #aaa;
+	position: relative;
+	min-height: 100vh;
+
+	.fundo-dinamico {
+		position: absolute;
+		background-repeat: repeat; 
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+
+		&.padrao {background-image: url('../imagens/bgportal_0.jpg');}
+		&.livro1 {background-image: url('../imagens/bgportal_1.jpg');}
+		&.livro2 {background-image: url('../imagens/bgportal_2.jpg');}
+		&.livro3 {background-image: url('../imagens/bgportal_3.jpg');}
+	}	
+
+	canvas.particles-js-canvas-el {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+
+	section {
+		width: 95%;
+		max-width: 1200px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 2;
+
+
+		.topo {
+			.marca {
+				position: relative;
+				cursor: pointer;
+
+				img {
+					width: 100%;
+					height: auto;
+					vertical-align: bottom;
+					border-bottom: 8px solid #222;
+				}
+				&:after {
+					content: "\25be";
+					position: absolute;
+					right: 20px;
+					bottom: 20px;
+					font-size: 25px;
+					color: $cinza-texto;
+				}
+			}
+			.descricao {
+				display: none;
+				padding: 20px;
+				background: #fff;
+			}
+
+			@media screen and (max-width: 450px) {
+				.marca:after {bottom: 10px; right: 10px}
+				.descricao {padding: 10px}
+			}			
+		}
+
+		.livros {
+			.volume {
+				background: #fff;
+				margin: 20px 0;
+
+				.titulo {
+					padding: 30px 60px 10px 20px;
+					border-bottom-width: 8px;
+					border-style: solid;
+					position: relative;
+					cursor: pointer;
+					font-size: 1.7em;
+					color: $cinza-texto;
+					line-height: 1.5;
+					@extend %fonte-destaque;
+
+					div {
+						font-size: 0.6em;
+						display: inline-block;
+
+						&:before {
+							content: '\2022';
+							display: inline-block;
+							vertical-align: middle;
+							margin: 0 10px;
+						}
+					}
+
+					&:after {
+						content: "\25be";
+						position: absolute;
+						right: 20px;
+						bottom: 10px;
+						font-size: 25px;
+					}
+				}
+				.sinopse {
+					display: none;
+					padding: 20px;
+
+					& > div {
+						@include display(flex);
+						@include flex-direction(row);
+						@include flex-wrap(nowrap);
+						@include justify-content(space-between);
+
+						.texto {
+							width: 60%;
+						}
+
+						.acesso {
+							@include align-self(flex-end);
+
+							a, a:link, a:visited, a:active {
+								color: #fff;
+								display: inline-block;
+								@extend %fonte-destaque;
+								padding: 10px 20px;
+							}
+						}
+					}
+				}
+
+				@media screen and (max-width: 900px) {
+					.titulo div {
+						display: block;
+						&:before {display: none;}
+					}
+				}
+
+				@media screen and (max-width: 650px) {
+
+					.sinopse > div {
+						@include flex-wrap(wrap);
+						.texto {width: 100%;}
+						.acesso {margin-top: 20px}
+					}
+
+				}
+
+				@media screen and (max-width: 450px) {
+					.titulo {
+						font-size: 1.3em;
+						padding: 10px 50px 10px 10px;
+						&:after {right: 10px}
+					}
+
+					.sinopse {
+						padding: 10px;
+					}
+				}
+
+				@each $livros in $cores-livros{
+					$i: index($cores-livros, $livros);
+
+					&:nth-of-type(#{$i}) .titulo{
+						border-color: nth($livros, 1);
+					}
+					
+					&:nth-of-type(#{$i}) .sinopse > div .acesso a {
+						background: nth($livros, 1);
+					}
+
+				}
+			}
+
+		}
+
+		.marcas {
+			@include display(flex);
+			@include flex-direction(row);
+			@include flex-wrap(wrap);
+			@include justify-content(space-around);
+
+			img {
+				height: 70px;
+				margin: 10px;
+			} 
+
+			@media screen and (max-width: 450px) {
+				img {height: 50px}
+			}
+
+			@media screen and (max-width: 330px) {
+				img {flex-basis: 100%}
+			}
+		}
+	}
+}

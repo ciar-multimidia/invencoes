@@ -1,0 +1,385 @@
+$boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
+
+header {
+	// background-image: definido no loop no final
+	background-repeat: repeat; 
+	background-position: center center;
+	background-attachment: fixed; 
+	height: auto;
+	position: relative;
+	overflow: hidden;
+
+	@include display(flex);
+	@include flex-direction(row);
+	@include flex-wrap(nowrap);
+	@include justify-content(center);
+
+	@media screen and (max-width: 900px) {
+		@include display(block);
+	}
+
+	// regiao com infos do livro/capitulo
+	.sobrevolume {
+		width: $container-capa;
+		color: $cinza-texto;
+
+		@include display(flex);
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+		@include align-content(space-between);
+		@include align-items(flex-start);
+
+		padding: 20px;
+
+		@media screen and (max-width: $container-capa) {
+			width: $container-capitulo;
+		}
+
+		@media screen and (max-width: $container-capitulo){
+			width: 100%;
+		}
+
+		@media screen and (max-width: 900px) {
+			display: block;
+		}
+
+		.invencoes-sumario{
+			height: 60px;
+			vertical-align: top;
+			@include user-select(none);
+			@media screen and (max-width: 900px) {
+				height: 45px;
+			}	
+			
+
+			a.bt-invencoes{
+				box-shadow: $boxshadowpadrao;
+				vertical-align: top;
+				display: inline-block;
+				height: 100%;
+				margin-right: 10px;
+				img{
+					display: block;
+					width: auto;
+					height: 100%;
+				}
+			}
+
+			div.sumario{
+				// background-color: Definido no Loop de Cores no final	
+				box-shadow: $boxshadowpadrao;
+				vertical-align: top;
+				padding: 0 25px;
+				line-height: 0;
+				height: 100%;
+				vertical-align: middle;
+				@include order(1);
+				@include display(inline-flex);
+				@include align-items(center);
+
+				@media screen and (max-width: 900px) {
+					padding: 0 18px;
+					
+				}
+
+				&:hover{
+					cursor: pointer;
+				}
+
+				img{
+					display: inline-block;
+					line-height: 0;
+					height: 20px;
+					width: auto;
+					vertical-align: middle;
+					margin-right: 15px;
+				}
+				span{
+					font-size: 1.1em;
+					color: white;
+				}
+			}
+		}
+
+		
+
+		.titulo {
+			background-color: white;
+			box-shadow: $boxshadowpadrao;
+			@include flex-basis(100%);
+			margin-top: 20px;
+			@include order(3);
+			padding: 20px;
+
+			@media screen and (max-width: 900px) {
+				padding: 15px;
+				@include order(1);
+				margin-bottom: 20px;
+				width: 100%;
+				height: auto;
+			}
+
+			
+
+			h1 {
+				line-height: 1.2;
+				background-color: none;
+				color: $cinza-texto;
+				font-size: 2em;
+
+				@media screen and (max-width: 1200px) {
+					font-size: 1.8em;
+				}
+
+				@media screen and (max-width: 900px) {
+					font-size: 1.4em;
+				}
+			}
+		}
+
+		.info {
+			opacity: 1;
+			background-color: white;
+			padding: 20px;
+			padding-right: 40px;
+			position: relative;
+			min-width: 300px;
+			display: inline-block;
+			box-shadow: $boxshadowpadrao;
+			@include order(2);
+
+			@include display(flex);
+			@include flex-direction(row);
+			@include align-items(center);
+			@include justify-content(center);
+			@include flex-wrap(wrap);
+
+			&.esconder{
+				opacity: 0;
+			}
+
+			&:after {
+				content: "\25be";
+				position: absolute;
+				right: 20px;
+				bottom: 20px;
+				font-size: 25px;
+				// color: $cinza-texto;
+			}
+
+			&:hover{
+				cursor: pointer;
+			}
+
+			@media screen and (max-width: 900px) {
+				min-width: 0;
+				max-width: 400px;
+			    // margin: 0 0 20px;
+			    
+			}
+
+			.organizacao{
+				width: 100%;
+				h2{
+					font-weight: bold;
+				}
+				div.membro{
+					& + h2{
+						margin-top: 10px;
+					}
+
+					& + a.fichatecnica{
+						margin-top: 15px;
+					}
+
+					p.nome{
+			
+					}
+					p.descricao{
+						display: none;
+					}
+				}
+			}
+		}
+
+		
+	}
+
+	// estilos diferentes para o header capa
+	&.capa {
+
+		@media screen and (max-width: 900px) {
+		}
+
+		.sobrevolume{
+			padding: 20px 20px 100px;
+
+
+			.titulo{
+				margin-top: 40px;
+				@include order(3);
+				padding: 36px;
+				padding-right: 40px;
+				position: relative;
+
+				@media screen and (max-width: 900px) {
+					padding: 21px;
+					margin-top: 20px;
+					padding-right: 40px;
+				}
+
+				&:after {
+					content: "\25be";
+					position: absolute;
+					right: 20px;
+					bottom: 20px;
+					font-size: 25px;
+				}
+
+				&:hover{
+					cursor: pointer;
+				}
+
+				h1 {
+					// font-weight: bold;
+					line-height: 1.2;
+					font-size: 3.6em;
+					span{
+						display: block;
+						font-size: 0.4em;
+						line-height: 1.2;
+						font-weight: normal;
+					}
+					@media screen and (max-width: 1200px) {
+						font-size: 3em;
+					}
+
+					@media screen and (max-width: 900px) {
+						font-size: 2.1em;
+						span{
+							margin-top: 4px;
+							font-size: 0.5em;
+						}
+					}
+				}
+
+				div.sinopse{
+					display: none;
+					padding-top: 20px;
+					margin-top: 20px;
+					border-top: 1px solid $cinza-texto;
+				}
+			}
+			.info{
+				@include order(2);
+
+			}
+		}
+	}
+}
+
+
+
+
+
+// header fixo
+div#headerfixo{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+	@include transition(transform 0.2s ease-out);
+	@include transform(translateY(-60px));
+	@media screen and (max-width: 600px) {
+		@include transform(translateY(-45px));
+	}
+	&.db{
+		display: block;
+	}
+	&.visivel{
+		@include transform(translateY(0px));
+	}
+	
+	
+	div.header_mesmo{
+		// background-color: Definido no Loop de Cores no final	
+		background-attachment: fixed;
+		width: 100%;
+		height: 60px;
+		box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.15);
+		@include display(flex);
+		@include flex-direction(row);
+		@include flex-wrap(nowrap);
+		@include align-items(center);
+		@media screen and (max-width: 600px) {
+			height: 45px;
+		}
+		h1{
+			@include flex-basis(100%);
+			@include flex-shrink(1);
+			margin-left: 20px;
+			color: white;
+			font-size: 1.2em;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			@media screen and (max-width: 600px) {
+				margin-left: 10px;
+			}
+		}
+		div.btsumario{
+			@include flex-shrink(0);
+			height: 100%;
+			width: 60px;
+			@include display(inline-flex);
+			@include align-items(center);
+			@include justify-content (center);
+			@media screen and (max-width: 600px) {
+				width: 45px;
+			}
+			img{
+				display: block;
+				height: 36%;
+				width: auto;
+			}
+			&:hover{
+				cursor: pointer;
+			}
+		}
+	}
+	div.barra-progresso{
+		width: 100%;
+		height: 3px;
+		div.progresso{
+			height: 100%;
+			// background-color: definido no loop no final
+		}
+	}
+	
+}
+
+// variacao de paleta cromatica
+
+body{
+	@each $livros in $cores-livros{
+		$i: index($cores-livros, $livros);
+		&#livro#{$i}{
+			header{
+				background-image: url(../imagens/bgportal_#{$i}.jpg);
+				.invencoes-sumario > div.sumario{background-color: nth($livros, 2)}
+			} 
+			div#headerfixo{
+				div.header_mesmo{
+					background-image: url(../imagens/bgportal_#{$i}.jpg);
+					div.btsumario{
+						background-color: nth($livros, 2)
+					}
+				}
+				div.barra-progresso > .progresso{background-color: nth($livros, 2)}
+			}
+		}
+	}
+}
+
