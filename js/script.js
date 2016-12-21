@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	var boxOrganizacao = $('.info'),
-		modalAberto = false,
+		overlayAberto = false,
+		modalFoiAberto = false,
 		fonteModal,
 		destinoModal,
 		overlay = $('#overlay'),
@@ -21,12 +22,19 @@ $(document).ready(function() {
 		alturaJanela = janela.innerHeight(),
 		scrollTopMaximo = todoCorpo.innerHeight() - alturaJanela;
 
-
-	// metodo para revelar o modal
-	function revelarModal(clicado, destino){
-
+	// metodo para revelar o overlay
+	function revelarOverlay(){
 		todoCorpo.addClass('blockscroll');
 		overlay.addClass('db');
+		setTimeout(function(){
+			escurecer.addClass('visivel');
+			btFecharOverlay.addClass('visivel');
+		},20);
+		overlayAberto = true;
+
+	}
+	// metodo para revelar o modal
+	function revelarModal(clicado, destino){
 
 		var wi = clicado.innerWidth();
 		var hi = clicado.innerHeight();
@@ -36,49 +44,32 @@ $(document).ready(function() {
 		var hf = destino.innerHeight();
 		var xf = destino.offset().left;
 		var yf = destino.offset().top - janela.scrollTop();
-
-		// console.log('Dimensões do clicado: \n'
-		// 	+'X: '+xi
-		// 	+'\nY: '+yi
-		// 	+'\nlargura: '+wi
-		// 	+'\naltura: '+hi
-		// 	+'\n\nDimensões do destino: \n'
-		// 	+'X: '+xf
-		// 	+'\nY: '+yf
-		// 	+'\nlargura: '+wf
-		// 	+'\naltura: '+hi);
-
-		boxTransicao.css({
+		clicado.addClass('esconder');
+		boxTransicao
+		.css({
 			width: wi,
 			height: hi,
 			left: xi,
 			top: yi
+		})
+		.animate({
+			width: wf,
+			height: hf,
+			left: xf,
+			top: yf},
+			200, function() {
+			minicurriculos.addClass('visivel');
+			boxTransicao.addClass('esconder');			
 		});
 
-		clicado.addClass('esconder');
-
-		setTimeout(function(){
-			escurecer.addClass('visivel');
-			btFecharOverlay.addClass('visivel');
-			boxTransicao.animate({
-				width: wf,
-				height: hf,
-				left: xf,
-				top: yf},
-				200, function() {
-				minicurriculos.addClass('visivel');
-				boxTransicao.addClass('esconder');			
-			});
-
-		},20);
-		modalAberto = true;
+		modalFoiAberto = true;
 		fonteModal = clicado;
 		destinoModal = destino;
 	}
 
 	// Método que esconde o modal
 
-	function esconderModal(){
+	function esconderOverlay(){
 
 		var wi = fonteModal.innerWidth();
 		var hi = fonteModal.innerHeight();
@@ -92,27 +83,35 @@ $(document).ready(function() {
 		todoCorpo.removeClass('blockscroll');
 		escurecer.removeClass('visivel');
 		btFecharOverlay.removeClass('visivel');
-		minicurriculos.removeClass('visivel');			
-		boxTransicao.removeClass('esconder')
-		.css({
-			width: wf,
-			height: hf,
-			left: xf,
-			top: yf
-		})
-		.animate({
-			width: wi,
-			height: hi,
-			left: xi,
-			top: yi},
-			200, function() {
+		minicurriculos.removeClass('visivel');
+		if (modalFoiAberto === true) {
+			boxTransicao.removeClass('esconder')
+			.css({
+				width: wf,
+				height: hf,
+				left: xf,
+				top: yf
+			})
+			.animate({
+				width: wi,
+				height: hi,
+				left: xi,
+				top: yi},
+				200, function() {
+					overlay.removeClass('db');
+					fonteModal.removeClass('esconder');
+					fonteModal = '';
+					destinoModal = '';
+					modalFoiAberto = false;
+			});
+		} else{
+			setTimeout(function(){
 				overlay.removeClass('db');
-				fonteModal.removeClass('esconder');
-				fonteModal = '';
-				destinoModal = '';
-		});
+			},200)
+		}			
 		
-		modalAberto = false;
+		
+		overlayAberto = false;
 	}
 
 	// atualizando a altura do header
@@ -138,6 +137,7 @@ $(document).ready(function() {
 
 			boxOrganizacao.on('click', function(event) {
 				var boxClicado = $(this);
+				revelarOverlay();
 				revelarModal(boxClicado, minicurriculos);
 			});
 		} 
@@ -145,20 +145,20 @@ $(document).ready(function() {
 	
 	// Fechando overlay globalmente
 	btFecharOverlay.on('click', function(event) {
-		esconderModal();
+		esconderOverlay();
 	});
 
 	escurecer.on('click', function(event) {
-		esconderModal();
+		esconderOverlay();
 	});
 
 	$(document).on('keyup', function(e) {
 		var evento = e;
 		var tecla = event.keyCode || evento.which;
 		if (tecla == 27) {
-			if (modalAberto == true) {
+			if (overlayAberto == true) {
 				evento.preventDefault();
-				esconderModal();
+				esconderOverlay();
 			}
 		}
 	});
