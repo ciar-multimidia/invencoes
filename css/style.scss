@@ -19,10 +19,11 @@ $container-capitulo: 960px;
 @import 'capa';
 @import 'article';
 @import 'footer';
+@import 'sumario';
 @import 'overlays';
 
 // variavel que organiza os z-index
-$ordem-profundidade: article, footer, #headerfixo, header, #overlay;
+$ordem-profundidade: 'article', 'footer', '#headerfixo', 'header', '#sumario', '#overlay';
 
 @each $elemento in $ordem-profundidade{
 	#{$elemento}{

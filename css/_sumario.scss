@@ -1,0 +1,22 @@
+#sumario{
+	width: 480px;
+	max-width: calc(100vw - 40px);
+	margin: 20px;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+// variacao de paleta cromatica
+
+body{
+	@each $livros in $cores-livros{
+		$i: index($cores-livros, $livros);
+		&#livro#{$i}{
+			#sumario{
+
+			}
+		}
+	}
+}
