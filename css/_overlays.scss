@@ -69,8 +69,9 @@
 	.transicao{
 		position: fixed;
 		background-color: white;
-		&.esconder{
-			display: none;
+		display: none;
+		&.db{
+			display: block;
 		}
 	}
 	// modal
@@ -93,7 +94,11 @@
 			max-width: 640px;
 			display: inline-block;
 			opacity: 0;
+			display: none;
 			// @include transition(opacity 0.2s linear);
+			&.db{
+				display: block;
+			}
 			&.visivel{
 				opacity: 1;
 			}
@@ -118,7 +123,121 @@
 
 	// sumario
 	#sumario{
-		
-	}
+		position: fixed;
+		width: 450px;
+		max-width: calc(100vw - 60px);
+		height: 100vh;
+		top: 0;
+		left: 0;
+		overflow: scroll;
+		@include transform(translateX(-100%));
+		@include transition(transform 0.2s $ease-out-quad);
+		&.visivel{
+			@include transform(translateX(0%));
+		}
+		&.easing-invertido{
+			@include transition-timing-function($ease-in-quad);
+		}
+		ul{
+			min-height: 100%;
+			display: block;
+			h5{
+				display: inline-block;
+				margin: 0 12px;
+				font-size: 0.8em;
+				padding: 3px 9px;
+				color: white;
+				& + li{
+					margin-top: 4px;
+				}
+			}
+			li{
+				display: block;
+				margin: 12px;
+				& > a{
+					@include transition(background-color 0.2s linear);
+					display: block;
+					padding: 15px 25px;
+					color: white;
+					&:hover{
+						cursor: pointer;
+					}
+					h3.titulo{
+						font-size: 1.15em;
+					}
+					div.autores{
 
+					}
+				}
+				&.invencoes-ficha{
+					@include display(flex);
+					@include justify-content(space-between);
+					height: 60px;
+					@media screen and (max-width: 600px) {
+						height: 45px;
+
+					}
+					& > a{
+						display: inline-block;
+						height: 100%;
+						padding: 0;
+						&.invencoes{
+							img{
+								width: auto;
+								height: 100%;
+								display: inline-block;
+							}
+						}
+						&.fichatecnica{
+							padding: 10px 25px;
+							@include display(flex);
+							@include justify-content(center);
+							@include align-items(center);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+body{
+	@each $livros in $cores-livros{
+		$i: index($cores-livros, $livros);
+		&#livro#{$i}{
+			#sumario{
+					background-image: url(../imagens/bgportal_#{$i}.jpg);
+				ul{
+					background-color: transparentize(nth($livros, 1), 0.5);
+					h5{
+						background-color: transparentize(nth($livros, 2), 0.2);
+					}
+					& > li{
+						& > a{
+							background-color: transparentize(nth($livros, 2), 0.7);
+							&:hover{
+								background-color: transparentize(nth($livros, 2), 0.4);
+							}
+						}
+						&.invencoes-ficha{
+							& > a{
+								&.invencoes{
+									background-color: transparent;
+									&:hover{
+										background-color: transparent;
+									}
+								}
+								&.fichatecnica{
+									background-color: nth($livros, 2);
+									&:hover{
+										background-color: nth($livros, 2);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

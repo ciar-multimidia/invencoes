@@ -66,7 +66,7 @@ header {
 				}
 			}
 
-			div.sumario{
+			div.btsumario{
 				// background-color: Definido no Loop de Cores no final	
 				box-shadow: $boxshadowpadrao;
 				vertical-align: top;
@@ -368,7 +368,7 @@ body{
 		&#livro#{$i}{
 			header{
 				background-image: url(../imagens/bgportal_#{$i}.jpg);
-				.invencoes-sumario > div.sumario{background-color: nth($livros, 2)}
+				.invencoes-sumario > div.btsumario{background-color: nth($livros, 2)}
 			} 
 			div#headerfixo{
 				div.header_mesmo{

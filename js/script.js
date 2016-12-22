@@ -2,13 +2,17 @@ $(document).ready(function() {
 	var boxOrganizacao = $('.info'),
 		overlayAberto = false,
 		modalFoiAberto = false,
+		sumarioAberto = false,
 		fonteModal,
 		destinoModal,
 		overlay = $('#overlay'),
 		escurecer = overlay.find('.escurecer').eq(0),
 		btFecharOverlay = overlay.find('.fechar-overlay').eq(0),
 		boxTransicao = overlay.find('.transicao').eq(0),
-		minicurriculos = overlay.find('.minicurriculos').eq(0),
+		modais = overlay.find('.modais > div'),
+		minicurriculos = modais.filter('.minicurriculos').eq(0),
+		sumario = $('#sumario'),
+		botoesSumario = $('.btsumario'),
 		header = $('header').eq(0),
 		alturaHeader = header.innerHeight(),
 		titulo = header.find('.titulo').eq(0),
@@ -35,6 +39,7 @@ $(document).ready(function() {
 	}
 	// metodo para revelar o modal
 	function revelarModal(clicado, destino){
+		destino.addClass('db');
 
 		var wi = clicado.innerWidth();
 		var hi = clicado.innerHeight();
@@ -46,6 +51,7 @@ $(document).ready(function() {
 		var yf = destino.offset().top - janela.scrollTop();
 		clicado.addClass('esconder');
 		boxTransicao
+		.addClass('db')
 		.css({
 			width: wi,
 			height: hi,
@@ -58,8 +64,8 @@ $(document).ready(function() {
 			left: xf,
 			top: yf},
 			200, function() {
-			minicurriculos.addClass('visivel');
-			boxTransicao.addClass('esconder');			
+			destino.addClass('visivel');
+			boxTransicao.removeClass('db');			
 		});
 
 		modalFoiAberto = true;
@@ -67,25 +73,35 @@ $(document).ready(function() {
 		destinoModal = destino;
 	}
 
-	// Método que esconde o modal
+	// metodo que revela o sumario
+	function revelarSumario(){
+		sumario.removeClass('easing-invertido');
+		setTimeout(function(){
+			sumario.addClass('visivel');
+			sumarioAberto = true;
+		}, 20)
+	}
+
+	// Método que esconde o overlay
 
 	function esconderOverlay(){
 
-		var wi = fonteModal.innerWidth();
-		var hi = fonteModal.innerHeight();
-		var xi = fonteModal.offset().left;
-		var yi = fonteModal.offset().top - janela.scrollTop();
-		var wf = destinoModal.innerWidth();
-		var hf = destinoModal.innerHeight();
-		var xf = destinoModal.offset().left;
-		var yf = destinoModal.offset().top - janela.scrollTop();
+		
 
 		todoCorpo.removeClass('blockscroll');
 		escurecer.removeClass('visivel');
 		btFecharOverlay.removeClass('visivel');
-		minicurriculos.removeClass('visivel');
 		if (modalFoiAberto === true) {
-			boxTransicao.removeClass('esconder')
+			modais.removeClass('visivel');
+			var wi = fonteModal.innerWidth();
+			var hi = fonteModal.innerHeight();
+			var xi = fonteModal.offset().left;
+			var yi = fonteModal.offset().top - janela.scrollTop();
+			var wf = destinoModal.innerWidth();
+			var hf = destinoModal.innerHeight();
+			var xf = destinoModal.offset().left;
+			var yf = destinoModal.offset().top - janela.scrollTop();
+			boxTransicao.addClass('db')
 			.css({
 				width: wf,
 				height: hf,
@@ -99,11 +115,19 @@ $(document).ready(function() {
 				top: yi},
 				200, function() {
 					overlay.removeClass('db');
+					boxTransicao.removeClass('db');
+					modais.removeClass('db');
 					fonteModal.removeClass('esconder');
 					fonteModal = '';
 					destinoModal = '';
 					modalFoiAberto = false;
 			});
+		} else if(sumarioAberto === true){
+			sumario.removeClass('visivel').addClass('easing-invertido');
+			sumarioAberto = false;
+			setTimeout(function(){
+				overlay.removeClass('db');
+			},500)
 		} else{
 			setTimeout(function(){
 				overlay.removeClass('db');
@@ -142,6 +166,12 @@ $(document).ready(function() {
 			});
 		} 
 	}
+
+	// abrindo sumario
+	botoesSumario.on('click', function(event) {
+		revelarOverlay();
+		revelarSumario();
+	});
 	
 	// Fechando overlay globalmente
 	btFecharOverlay.on('click', function(event) {
