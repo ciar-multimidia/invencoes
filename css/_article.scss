@@ -1,8 +1,71 @@
 article{
 
-	display: block;
-	width: 720px;
+	@include display(flex);
+	@include flex-wrap(nowrap);
+	@include justify-content(center);
+	width: $container-capa;
 	margin: 50px auto 100px;
+	padding: 20px;
+	@media screen and (max-width: $container-capa) {
+		width: $container-capitulo;
+	}
+
+	@media screen and (max-width: $container-capitulo){
+		width: 100%;
+		// margin: 50px 20px 100px;
+	}
+
+	div.main{
+
+		width: 60%;
+		@media screen and (max-width: 900px){
+			width: 75%;
+		}
+
+		@media screen and (max-width: 600px){
+			width: 100%;
+		}
+	}
+
+	div.aside{
+		margin-left: 0px;
+		width: 0%;
+		@include transition(all 0.2s ease-out);
+		@include transition-property(width, margin-left);
+		display: none;
+		position: relative;
+		color: $cinza-texto;
+		font-size: 0.9em;
+		&.db{
+			display: block;
+		}
+		&.visivel{
+			width: 30%;
+			margin-left: 50px;
+
+			@media screen and (max-width: 900px){
+				width: 25%;
+			}
+
+			@media screen and (max-width: 600px){
+			}
+		}
+
+		div.content{
+			position: absolute;
+			left: 0;
+			opacity: 0;
+			@include transition(opacity 0.2s linear);
+			display: none;
+			&.db{
+				display: block;
+			}
+			&.visivel{
+				opacity: 1;
+			}
+		}
+	}
+
 	
 	// links
 	a, a:link, a:active, a:visited {
@@ -13,39 +76,36 @@ article{
 	}
 
 	// paragrafos
-	p {margin: 30px 0 0}
+	p {
+		& + p{
+			margin: 1.2em 0 0
+		}
+	}
 
 	h1, h2, h3, h4, h5 {
 		margin: 0;
 		text-align: left;
-		line-height: 1.24em;
+		line-height: 1.24;
 		@extend %fonte-destaque;
 		font-weight: bold;
 	}
 
-	// titulos
-	h1 {
-		font-size: 28px;
+	// titulo
+
+	h1{
+		font-size: 2.4em;
 	}
 
 	h2 {
-		font-size: 24px;
-		margin: 25px 0 0;
+		font-size: 1.8em;
 	}
-	article h2 {
-
-	 }
-	// p + h2, figure + h2,
-	// blockquote + h2, table + h2 {margin: 20px 0 0}
 
 	h3 {
-		font-size: 20px;
-		margin: 25px 0 0;
+		font-size: 1.3em;
 	}
-	// h2 + h3 {margin: 30px 0 0}
 
 	h4 {
-		margin: 25px 0 0; 
+		
 	}
 	h4 + p {
 		margin-top: 0
@@ -55,7 +115,7 @@ article{
 	// blockquote / citacoes
 	blockquote {
 		margin: 30px 0 0 60px;
-		font-size: 15px;
+		font-size: 0.9em;
 		color: transparentize(black, 0.3);
 
 		p:first-of-type {margin: 0}
@@ -110,12 +170,28 @@ article{
 
 	// notas de rodape
 	.notarodape {
-		opacity: 0.5;
-		display: inline-block;
+		// opacity: 0.5;
+		display: none;
 	}
 
-	a.linknotarodape {
+	span.linknotarodape {
 		display: inline-block;
-		// color: $roxo;
+		vertical-align: middle;
+		line-height: 0;
+		border-radius: 6px;
+		padding: 5px;
+		margin: 0 2px;
+		background-color: black;
+		&:hover{
+			cursor: pointer;
+		}
+
+		img{
+			vertical-align: middle;
+			display: inline;
+			height: 0.25em;
+			width: auto;
+		}
+		
 	}
 }

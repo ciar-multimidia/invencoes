@@ -20,6 +20,8 @@ $(document).ready(function() {
 		headerfixo = $('#headerfixo'),
 		barraProgresso = headerfixo.find('.barra-progresso > .progresso'),
 		footer = $('footer').eq(0),
+		areaAside = $('article .aside'),
+		textosRodape = $('span.notarodape'),
 		todoCorpo = $('html,body'),
 		alturaCorpo = todoCorpo.innerHeight(),
 		janela = $(window),
@@ -210,6 +212,44 @@ $(document).ready(function() {
 		.end()
 		.text();
 	});
+
+	// codigo para criar as notas de rodapé
+	var conteudoNotaRodape = [];
+	textosRodape.each(function(index, el) {
+		$(el).before('<span class="linknotarodape"><img src="../../imagens/icone_moreinfo.svg"></span>');
+		conteudoNotaRodape.push(
+			$(el).html()
+		);
+	});
+
+	textosRodape.remove();
+	var botoesRodape = $('span.linknotarodape');
+	botoesRodape.each(function(index, el) {
+		var btEl = $(el);
+		var btIndice = index;
+		btEl.on('click', function(event) {
+			var btClicado = $(this);
+			areaAside.addClass('db');
+			setTimeout(function(){
+				areaAside.addClass('visivel');
+				setTimeout(function(){
+					areaAside.append('\
+						<div class="content">\
+						<p>'+conteudoNotaRodape[btIndice]+'</p>\
+						</div>');
+					var divcontent = areaAside.find('div.content');
+					var calculoTopContent = btClicado.offset().top - areaAside.offset().top;
+					divcontent.addClass('db');
+					divcontent.css('top', calculoTopContent);
+
+					setTimeout(function(){
+						divcontent.addClass('visivel');
+					},40);
+				},200);
+			},40);
+		});
+	});
+
 
 	// Eventos de rolagem da página
 	var rolagemAtual = janela.scrollTop();
