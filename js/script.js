@@ -1,4 +1,132 @@
 $(document).ready(function() {
+
+	// lendo caminho do arquivo para descobrir se é um capitulo/artigo ou uma capa.
+	var complementourl;
+	var caminhourl = window.location.href.split('/');
+	indexCaminhoComum = caminhourl.indexOf('livros');
+	var numeroLivro = parseInt(caminhourl[indexCaminhoComum+1]);
+	var nomePaginaAtual = caminhourl[indexCaminhoComum+2].split('.')[0];
+	var numeroCapitulo;
+	if (nomePaginaAtual == 'capa') {
+		complementourl = '';
+	} else if(nomePaginaAtual == 'ficha-tecnica'){
+		complementourl = '';
+	}else if (nomePaginaAtual == 'capitulos'){
+		var nomeCapitulo = caminhourl[indexCaminhoComum+3].split('.')[0].split('');
+		if (nomeCapitulo[0] == 'c' &&
+			$.isNumeric(nomeCapitulo[1]) &&
+			$.isNumeric(nomeCapitulo[2]) ) {
+			complementourl = '../';
+			nomePaginaAtual = nomeCapitulo;
+			numeroCapitulo = parseInt(nomeCapitulo[1]+nomeCapitulo[2]);
+		}
+	}
+
+	// colocando os elementos globais no html
+	var header = $('header').eq(0),
+		article = $('article').eq(0);
+
+	// estamos numa capa? entao coloca a classe capa no header.
+	if (nomePaginaAtual == 'capa') {
+		header.addClass('capa');
+	}
+
+	// inserido elementos da capa
+	var tituloInicial = header.find('h1').html();
+	var sinopseInicial = header.find('div.sinopse').html();
+	var membrosIniciais = header.find('.membro').clone();
+	var txtMembrosIniciais = membrosIniciais.wrapAll('<div></div>').parent().html();
+
+	console.log(
+		(tituloInicial != undefined ? 'tem titulo' : 'nao tem titulo'),
+		(sinopseInicial != undefined ? 'tem sinopse' : 'nao tem sinopse'),
+		(txtMembrosIniciais != undefined ? 'tem membros' : 'nao tem membros')
+		);
+	header.children().remove();
+	header.append('\
+		<div class=\"sobrevolume\">\
+			<div class=\"invencoes-sumario\">\
+				<a class=\"bt-invencoes\" href=\"'+complementourl+'../../index.html\">\
+					<img src=\"'+complementourl+'../../imagens/invencoes-mini.svg\">\
+				</a>\
+				<div class=\"btsumario\" role=\"button\">\
+					<img src=\"'+complementourl+'../../imagens/hamburger-branco.svg\"><span>Sumário</span>\
+				</div>\
+			</div>\
+			\
+			<div class="titulo">\
+				<h1>'+tituloInicial+'</h1>\
+				<div class="sinopse">'+(sinopseInicial != undefined ? sinopseInicial : '')+'</div>\
+			</div>'+
+			(membrosIniciais.length > 0 ? 
+				'<div class="info">\
+					<div class="organizacao">\
+						<h2>'+
+							(nomePaginaAtual == 'capa' ? 'Organização' : membrosIniciais.length > 1 ? 'Autores' : 'Autor(a)')
+						+'</h2>'+
+						txtMembrosIniciais
+					+'</div>\
+					</div>'
+				: '')
+		+'</div>\
+	');
+
+	// adicionando header fixo
+	header.after('\
+		<div id=\"headerfixo\">\
+			<div class=\"header_mesmo\">\
+				<div role=\"button\" class=\"btsumario\"><img src=\"'+complementourl+'../../imagens/hamburger-branco.svg\"></div>\
+				<h1>'+tituloInicial+'</h1>\
+			</div>\
+			<div class=\"barra-progresso\">\
+				<div class=\"progresso\"></div>\
+			</div>\
+		</div>\
+	');
+
+	// adicionando as camadas adicionais do article
+	article.children().wrapAll('<div class="main"></div>');
+	article.prepend('<div class="overlay-fechar"></div>');
+	article.append('<div class="aside"></div>');
+
+	// adicionando footer
+	article.after('\
+		<footer>\
+			<a class="anterior" href=""><img src="'+complementourl+'../../imagens/arrow-branco.svg" alt=""><span>Anterior</span></a>\
+			<a class="proximo" href=""><span>Próximo</span><img src="'+complementourl+'../../imagens/arrow-branco.svg" alt=""></a>\
+		</footer>\
+	');
+
+	// adicionando overlay
+	$('footer').after('\
+		<div id="overlay">\
+			<div class="escurecer"></div>\
+			<div class="fechar-overlay">\
+				<div class="posrel ">\
+					<div></div>\
+					<div></div>\
+				</div>\
+			</div>\
+			<div class="transicao"></div>\
+				\
+			<div class="modais">\
+				<div class="minicurriculos">\</div>\
+			</div>\
+			<nav id="sumario">\
+				<ul>\
+					<li class="invencoes-ficha">\
+						<a class="invencoes" href="'+complementourl+'../../index.html">\
+							<img src="'+complementourl+'../../imagens/invencoes-mini.svg">\
+						</a>\
+						<a class="fichatecnica" href="'+complementourl+'capitulos/fichatecnica.html">Ficha técnica</a>\
+					</li>\
+				</ul>\
+			</nav>	\
+		</div>\
+	');
+
+	
+
 	var boxOrganizacao = $('.info'),
 		overlayAberto = false,
 		modalFoiAberto = false,
@@ -13,20 +141,63 @@ $(document).ready(function() {
 		minicurriculos = modais.filter('.minicurriculos').eq(0),
 		sumario = $('#sumario'),
 		botoesSumario = $('.btsumario'),
-		header = $('header').eq(0),
 		alturaHeader = header.innerHeight(),
 		titulo = header.find('.titulo').eq(0),
 		sinopseTitulo = titulo.find('.sinopse'),
 		headerfixo = $('#headerfixo'),
 		barraProgresso = headerfixo.find('.barra-progresso > .progresso'),
 		footer = $('footer').eq(0),
-		areaAside = $('article .aside'),
+		domArticle = $('article').eq(0),
+		areaAside = domArticle.find('.aside'),
+		asideContent, 
 		textosRodape = $('span.notarodape'),
+		rodapeRevelado = false,
+		indexRodapeClicado,
 		todoCorpo = $('html,body'),
 		alturaCorpo = todoCorpo.innerHeight(),
 		janela = $(window),
 		alturaJanela = janela.innerHeight(),
 		scrollTopMaximo = todoCorpo.innerHeight() - alturaJanela;
+	
+
+	// pegando dados desse livro
+	var dadosLivroAtual = dadosLivros[numeroLivro-1];
+
+	// Total de capítulos nesse livro
+	var totalCapitulos = dadosLivroAtual.capitulos.length;
+
+	// populando sumário
+	if (dadosLivroAtual.tem_categorias == true) {
+		var categoriaAtual = '';
+	}
+	$.each(dadosLivroAtual.capitulos, function(index, val) {
+		 if (dadosLivroAtual.tem_categorias == true) {
+		 	if (val.categoria != categoriaAtual) {
+		 		categoriaAtual = val.categoria;
+		 		sumario.children('ul').eq(0).append('<h5>'+val.categoria+'</h5>');
+		 	}
+		 }
+		 sumario.children('ul').eq(0).append('\
+		 	<li>\
+		 		<a href="'+complementourl+'capitulos/c'+( 
+			 			(index).toString().length>1 
+			 			? (index+1) 
+			 			: "0"+(index) 
+		 			)+'.html">\
+		 			<h3 class="titulo">'+val.titulo+'</h3>'+
+		 			(val.autores != '' ?
+		 				'<div class="autores">\
+		 					<p>'+
+		 					(val.autores.join('</p><p>'))
+		 					+'</p>\
+		 				</div>'
+		 			 : '')
+		 			
+		 		+'</a>\
+		 	</li>\
+	 	');
+	});
+		 
 
 	// metodo para revelar o overlay
 	function revelarOverlay(){
@@ -87,9 +258,6 @@ $(document).ready(function() {
 	// Método que esconde o overlay
 
 	function esconderOverlay(){
-
-		
-
 		todoCorpo.removeClass('blockscroll');
 		escurecer.removeClass('visivel');
 		btFecharOverlay.removeClass('visivel');
@@ -135,8 +303,6 @@ $(document).ready(function() {
 				overlay.removeClass('db');
 			},200)
 		}			
-		
-		
 		overlayAberto = false;
 	}
 
@@ -152,7 +318,6 @@ $(document).ready(function() {
 	if (boxOrganizacao.length > 0) {
 		var infoOrganizacao = boxOrganizacao.find('.membro.cdescricao');
 		if (infoOrganizacao.length > 0) {
-			console.log('tem info sobre '+infoOrganizacao.length+' autores')
 			infoOrganizacao.each(function(index, el) {
 				var infoAutOrg = $(el).html();
 				minicurriculos.append(infoAutOrg);
@@ -175,15 +340,22 @@ $(document).ready(function() {
 		revelarSumario();
 	});
 	
-	// Fechando overlay globalmente
+	// clicar no X fecha overlay
 	btFecharOverlay.on('click', function(event) {
 		esconderOverlay();
 	});
 
+	// clicar no escuro tambem
 	escurecer.on('click', function(event) {
 		esconderOverlay();
 	});
 
+	// arrastar o menu de sumario para a esquerda tambem
+	sumario.on('swipeleft', function(event) {
+		esconderOverlay();
+	});
+
+	// e apertando esc tambem :D
 	$(document).on('keyup', function(e) {
 		var evento = e;
 		var tecla = event.keyCode || evento.which;
@@ -202,52 +374,96 @@ $(document).ready(function() {
 		});
 	}
 
-	// Definindo automaticamente título
-	headerfixo.find('h1').text(function(){
-		return titulo
-		.find('h1')
-		.clone()
-		.find('span')
-		.remove()
-		.end()
-		.text();
-	});
 
-	// codigo para criar as notas de rodapé
+	// armazenando textos do rodape, criando botoes para acesso e removendo tags que continham os textos
 	var conteudoNotaRodape = [];
 	textosRodape.each(function(index, el) {
-		$(el).before('<span class="linknotarodape"><img src="../../imagens/icone_moreinfo.svg"></span>');
+		$(el).before('<span class="linknotarodape"><img src="'+complementourl+'../../imagens/icone_moreinfo.svg"></span>');
 		conteudoNotaRodape.push(
 			$(el).html()
 		);
 	});
-
 	textosRodape.remove();
 	var botoesRodape = $('span.linknotarodape');
-	botoesRodape.each(function(index, el) {
-		var btEl = $(el);
-		var btIndice = index;
-		btEl.on('click', function(event) {
-			var btClicado = $(this);
-			areaAside.addClass('db');
-			setTimeout(function(){
-				areaAside.addClass('visivel');
-				setTimeout(function(){
-					areaAside.append('\
-						<div class="content">\
-						<p>'+conteudoNotaRodape[btIndice]+'</p>\
-						</div>');
-					var divcontent = areaAside.find('div.content');
-					var calculoTopContent = btClicado.offset().top - areaAside.offset().top;
-					divcontent.addClass('db');
-					divcontent.css('top', calculoTopContent);
 
-					setTimeout(function(){
-						divcontent.addClass('visivel');
-					},40);
-				},200);
-			},40);
-		});
+	// funcao que fecha a nota de rodape
+	function esconderNotaRodape(){
+		asideContent.css('width', asideContent.innerWidth()).removeClass('visivel');
+		areaAside.addClass('easing-reverso');
+		areaAside.removeClass('visivel');
+		setTimeout(function(){
+			todoCorpo.removeClass('blockscroll apenas_mobile');
+			domArticle.find('div.overlay-fechar').removeClass('db');
+			asideContent.remove();
+			areaAside.removeClass('db easing-reverso');
+			indexRodapeClicado = '';
+			rodapeRevelado = false;
+			
+		},200);
+	}
+
+	// funcao que abrem (e populam) as notas de rodapé
+	function revelarNotaRodape(btClicado){
+		if (rodapeRevelado === false){
+			areaAside.addClass('db');
+			todoCorpo.addClass('blockscroll apenas_mobile')
+			domArticle.find('div.overlay-fechar').addClass('db');
+		};
+		setTimeout(function(){
+			if (rodapeRevelado === false){areaAside.addClass('visivel')};
+			setTimeout(function(){
+				if (rodapeRevelado === true){
+					asideContent.remove();
+					asideContent = '';
+				};
+				areaAside.append('\
+					<div class="content">\
+						<div class="btfechar">\
+							<div></div>\
+							<div></div>\
+						</div>\
+						<p>'+conteudoNotaRodape[indexRodapeClicado]+'</p>\
+					</div>'
+				);
+				asideContent = areaAside.find('div.content');
+				var calculoTopContent = btClicado.offset().top - areaAside.offset().top - asideContent.find('div.btfechar').outerHeight(true);
+
+				if (calculoTopContent < 0) {
+					calculoTopContent = 0;
+				} else if(calculoTopContent+asideContent.innerHeight() > areaAside.innerHeight() ){
+					calculoTopContent = areaAside.innerHeight()-asideContent.innerHeight();
+				}
+				asideContent.css('top', calculoTopContent);
+				asideContent.addClass('visivel');
+
+				asideContent.find('.btfechar').on('click', function(event) {
+					esconderNotaRodape();
+				});
+				rodapeRevelado = true;
+			}, (rodapeRevelado === false ? 200 : 0));
+		},(rodapeRevelado === false ? 20 : 0));
+	}
+
+	// evento de clique para abrir os rodapes
+	botoesRodape.on('click', function(event) {
+		var clicado = $(this);
+		if (indexRodapeClicado !== botoesRodape.index(clicado) ) {
+			indexRodapeClicado = botoesRodape.index(clicado);
+			revelarNotaRodape(clicado);
+		} else{
+			
+		}
+	});
+
+	// no mobile, cover transparente fecha a nota
+	domArticle.find('div.overlay-fechar').eq(0).on('click', function(event) {
+		esconderNotaRodape();
+	});
+
+	// arrastar aside para a direita também fecha a nota
+	areaAside.on('swiperight', function(event) {
+		esconderNotaRodape();
+		
 	});
 
 

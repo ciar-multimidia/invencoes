@@ -22,7 +22,7 @@ $container-capitulo: 960px;
 @import 'overlays';
 
 // variavel que organiza os z-index
-$ordem-profundidade: 'article', 'footer', '#headerfixo', 'header', '#sumario', '#overlay';
+$ordem-profundidade: 'article', 'footer', '#headerfixo', 'header', '#overlay';
 
 @each $elemento in $ordem-profundidade{
 	#{$elemento}{

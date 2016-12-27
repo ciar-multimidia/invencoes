@@ -9,20 +9,35 @@ article{
 	@media screen and (max-width: $container-capa) {
 		width: $container-capitulo;
 	}
-
 	@media screen and (max-width: $container-capitulo){
 		width: 100%;
-		// margin: 50px 20px 100px;
+	}
+	@media screen and (max-width: 600px){
+		@include display(block);
+	}
+
+	// div transparente para fechar a nota de rodape; APENAS MOBILE!
+	div.overlay-fechar{
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		display: none;
+		&.db{
+			@media screen and (max-width: 600px) {
+				display: block;
+				z-index: 2;
+			}
+		}
 	}
 
 	div.main{
-
+		display: inline-block;
 		width: 60%;
-		@media screen and (max-width: 900px){
-			width: 75%;
-		}
 
 		@media screen and (max-width: 600px){
+			z-index: 1;
 			width: 100%;
 		}
 	}
@@ -36,8 +51,30 @@ article{
 		position: relative;
 		color: $cinza-texto;
 		font-size: 0.9em;
+		line-height: 1.3;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		@media screen and (max-width: 600px){
+			z-index: 3;
+			position: fixed;
+			top: 0;
+			right: 0;
+			padding: 50px 20px 20px;
+			background-color: white;
+			width: 360px;
+			max-width: calc(100% - 80px);
+			height: 100vh;
+			overflow: scroll;
+			@include transition-property(transform, box-shadow);
+			@include transform(translateX(100%));
+			box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.3);
+			&.easing-reverso{
+				@include transition-timing-function(ease-in);
+			}
+		}
+
 		&.db{
-			display: block;
+			display: inline-block;
 		}
 		&.visivel{
 			width: 30%;
@@ -48,6 +85,10 @@ article{
 			}
 
 			@media screen and (max-width: 600px){
+				margin-left: 0px;
+				width: 360px;
+				@include transform(translateX(0%));
+				box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.3);
 			}
 		}
 
@@ -56,12 +97,43 @@ article{
 			left: 0;
 			opacity: 0;
 			@include transition(opacity 0.2s linear);
-			display: none;
-			&.db{
-				display: block;
+			@include display(flex);
+			@include flex-direction(column);
+			@include align-items(flex-start);
+			@media screen and (max-width: 600px) {
+				position: relative;
+				left: auto;
+				//como no mobile o position eh relative, o important no top eh para evitar o efeito do top recebido por JS. Melhor assim do que prever isso por JS.
+				top: auto !important;
+				margin: 15px 0;
 			}
 			&.visivel{
 				opacity: 1;
+			}
+
+			div.btfechar{
+			display: block;
+			width: 16px;
+			height: 16px;
+			position: relative;
+			margin-bottom: 10px;
+			&:hover{
+				cursor: pointer;
+			}
+			& > div{
+				height: 100%;
+				width: 1px;
+				background-color: $cinza-texto;
+				position: absolute;	
+				top: 50%;
+				left: 50%;
+				&:nth-child(1){
+					@include transform(translate(-50%, -50%) rotate(45deg));
+				}
+				&:nth-child(2){
+					@include transform(translate(-50%, -50%) rotate(-45deg));
+				}
+			}
 			}
 		}
 	}
@@ -178,9 +250,9 @@ article{
 		display: inline-block;
 		vertical-align: middle;
 		line-height: 0;
-		border-radius: 6px;
-		padding: 5px;
-		margin: 0 2px;
+		border-radius: 0.3rem;
+		padding: 0.3rem;
+		margin: 0 0.2rem 0;
 		background-color: black;
 		&:hover{
 			cursor: pointer;
@@ -189,7 +261,7 @@ article{
 		img{
 			vertical-align: middle;
 			display: inline;
-			height: 0.25em;
+			height: 0.25rem;
 			width: auto;
 		}
 		

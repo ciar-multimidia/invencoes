@@ -5,7 +5,7 @@ var dadosLivros = [
 		"organizacao": [
 			"Cleomar Rocha"
 		],
-		"capitulos_tem_categorias": false,
+		"tem_categorias": false,
 		"capitulos": [
 			{
 				"titulo":"Introdução",
@@ -52,7 +52,7 @@ var dadosLivros = [
 		"organizacao": [
 			"Vanderlei Cassiano"
 		],
-		"capitulos_tem_categorias": false,
+		"tem_categorias": false,
 		"capitulos": [
 			{
 				"titulo":"Introdução",
@@ -68,18 +68,13 @@ var dadosLivros = [
 			"Cleomar Rocha",
 			"Lucia Santaella"
 		],
-		"capitulos_tem_categorias": true,
-		"categorias": [
+		"tem_categorias": true,
+		"capitulos": [
 			{
-				"titulo": "",
-				"capitulos": 
-				[
-					{
-						"titulo":"Introdução",
-						"autores": ""
-					},
-				]
-			}
+				"titulo":"Introdução",
+				"autores": "",
+				"categoria": ""
+			},
 		]
 	},
 ]
