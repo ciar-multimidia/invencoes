@@ -112,13 +112,13 @@ $(document).ready(function() {
 				<div class="minicurriculos">\</div>\
 			</div>\
 			<nav id="sumario">\
+				<div class="invencoes-ficha">\
+					<a class="invencoes" href="'+complementourl+'../../index.html">\
+						<img src="'+complementourl+'../../imagens/invencoes-mini.svg">\
+					</a>\
+					<a class="fichatecnica" href="'+complementourl+'capitulos/fichatecnica.html">Ficha técnica</a>\
+				</div>\
 				<ul>\
-					<li class="invencoes-ficha">\
-						<a class="invencoes" href="'+complementourl+'../../index.html">\
-							<img src="'+complementourl+'../../imagens/invencoes-mini.svg">\
-						</a>\
-						<a class="fichatecnica" href="'+complementourl+'capitulos/fichatecnica.html">Ficha técnica</a>\
-					</li>\
 					<li><a href="'+complementourl+'capa.html"><h3 class="titulo">Capa do livro</h3></a></li>\
 				</ul>\
 			</nav>	\
@@ -195,7 +195,7 @@ $(document).ready(function() {
 		 if (dadosLivroAtual.tem_categorias == true) {
 		 	if (val.categoria != categoriaAtual) {
 		 		categoriaAtual = val.categoria;
-		 		sumario.children('ul').eq(0).append('<h5>'+val.categoria+'</h5>');
+		 		sumario.children('ul').eq(0).append('<div class="categoria"><h5>'+val.categoria+'</h5></div');
 		 	}
 		 }
 		 sumario.children('ul').eq(0).append('\

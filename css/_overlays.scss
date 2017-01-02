@@ -141,30 +141,75 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 		&.easing-invertido{
 			@include transition-timing-function(ease-in);
 		}
+
+		div.invencoes-ficha{
+			@include display(flex);
+			@include justify-content(space-between);
+			height: 60px;
+			padding: 0 20px;
+			margin: 20px 0;
+			@media screen and (max-width: 600px) {
+				height: 45px;
+
+			}
+			& > a{
+				display: inline-block;
+				height: 100%;
+				padding: 0;
+				box-shadow: $boxshadowpadrao;
+				color: white;
+				&.invencoes{
+					img{
+						width: auto;
+						height: 100%;
+						display: inline-block;
+					}
+				}
+				&.fichatecnica{
+					padding: 10px 25px;
+					@include display(flex);
+					@include justify-content(center);
+					@include align-items(center);
+				}
+			}
+		}
+
 		ul{
 			min-height: 100%;
 			display: block;
-			padding-top: 20px;
-			h5{
-				display: inline-block;
-				margin: 0 12px;
-				font-size: 0.8em;
-				padding: 3px 9px;
-				color: white;
+			padding: 0 20px;
+			div.categoria{
+				width: 100%;
+				@include display(flex);
+				@include justify-content(center);
 				& + li{
-					margin-top: 4px;
+					border-top: 1px solid transparentize(white, 0.6);
+				}
+				h5{
+					min-width: 40%;
+					display: inline-block;
+					font-size: 0.8em;
+					padding: 3px 6px;
+					color: white;
+					text-align: center;
+					
 				}
 			}
+			
 			li{
 				display: block;
-				margin: 12px;
+				& + li{
+					border-top: 1px solid transparentize(white, 0.6);
+				}
+
 				& > a{
 					@include transition(background-color 0.2s linear);
 					display: block;
-					padding: 15px 25px;
+					padding: 20px 0 15px;
 					color: white;
+					text-shadow: 0px 1px 4px rgba(0,0,0,0.4);
 					@media screen and (max-width: 900px) {
-						padding: 8px 15px;
+						padding: 12px 0 9px;
 						
 					}
 					&:hover{
@@ -175,35 +220,6 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 					}
 					div.autores{
 
-					}
-				}
-				&.invencoes-ficha{
-					@include display(flex);
-					@include justify-content(space-between);
-					height: 60px;
-					margin-top: 0px;
-					@media screen and (max-width: 600px) {
-						height: 45px;
-
-					}
-					& > a{
-						display: inline-block;
-						height: 100%;
-						padding: 0;
-						box-shadow: $boxshadowpadrao;
-						&.invencoes{
-							img{
-								width: auto;
-								height: 100%;
-								display: inline-block;
-							}
-						}
-						&.fichatecnica{
-							padding: 10px 25px;
-							@include display(flex);
-							@include justify-content(center);
-							@include align-items(center);
-						}
 					}
 				}
 			}
@@ -217,34 +233,35 @@ body{
 		&#livro#{$i}{
 			#sumario{
 					background-image: url(../imagens/bgportal_#{$i}.jpg);
+					div.invencoes-ficha{
+						& > a{
+							&.invencoes{
+								background-color: transparent;
+								&:hover{
+									background-color: transparent;
+								}
+							}
+							&.fichatecnica{
+								background-color: nth($livros, 2);
+								&:hover{
+									background-color: nth($livros, 2);
+								}
+							}
+						}
+					}
 				ul{
 					background-color: transparentize(nth($livros, 1), 0.5);
 					h5{
-						background-color: transparentize(nth($livros, 2), 0.2);
+						// background-color: nth($livros, 2);
 					}
 					& > li{
-						& > a{
-							background-color: transparentize(nth($livros, 2), 0.7);
-							&:hover{
-								background-color: transparentize(nth($livros, 2), 0.4);
-							}
-						}
-						&.invencoes-ficha{
-							& > a{
-								&.invencoes{
-									background-color: transparent;
-									&:hover{
-										background-color: transparent;
-									}
-								}
-								&.fichatecnica{
-									background-color: nth($livros, 2);
-									&:hover{
-										background-color: nth($livros, 2);
-									}
-								}
-							}
-						}
+						// & > a{
+						// 	background-color: transparentize(nth($livros, 2), 0.7);
+						// 	&:hover{
+						// 		background-color: transparentize(nth($livros, 2), 0.4);
+						// 	}
+						// }
+						
 					}
 				}
 			}

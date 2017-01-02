@@ -5,43 +5,52 @@ var dadosLivros = [
 		"organizacao": [
 			"Cleomar Rocha"
 		],
-		"tem_categorias": false,
+		"tem_categorias": true,
 		"capitulos": [
 			{
 				"titulo":"Introdução",
-				"autores": ""
+				"autores": ['Pamala Willms','Teresia Elles'],
+				"categoria": 'Laranja'
 			},
 			{
 				"titulo":"Sobre Pontes, Janelas e Peles",
-				"autores": ""
+				"autores": ['Norine Thiery','Kourtney Wickwire'],
+				"categoria": 'Laranja'
 			},
 			{
 				"titulo":"Os Azúis de Gagarin e de Turing",
-				"autores": ""
+				"autores": ['Kenneth Rosberg','Roseanna Thomley'],
+				"categoria": 'Laranja'
 			},
 			{
 				"titulo":"Perspectivas Taxionômicas",
-				"autores": ""
+				"autores": ['Kristi Chatten','Mariella Goodley'],
+				"categoria": 'Laranja'
 			},
 			{
 				"titulo":"Poéticas das Interfaces",
-				"autores": ""
+				"autores": ['Sonny Nordquist','Edison Manso'],
+				"categoria": 'Pera'
 			},
 			{
 				"titulo":"Projetações",
-				"autores": ""
+				"autores": ['Carmon Whittum','Kenton Ogas'],
+				"categoria": 'Pera'
 			},
 			{
 				"titulo":"Prospecções: uma Nova Matriz de Linguagem",
-				"autores": ""
+				"autores": ['Lanell Esque','Andy Pisarski'],
+				"categoria": 'Pera'
 			},
 			{
 				"titulo":"Conclusão",
-				"autores": ""
+				"autores": ['Felton Teffeteller','Angle Hagwell'],
+				"categoria": 'Cagaita'
 			},
 			{
 				"titulo":"Referências",
-				"autores": ""
+				"autores": ['Waldo Whiton','Dana Alejos'],
+				"categoria": 'Cagaita'
 			},
 		]
 	},

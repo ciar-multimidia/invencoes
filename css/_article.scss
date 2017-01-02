@@ -143,12 +143,16 @@ article{
 
 	
 	// links
-	a, a:link, a:active, a:visited {
+	a{
+		word-break: break-all;
+		word-wrap: break-word;
+		&, &:link, &:active, &:visited {
 		text-decoration: none;
 		outline: none;
-
 		&:hover {text-decoration: underline;}
+		}
 	}
+	
 
 	// paragrafos
 	p {
