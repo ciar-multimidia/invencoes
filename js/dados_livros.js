@@ -24,7 +24,7 @@ var dadosLivros = [
 				"autores": ""
 			},
 			{
-				"titulo":"Poéticas Das Interfaces",
+				"titulo":"Poéticas das Interfaces",
 				"autores": ""
 			},
 			{

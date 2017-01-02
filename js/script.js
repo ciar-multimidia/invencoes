@@ -22,9 +22,12 @@ $(document).ready(function() {
 		}
 	}
 
+	console.log(nomeCapitulo);
+
 	// colocando os elementos globais no html
 	var header = $('header').eq(0),
-		article = $('article').eq(0);
+		article = $('article').eq(0),
+		corpo = $('body');
 
 	// estamos numa capa? entao coloca a classe capa no header.
 	if (nomePaginaAtual == 'capa') {
@@ -32,16 +35,12 @@ $(document).ready(function() {
 	}
 
 	// inserido elementos da capa
-	var tituloInicial = header.find('h1').html();
+	var tagTituloInicial = header.find('h1');
+	var tituloInicial = tagTituloInicial.html();
 	var sinopseInicial = header.find('div.sinopse').html();
 	var membrosIniciais = header.find('.membro').clone();
 	var txtMembrosIniciais = membrosIniciais.wrapAll('<div></div>').parent().html();
 
-	console.log(
-		(tituloInicial != undefined ? 'tem titulo' : 'nao tem titulo'),
-		(sinopseInicial != undefined ? 'tem sinopse' : 'nao tem sinopse'),
-		(txtMembrosIniciais != undefined ? 'tem membros' : 'nao tem membros')
-		);
 	header.children().remove();
 	header.append('\
 		<div class=\"sobrevolume\">\
@@ -76,7 +75,7 @@ $(document).ready(function() {
 		<div id=\"headerfixo\">\
 			<div class=\"header_mesmo\">\
 				<div role=\"button\" class=\"btsumario\"><img src=\"'+complementourl+'../../imagens/hamburger-branco.svg\"></div>\
-				<h1>'+tituloInicial+'</h1>\
+				<h1>'+(tagTituloInicial.clone().find('span').remove().end().text())+'</h1>\
 			</div>\
 			<div class=\"barra-progresso\">\
 				<div class=\"progresso\"></div>\
@@ -120,10 +119,14 @@ $(document).ready(function() {
 						</a>\
 						<a class="fichatecnica" href="'+complementourl+'capitulos/fichatecnica.html">Ficha técnica</a>\
 					</li>\
+					<li><a href="'+complementourl+'capa.html"><h3 class="titulo">Capa do livro</h3></a></li>\
 				</ul>\
 			</nav>	\
 		</div>\
 	');
+
+	// depois que colocar tudo, deixar body visivel
+	corpo.addClass('carregado');
 
 	
 
@@ -158,6 +161,24 @@ $(document).ready(function() {
 		janela = $(window),
 		alturaJanela = janela.innerHeight(),
 		scrollTopMaximo = todoCorpo.innerHeight() - alturaJanela;
+
+
+	// atualizando a altura do header
+	janela.on('resize', function(event) {
+		alturaHeader = header.innerHeight();
+		alturaJanela = janela.innerHeight();
+		alturaCorpo = todoCorpo.innerHeight();
+		scrollTopMaximo = todoCorpo.innerHeight() - alturaJanela;
+		// revelando footer se conteudo é muito pequeno
+		if (alturaCorpo < janela.height()+header.innerHeight()) {
+			footer.addClass('visivel');
+		}
+	});
+
+	// deixando footer sempre fixo caso conteudo nao seja grande o suficiente
+	if (alturaCorpo < janela.height()+header.innerHeight()) {
+		footer.addClass('visivel');
+	}
 	
 
 	// pegando dados desse livro
@@ -181,9 +202,10 @@ $(document).ready(function() {
 		 	<li>\
 		 		<a href="'+complementourl+'capitulos/c'+( 
 			 			(index).toString().length>1 
-			 			? (index+1) 
-			 			: "0"+(index) 
-		 			)+'.html">\
+			 			? '' 
+			 			: "0")+
+				 		index
+		 		+'.html">\
 		 			<h3 class="titulo">'+val.titulo+'</h3>'+
 		 			(val.autores != '' ?
 		 				'<div class="autores">\
@@ -197,6 +219,26 @@ $(document).ready(function() {
 		 	</li>\
 	 	');
 	});
+
+	// links do footer
+	if (numeroCapitulo == dadosLivroAtual.capitulos.length-1) {
+		footer.find('a.proximo').addClass('esconder');
+	} else if (nomePaginaAtual == 'capa') {
+		footer.find('a.proximo').attr('href',complementourl+'capitulos/c00.html');
+	}else{
+		footer.find('a.proximo').attr('href', complementourl+'capitulos/c'+( (numeroCapitulo+1).toString().length>1 ? '' : "0" )+(numeroCapitulo+1)+'.html');
+	}
+	if (nomePaginaAtual == 'capa') {
+		footer.find('a.anterior').addClass('esconder');
+	} else if (numeroCapitulo == 0) {
+		footer.find('a.anterior').attr('href', complementourl+'capa.html');
+	}else{
+		footer.find('a.anterior').attr('href', complementourl+'capitulos/c'+( (numeroCapitulo-1).toString().length>1 ? '' : "0" )+(numeroCapitulo-1)+'.html');
+	}
+
+
+	// envolvendo todas as tables com div rolável
+	$('table').wrap('<div class="containertable"></div>')
 		 
 
 	// metodo para revelar o overlay
@@ -305,14 +347,6 @@ $(document).ready(function() {
 		}			
 		overlayAberto = false;
 	}
-
-	// atualizando a altura do header
-	janela.on('resize', function(event) {
-		alturaHeader = header.innerHeight();
-		alturaJanela = janela.innerHeight();
-		alturaCorpo = todoCorpo.innerHeight();
-		scrollTopMaximo = todoCorpo.innerHeight() - alturaJanela;
-	});
 
 	// definindo interações com as informações sobre os autores/organizadores
 	if (boxOrganizacao.length > 0) {
@@ -492,5 +526,7 @@ $(document).ready(function() {
 		}
 	rolagemAtual = rolagemEvento;
 	});
+
+	
 
 });
