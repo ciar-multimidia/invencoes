@@ -192,7 +192,7 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 					width: 100%;
 					@include display(flex);
 					@include justify-content(center);
-					padding: 3px 12px;
+					padding: 6px 12px;
 					// margin: 12px 0 4px;	
 					& + li{
 						// border-top: 1px solid transparentize(white, 0.6);
@@ -240,6 +240,17 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 						div.autores{
 							p{
 								font-size: 0.95em;
+								font-style: italic;
+							}
+						}
+					}
+					&.pagina-atual{
+						& > a{
+							padding-left: 12px;
+							border-left: 6px solid white;
+							&:hover{
+								cursor: default;
+								@include transform(none);
 							}
 						}
 					}
@@ -275,7 +286,7 @@ body{
 					}
 				ul{
 					div.categoria{
-						background-color: transparentize(nth($livros, 2), 0.5);
+						background-color: transparentize(nth($livros, 2), 0.75);
 						h5{
 						}
 					}

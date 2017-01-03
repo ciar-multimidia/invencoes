@@ -22,8 +22,6 @@ $(document).ready(function() {
 		}
 	}
 
-	console.log(nomeCapitulo);
-
 	// colocando os elementos globais no html
 	var header = $('header').eq(0),
 		article = $('article').eq(0),
@@ -91,8 +89,20 @@ $(document).ready(function() {
 	// adicionando footer
 	article.after('\
 		<footer>\
-			<a class="anterior" href=""><img src="'+complementourl+'../../imagens/arrow-branco.svg" alt=""><span>Anterior</span></a>\
-			<a class="proximo" href=""><span>Próximo</span><img src="'+complementourl+'../../imagens/arrow-branco.svg" alt=""></a>\
+			<a class="anterior" href="">\
+				<img src="'+complementourl+'../../imagens/arrow-branco.svg" alt="">\
+				<div class="textonav">\
+					<p>Anterior</p>\
+					<h4></h4>\
+				</div>\
+			</a>\
+			<a class="proximo" href="">\
+				<div class="textonav">\
+					<p>Próximo</p>\
+					<h4></h4>\
+				</div>\
+				<img src="'+complementourl+'../../imagens/arrow-branco.svg" alt="">\
+			</a>\
 		</footer>\
 	');
 
@@ -120,7 +130,17 @@ $(document).ready(function() {
 						<a class="fichatecnica" href="'+complementourl+'capitulos/fichatecnica.html">Ficha técnica</a>\
 					</div>\
 					<ul>\
-						<li><a href="'+complementourl+'capa.html"><h3 class="titulo">Capa do livro</h3></a></li>\
+						<li'+(nomePaginaAtual == 'capa' ? 
+							' class="pagina-atual"' : 
+							'')
+						+'>\
+							<a'+(nomePaginaAtual == 'capa' ? 
+								'' : 
+								' href="'+complementourl+'capa.html"')
+							+'>\
+								<h3 class="titulo">Capa do livro</h3>\
+							</a>\
+						</li>\
 					</ul>\
 				</div>\
 			</nav>\
@@ -200,14 +220,17 @@ $(document).ready(function() {
 		 		sumario.find('ul').eq(0).append('<div class="categoria"><h5>'+val.categoria+'</h5></div');
 		 	}
 		 }
+		 console.log(index, numeroCapitulo);
 		 sumario.find('ul').eq(0).append('\
-		 	<li>\
-		 		<a href="'+complementourl+'capitulos/c'+( 
-			 			(index).toString().length>1 
-			 			? '' 
-			 			: "0")+
-				 		index
-		 		+'.html">\
+		 	<li'+(index == numeroCapitulo ? ' class="pagina-atual"' : '')+'>\
+		 		<a'+(index == numeroCapitulo ? 
+			 			'' : 
+			 			' href="'+complementourl+'capitulos/c'+( (index).toString().length>1 ? 
+			 				'' : 
+			 				'0')
+			 			+index+'.html"'
+		 			) 
+		 		+'>\
 		 			<h3 class="titulo">'+val.titulo+'</h3>'+
 		 			(val.autores != '' ?
 		 				'<div class="autores">\
@@ -227,15 +250,19 @@ $(document).ready(function() {
 		footer.find('a.proximo').addClass('esconder');
 	} else if (nomePaginaAtual == 'capa') {
 		footer.find('a.proximo').attr('href',complementourl+'capitulos/c00.html');
+		footer.find('a.proximo div.textonav > h4').text(dadosLivroAtual.capitulos[0].titulo);
 	}else{
 		footer.find('a.proximo').attr('href', complementourl+'capitulos/c'+( (numeroCapitulo+1).toString().length>1 ? '' : "0" )+(numeroCapitulo+1)+'.html');
+		footer.find('a.proximo div.textonav > h4').text(dadosLivroAtual.capitulos[numeroCapitulo+1].titulo);
 	}
 	if (nomePaginaAtual == 'capa') {
 		footer.find('a.anterior').addClass('esconder');
 	} else if (numeroCapitulo == 0) {
 		footer.find('a.anterior').attr('href', complementourl+'capa.html');
+		footer.find('a.anterior div.textonav > h4').text('Capa do Livro');
 	}else{
 		footer.find('a.anterior').attr('href', complementourl+'capitulos/c'+( (numeroCapitulo-1).toString().length>1 ? '' : "0" )+(numeroCapitulo-1)+'.html');
+		footer.find('a.anterior div.textonav > h4').text(dadosLivroAtual.capitulos[numeroCapitulo-1].titulo);
 	}
 
 
@@ -525,6 +552,12 @@ $(document).ready(function() {
 			if (rolagemEvento < alturaHeader-headerfixo.innerHeight()) {
 				headerfixo.removeClass('db visivel');			
 			}
+		}
+
+		if (rolagemEvento > scrollTopMaximo - 10) {
+			footer.addClass('final');
+		} else {
+			footer.removeClass('final');
 		}
 	rolagemAtual = rolagemEvento;
 	});
