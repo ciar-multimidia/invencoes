@@ -112,16 +112,18 @@ $(document).ready(function() {
 				<div class="minicurriculos">\</div>\
 			</div>\
 			<nav id="sumario">\
-				<div class="invencoes-ficha">\
-					<a class="invencoes" href="'+complementourl+'../../index.html">\
-						<img src="'+complementourl+'../../imagens/invencoes-mini.svg">\
-					</a>\
-					<a class="fichatecnica" href="'+complementourl+'capitulos/fichatecnica.html">Ficha técnica</a>\
+				<div class="color-overlay">\
+					<div class="invencoes-ficha">\
+						<a class="invencoes" href="'+complementourl+'../../index.html">\
+							<img src="'+complementourl+'../../imagens/invencoes-mini.svg">\
+						</a>\
+						<a class="fichatecnica" href="'+complementourl+'capitulos/fichatecnica.html">Ficha técnica</a>\
+					</div>\
+					<ul>\
+						<li><a href="'+complementourl+'capa.html"><h3 class="titulo">Capa do livro</h3></a></li>\
+					</ul>\
 				</div>\
-				<ul>\
-					<li><a href="'+complementourl+'capa.html"><h3 class="titulo">Capa do livro</h3></a></li>\
-				</ul>\
-			</nav>	\
+			</nav>\
 		</div>\
 	');
 
@@ -195,10 +197,10 @@ $(document).ready(function() {
 		 if (dadosLivroAtual.tem_categorias == true) {
 		 	if (val.categoria != categoriaAtual) {
 		 		categoriaAtual = val.categoria;
-		 		sumario.children('ul').eq(0).append('<div class="categoria"><h5>'+val.categoria+'</h5></div');
+		 		sumario.find('ul').eq(0).append('<div class="categoria"><h5>'+val.categoria+'</h5></div');
 		 	}
 		 }
-		 sumario.children('ul').eq(0).append('\
+		 sumario.find('ul').eq(0).append('\
 		 	<li>\
 		 		<a href="'+complementourl+'capitulos/c'+( 
 			 			(index).toString().length>1 

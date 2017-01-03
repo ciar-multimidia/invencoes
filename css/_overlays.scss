@@ -141,85 +141,107 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 		&.easing-invertido{
 			@include transition-timing-function(ease-in);
 		}
-
-		div.invencoes-ficha{
-			@include display(flex);
-			@include justify-content(space-between);
-			height: 60px;
-			padding: 0 20px;
-			margin: 20px 0;
+		div.color-overlay{
+			width: 100%;
+			min-height: 100%;
+			padding-top: 20px;
 			@media screen and (max-width: 600px) {
-				height: 45px;
-
+				padding-top: 12px;
 			}
-			& > a{
-				display: inline-block;
-				height: 100%;
-				padding: 0;
-				box-shadow: $boxshadowpadrao;
-				color: white;
-				&.invencoes{
-					img{
-						width: auto;
-						height: 100%;
-						display: inline-block;
+			div.invencoes-ficha{
+				@include display(flex);
+				@include justify-content(space-between);
+				height: 60px;
+				padding: 0 20px;
+				margin: 0 0 20px;
+				@media screen and (max-width: 600px) {
+					height: 45px;
+					padding: 0 12px;
+					margin: 0 0 12px;
+				}
+				& > a{
+					display: inline-block;
+					height: 100%;
+					padding: 0;
+					box-shadow: $boxshadowpadrao;
+					color: white;
+					&.invencoes{
+						img{
+							width: auto;
+							height: 100%;
+							display: inline-block;
+						}
+					}
+					&.fichatecnica{
+						padding: 10px 25px;
+						@include display(flex);
+						@include justify-content(center);
+						@include align-items(center);
 					}
 				}
-				&.fichatecnica{
-					padding: 10px 25px;
+			}
+
+			ul{
+				min-height: 100%;
+				display: block;
+				padding: 0 20px;
+				@media screen and (max-width: 600px) {
+					padding: 0 12px;
+				}
+				div.categoria{
+					width: 100%;
 					@include display(flex);
 					@include justify-content(center);
-					@include align-items(center);
-				}
-			}
-		}
-
-		ul{
-			min-height: 100%;
-			display: block;
-			padding: 0 20px;
-			div.categoria{
-				width: 100%;
-				@include display(flex);
-				@include justify-content(center);
-				& + li{
-					border-top: 1px solid transparentize(white, 0.6);
-				}
-				h5{
-					min-width: 40%;
-					display: inline-block;
-					font-size: 0.8em;
-					padding: 3px 6px;
-					color: white;
-					text-align: center;
-					
-				}
-			}
-			
-			li{
-				display: block;
-				& + li{
-					border-top: 1px solid transparentize(white, 0.6);
-				}
-
-				& > a{
-					@include transition(background-color 0.2s linear);
-					display: block;
-					padding: 20px 0 15px;
-					color: white;
-					text-shadow: 0px 1px 4px rgba(0,0,0,0.4);
-					@media screen and (max-width: 900px) {
-						padding: 12px 0 9px;
+					padding: 3px 12px;
+					// margin: 12px 0 4px;	
+					& + li{
+						// border-top: 1px solid transparentize(white, 0.6);
+					}
+					h5{
+						width: 100%;
+						display: inline-block;
+						font-size: 0.8em;
+						color: white;
+						text-align: center;
 						
 					}
-					&:hover{
-						cursor: pointer;
+				}
+				
+				li{
+					display: block;
+					border-bottom: 1px solid transparentize(white, 0.6);
+					border-top: 1px solid transparentize(white, 0.6);
+					padding-right: 20px;
+					@media screen and (max-width: 900px) {
+						padding-right: 12px;
 					}
-					h3.titulo{
-						font-size: 1.15em;
+					& + li{
+						border-top: 0px solid transparent;
 					}
-					div.autores{
 
+					& > a{
+						@include transition(background-color 0.2s linear);
+						display: block;
+						padding: 20px 0;
+						color: white;
+						text-shadow: 0px 1px 4px rgba(0,0,0,0.4);
+						@include transition(all 0.2s ease-in-out);
+						@include transition-property(transform);
+						@media screen and (max-width: 900px) {
+							padding: 12px 0;
+						}
+						&:hover{
+							cursor: pointer;
+							@include transform(translateX(6px));
+						}
+						h3.titulo{
+							font-size: 1.15em;
+						}
+						div.autores{
+							p{
+								font-size: 0.95em;
+							}
+						}
 					}
 				}
 			}
@@ -233,7 +255,9 @@ body{
 		&#livro#{$i}{
 			#sumario{
 					background-image: url(../imagens/bgportal_#{$i}.jpg);
-					div.invencoes-ficha{
+					div.color-overlay{
+						background-color: transparentize(nth($livros, 1), 0.5);
+						div.invencoes-ficha{
 						& > a{
 							&.invencoes{
 								background-color: transparent;
@@ -250,10 +274,12 @@ body{
 						}
 					}
 				ul{
-					background-color: transparentize(nth($livros, 1), 0.5);
-					h5{
-						// background-color: nth($livros, 2);
+					div.categoria{
+						background-color: transparentize(nth($livros, 2), 0.5);
+						h5{
+						}
 					}
+					
 					& > li{
 						// & > a{
 						// 	background-color: transparentize(nth($livros, 2), 0.7);
@@ -264,6 +290,8 @@ body{
 						
 					}
 				}
+			}
+					
 			}
 		}
 	}
