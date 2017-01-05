@@ -544,7 +544,6 @@ header {
       opacity: 1;
       background-color: white;
       padding: 20px;
-      padding-right: 40px;
       position: relative;
       min-width: 300px;
       display: inline-block;
@@ -600,14 +599,16 @@ header {
       flex-wrap: wrap; }
       header .sobrevolume .info.esconder {
         opacity: 0; }
-      header .sobrevolume .info:after {
-        content: "\25be";
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-        font-size: 25px; }
-      header .sobrevolume .info:hover {
-        cursor: pointer; }
+      header .sobrevolume .info.saiba-mais {
+        padding-right: 40px; }
+        header .sobrevolume .info.saiba-mais:after {
+          content: "\25be";
+          position: absolute;
+          right: 20px;
+          bottom: 20px;
+          font-size: 25px; }
+        header .sobrevolume .info.saiba-mais:hover {
+          cursor: pointer; }
       @media screen and (max-width: 900px) {
         header .sobrevolume .info {
           min-width: 0;
@@ -620,7 +621,7 @@ header {
           margin-top: 10px; }
         header .sobrevolume .info .organizacao div.membro + a.fichatecnica {
           margin-top: 15px; }
-        header .sobrevolume .info .organizacao div.membro p.descricao {
+        header .sobrevolume .info .organizacao div.membro div.descricao {
           display: none; }
   header.capa .sobrevolume {
     padding: 20px 20px 100px; }
@@ -1149,7 +1150,7 @@ article {
       display: block;
       box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.4); }
     article figure figcaption {
-      margin-top: 1.2em;
+      margin-top: 0.8em;
       color: #666;
       font-size: 0.9em; }
   article .notarodape {
@@ -1475,8 +1476,10 @@ body#livro6 #sumariofooter {
             padding: 24px 18px; } }
         #overlay .modais > div.minicurriculos h2.nome {
           font-size: 1.5em; }
-        #overlay .modais > div.minicurriculos p.descricao + h2.nome {
-          margin-top: 24px; }
+        #overlay .modais > div.minicurriculos div.descricao {
+          margin-top: 1em; }
+          #overlay .modais > div.minicurriculos div.descricao + h2.nome {
+            margin-top: 2em; }
   #overlay #sumario {
     position: fixed;
     width: 450px;

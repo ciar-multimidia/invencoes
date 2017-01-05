@@ -39,7 +39,7 @@ $(document).ready(function() {
 	var tagTituloInicial = header.find('h1');
 	var tituloInicial = tagTituloInicial.html();
 	var sinopseInicial = header.find('div.sinopse').html();
-	var membrosIniciais = header.find('.membro').clone();
+	var membrosIniciais = header.find('.organizacao').clone();
 	var txtMembrosIniciais = membrosIniciais.wrapAll('<div></div>').parent().html();
 
 	header.children().remove();
@@ -59,14 +59,7 @@ $(document).ready(function() {
 				<div class="sinopse">'+(sinopseInicial != undefined ? sinopseInicial : '')+'</div>\
 			</div>'+
 			(membrosIniciais.length > 0 ? 
-				'<div class="info">\
-					<div class="organizacao">\
-						<h2>'+
-							(nomePaginaAtual == 'capa' ? 'Organização' : membrosIniciais.length > 1 ? 'Autores' : 'Autor(a)')
-						+'</h2>'+
-						txtMembrosIniciais
-					+'</div>\
-					</div>'
+				'<div class="info">'+txtMembrosIniciais+'</div>'
 				: '')
 		+'</div>\
 	');
@@ -247,10 +240,10 @@ $(document).ready(function() {
 	});
 
 	// links do footer
-	if (numeroCapitulo == dadosLivroAtual.capitulos.length-1) {
+	if (numeroCapitulo == dadosLivroAtual.capitulos.length) {
 		footer.find('a.proximo').addClass('esconder');
 	} else if (nomePaginaAtual == 'capa') {
-		footer.find('a.proximo').attr('href',complementourl+'capitulos/c00.html');
+		footer.find('a.proximo').attr('href',complementourl+'capitulos/c01.html');
 		// footer.find('a.proximo div.textonav > h4').text(dadosLivroAtual.capitulos[0].titulo);
 	}else{
 		footer.find('a.proximo').attr('href', complementourl+'capitulos/c'+( (numeroCapitulo+1).toString().length>1 ? '' : "0" )+(numeroCapitulo+1)+'.html');
@@ -258,7 +251,7 @@ $(document).ready(function() {
 	}
 	if (nomePaginaAtual == 'capa') {
 		footer.find('a.anterior').addClass('esconder');
-	} else if (numeroCapitulo == 0) {
+	} else if (numeroCapitulo == 1) {
 		footer.find('a.anterior').attr('href', complementourl+'capa.html');
 		// footer.find('a.anterior div.textonav > h4').text('Capa do Livro');
 	}else{
@@ -335,6 +328,7 @@ $(document).ready(function() {
 		btFecharOverlay.removeClass('visivel');
 		if (modalFoiAberto === true) {
 			modais.removeClass('visivel');
+			modais.parent().scrollTop(0);
 			var wi = fonteModal.innerWidth();
 			var hi = fonteModal.innerHeight();
 			var xi = fonteModal.offset().left;
@@ -356,6 +350,7 @@ $(document).ready(function() {
 				left: xi,
 				top: yi},
 				200, function() {
+
 					overlay.removeClass('db');
 					boxTransicao.removeClass('db');
 					modais.removeClass('db');
@@ -382,6 +377,7 @@ $(document).ready(function() {
 	if (boxOrganizacao.length > 0) {
 		var infoOrganizacao = boxOrganizacao.find('.membro.cdescricao');
 		if (infoOrganizacao.length > 0) {
+			boxOrganizacao.addClass('saiba-mais');
 			infoOrganizacao.each(function(index, el) {
 				var infoAutOrg = $(el).html();
 				minicurriculos.append(infoAutOrg);

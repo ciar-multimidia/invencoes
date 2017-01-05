@@ -142,7 +142,6 @@ header {
 			opacity: 1;
 			background-color: white;
 			padding: 20px;
-			padding-right: 40px;
 			position: relative;
 			min-width: 300px;
 			display: inline-block;
@@ -159,18 +158,23 @@ header {
 				opacity: 0;
 			}
 
-			&:after {
-				content: "\25be";
-				position: absolute;
-				right: 20px;
-				bottom: 20px;
-				font-size: 25px;
-				// color: $cinza-texto;
+			&.saiba-mais{
+				padding-right: 40px;
+				&:after {
+					content: "\25be";
+					position: absolute;
+					right: 20px;
+					bottom: 20px;
+					font-size: 25px;
+					// color: $cinza-texto;
+				}
+
+				&:hover{
+					cursor: pointer;
+				}
 			}
 
-			&:hover{
-				cursor: pointer;
-			}
+			
 
 			@media screen and (max-width: 900px) {
 				min-width: 0;
@@ -196,7 +200,7 @@ header {
 					p.nome{
 			
 					}
-					p.descricao{
+					div.descricao{
 						display: none;
 					}
 				}
