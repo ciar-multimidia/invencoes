@@ -1,6 +1,3 @@
-@import 'bourbon/bourbon';
-@import 'padroes';
-
 $cores-livros: (
 	(#e33825, #75150b),
 	(#3c3c3b, #0E0E0E),
@@ -10,10 +7,15 @@ $cores-livros: (
 	(#ee7d00, #985100)
 );
 
-$cinza-texto: #666;
+$cor-texto-padrao: hsl(0,0%,20%);
+$cinza-texto: hsl(0,0%,40%);
 
 $container-capa: 1200px;
 $container-capitulo: 960px;
+
+@import 'bourbon/bourbon';
+@import 'padroes';
+
 
 @import 'portal';
 @import 'capa';

@@ -12,6 +12,9 @@ article{
 	@media screen and (max-width: $container-capitulo){
 		width: 100%;
 	}
+	@media screen and (max-width: 900px){
+		margin: 36px auto;
+	}
 	@media screen and (max-width: 600px){
 		@include display(block);
 	}
@@ -51,7 +54,7 @@ article{
 		position: relative;
 		color: $cinza-texto;
 		font-size: 0.9em;
-		line-height: 1.3;
+		line-height: 1.4;
 		overflow-x: hidden;
 		overflow-y: scroll;
 		@media screen and (max-width: 600px){
@@ -143,15 +146,21 @@ article{
 
 	
 	// links
+	$cor-links: #0063d8;
 	a{
 		word-break: break-all;
 		word-wrap: break-word;
-		&, &:link, &:active, &:visited {
-		text-decoration: none;
-		outline: none;
-		&:hover {text-decoration: underline;}
+		&, &.visited, &:link, &:active{
+			color: $cor-links;
+			text-decoration: none;
+			outline: none;
+		}
+		
+		&:hover {
+			text-decoration: underline;
 		}
 	}
+	
 	
 
 	// paragrafos
@@ -214,30 +223,53 @@ article{
 
 	// tabelas
 	table, .containertable table {
-		margin: 2.4em 0;
 		text-align: left;
 		font-size: 0.9em;
 		min-width: 480px;
 		thead{
-			border-bottom: 2px solid black;
-			th{
-				font-weight: bold;	
+			tr{
+				border-bottom: 2px solid;
+				th{
+					padding-right: 1.2em;
+					vertical-align: bottom;
+					font-weight: bold;	
+				}
+			}
+			
+		}
+		tbody{
+			tr{
+				border-bottom: 1px solid;
+				&:last-of-type{
+					border-bottom-width: 3px;
+				}
+				td{
+					vertical-align: middle;
+					padding: 0.4em 1.2em 0.4em 0;
+				}
 			}
 		}
-		tr{
-			border-bottom: 1px solid $cinza-texto;
-		}
-		th, td{
-			padding: 0.4em 1.2em 0.4em 0;
-		}
+		
 		caption {
-			display: table-caption;
+			display: none;
 		}
 	}
 
 	.containertable {
 		width: 100%;
 		overflow: scroll;
+		margin-top: 2.4em;
+		& + *:not(.table-caption){
+			margin-top: 2.4em;
+		}
+		& + p.table-caption{
+			text-align: center;
+			color: $cinza-texto;
+			font-size: 0.9em;
+			margin-top: 0.8em;
+			margin-bottom: 2.4em;
+
+		}
 	}
 
 
@@ -290,11 +322,13 @@ article{
 	span.linknotarodape {
 		display: inline-block;
 		vertical-align: middle;
-		line-height: 0;
+		line-height: 1;
 		border-radius: 0.3rem;
 		padding: 0.3rem;
 		margin: 0 0.2rem 0;
-		background-color: black;
+		font-size: 0.8em;
+		background-color: $cor-texto-padrao;
+		color: white;
 		&:hover{
 			cursor: pointer;
 		}

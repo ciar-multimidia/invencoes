@@ -260,8 +260,16 @@ $(document).ready(function() {
 	}
 
 
-	// envolvendo todas as tables com div rolável
+	// envolvendo todas as tables com div rolável e colocando caption pra fora
 	$('table').wrap('<div class="containertable"></div>');
+	$('div.containertable').each(function(index, el) {
+		captionTabela = $(el).find('table').find('caption').eq(0);
+		if (captionTabela.length > 0) {
+			var textoCaption = captionTabela.text();
+			captionTabela.remove();
+			$(el).after('<p class="table-caption">'+textoCaption+'</p>');
+		}
+	});
 
 	// definindo exceções para figuras verticais
 	var figuras = domArticle.find('figure');
@@ -450,7 +458,7 @@ $(document).ready(function() {
 	// armazenando textos do rodape, criando botoes para acesso e removendo tags que continham os textos
 	var conteudoNotaRodape = [];
 	textosRodape.each(function(index, el) {
-		$(el).before('<span class="linknotarodape"><img src="'+complementourl+'../../imagens/icone_moreinfo.svg"></span>');
+		$(el).before('<span class="linknotarodape">'+(index+1)+'</span>');
 		conteudoNotaRodape.push(
 			$(el).html()
 		);

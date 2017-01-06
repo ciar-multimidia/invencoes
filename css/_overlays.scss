@@ -134,6 +134,7 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 		top: 0;
 		left: 0;
 		overflow: scroll;
+		line-height: 1.4;
 		@include transform(translateX(-100%));
 		@include transition(transform 0.2s ease-out);
 		&.visivel{

@@ -21,7 +21,7 @@ header {
 	// regiao com infos do livro/capitulo
 	.sobrevolume {
 		width: $container-capa;
-		color: $cinza-texto;
+		color: $cor-texto-padrao;
 
 		@include display(flex);
 		@include flex-direction(row);

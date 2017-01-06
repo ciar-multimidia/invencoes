@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Sintony:400,700|Source+Sans+Pro:400,400i,700,700i);
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Sintony:400,700");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,8 +56,9 @@ table {
   box-sizing: border-box; }
 
 body {
-  font-size: 16px;
-  line-height: 1.4;
+  font-size: 15px;
+  line-height: 1.618;
+  color: #333333;
   min-height: 100vh;
   opacity: 0;
   -webkit-transition: opacity 0.1s linear;
@@ -84,13 +85,10 @@ h1, h2, h3, h4, h5, body.portal section .livros .livros .volume .titulo, body.po
   font-family: 'Sintony',sans-serif; }
 
 body, h6 {
-  font-family: 'Source Sans Pro',sans-serif; }
+  font-family: 'Open Sans',sans-serif; }
 
 html.bloqueiarolagem, body.bloqueiarolagem {
   overflow: hidden; }
-
-b, strong {
-  font-weight: bold; }
 
 em, i {
   font-style: italic; }
@@ -194,7 +192,7 @@ body.portal {
           right: 20px;
           bottom: 20px;
           font-size: 25px;
-          color: #666; }
+          color: #666666; }
       body.portal section .livros .topo .descricao {
         display: none;
         padding: 20px;
@@ -220,7 +218,7 @@ body.portal {
           position: relative;
           cursor: pointer;
           font-size: 1.7em;
-          color: #666;
+          color: #666666;
           line-height: 1.5; }
           body.portal section .livros .livros .volume .titulo div {
             font-size: 0.6em;
@@ -427,7 +425,7 @@ header {
       display: block; } }
   header .sobrevolume {
     width: 1200px;
-    color: #666;
+    color: #333333;
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -581,7 +579,7 @@ header {
       header .sobrevolume .titulo h1 {
         line-height: 1.2;
         background-color: none;
-        color: #666;
+        color: #666666;
         font-size: 2em; }
         @media screen and (max-width: 1200px) {
           header .sobrevolume .titulo h1 {
@@ -720,7 +718,7 @@ header {
         display: none;
         padding-top: 20px;
         margin-top: 20px;
-        border-top: 1px solid #666; }
+        border-top: 1px solid #666666; }
     header.capa .sobrevolume .info {
       -webkit-box-ordinal-group: 2;
       -moz-box-ordinal-group: 2;
@@ -959,6 +957,9 @@ article {
   @media screen and (max-width: 960px) {
     article {
       width: 100%; } }
+  @media screen and (max-width: 900px) {
+    article {
+      margin: 36px auto; } }
   @media screen and (max-width: 600px) {
     article {
       display: block; } }
@@ -991,9 +992,9 @@ article {
     transition-property: width, margin-left;
     display: none;
     position: relative;
-    color: #666;
+    color: #666666;
     font-size: 0.9em;
-    line-height: 1.3;
+    line-height: 1.4;
     overflow-x: hidden;
     overflow-y: scroll; }
     @media screen and (max-width: 600px) {
@@ -1091,7 +1092,7 @@ article {
         article div.aside div.content div.btfechar > div {
           height: 100%;
           width: 1px;
-          background-color: #666;
+          background-color: #666666;
           position: absolute;
           top: 50%;
           left: 50%; }
@@ -1112,11 +1113,12 @@ article {
   article a {
     word-break: break-all;
     word-wrap: break-word; }
-    article a, article a:link, article a:active, article a:visited {
+    article a, article a.visited, article a:link, article a:active {
+      color: #0063d8;
       text-decoration: none;
       outline: none; }
-      article a:hover, article a:link:hover, article a:active:hover, article a:visited:hover {
-        text-decoration: underline; }
+    article a:hover {
+      text-decoration: underline; }
   article * + p {
     margin: 1.2em 0 0; }
   article h1, article h2, article h3, article h4, article h5 {
@@ -1142,25 +1144,38 @@ article {
   article blockquote {
     margin: 1.2em 0 2.4em 2.4em;
     font-size: 0.9em;
-    color: #666; }
+    color: #666666; }
   article table, article .containertable table {
-    margin: 2.4em 0;
     text-align: left;
     font-size: 0.9em;
     min-width: 480px; }
-    article table thead, article .containertable table thead {
-      border-bottom: 2px solid black; }
-      article table thead th, article .containertable table thead th {
+    article table thead tr, article .containertable table thead tr {
+      border-bottom: 2px solid; }
+      article table thead tr th, article .containertable table thead tr th {
+        padding-right: 1.2em;
+        vertical-align: bottom;
         font-weight: bold; }
-    article table tr, article .containertable table tr {
-      border-bottom: 1px solid #666; }
-    article table th, article table td, article .containertable table th, article .containertable table td {
-      padding: 0.4em 1.2em 0.4em 0; }
+    article table tbody tr, article .containertable table tbody tr {
+      border-bottom: 1px solid; }
+      article table tbody tr:last-of-type, article .containertable table tbody tr:last-of-type {
+        border-bottom-width: 3px; }
+      article table tbody tr td, article .containertable table tbody tr td {
+        vertical-align: middle;
+        padding: 0.4em 1.2em 0.4em 0; }
     article table caption, article .containertable table caption {
-      display: table-caption; }
+      display: none; }
   article .containertable {
     width: 100%;
-    overflow: scroll; }
+    overflow: scroll;
+    margin-top: 2.4em; }
+    article .containertable + *:not(.table-caption) {
+      margin-top: 2.4em; }
+    article .containertable + p.table-caption {
+      text-align: center;
+      color: #666666;
+      font-size: 0.9em;
+      margin-top: 0.8em;
+      margin-bottom: 2.4em; }
   article hr {
     border-color: #ccc;
     margin: 30px 0 50px; }
@@ -1207,18 +1222,20 @@ article {
       box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.4); }
     article figure figcaption {
       margin-top: 0.8em;
-      color: #666;
+      color: #666666;
       font-size: 0.9em; }
   article .notarodape {
     display: none; }
   article span.linknotarodape {
     display: inline-block;
     vertical-align: middle;
-    line-height: 0;
+    line-height: 1;
     border-radius: 0.3rem;
     padding: 0.3rem;
     margin: 0 0.2rem 0;
-    background-color: black; }
+    font-size: 0.8em;
+    background-color: #333333;
+    color: white; }
     article span.linknotarodape:hover {
       cursor: pointer; }
     article span.linknotarodape img {
@@ -1525,7 +1542,7 @@ body#livro6 #sumariofooter {
         opacity: 1; }
       #overlay .modais > div.minicurriculos {
         background-color: white;
-        color: #666;
+        color: #666666;
         padding: 36px; }
         @media screen and (max-width: 900px) {
           #overlay .modais > div.minicurriculos {
@@ -1544,6 +1561,7 @@ body#livro6 #sumariofooter {
     top: 0;
     left: 0;
     overflow: scroll;
+    line-height: 1.4;
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
