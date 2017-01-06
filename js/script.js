@@ -261,7 +261,19 @@ $(document).ready(function() {
 
 
 	// envolvendo todas as tables com div rolável
-	$('table').wrap('<div class="containertable"></div>')
+	$('table').wrap('<div class="containertable"></div>');
+
+	// definindo exceções para figuras verticais
+	var figuras = domArticle.find('figure');
+	var proporcaoMaxima = 100/75;
+	figuras.each(function(index, el) {
+		var imgInterna = $(el).find('img').eq(0);
+		var proporcaoImg = imgInterna.width()/imgInterna.height();
+		console.log(proporcaoImg);
+		if (proporcaoImg < proporcaoMaxima) {
+			$(el).addClass('retrato');
+		}
+	});
 		 
 
 	// metodo para revelar o overlay

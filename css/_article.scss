@@ -255,6 +255,17 @@ article{
 		@include flex-direction(column);
 		@include align-items(center);
 
+		&.retrato{
+			img{
+				width: auto;
+				height: auto;
+				max-height: 45vh;
+				@media screen and (max-width: 600px) {
+					max-height: 60vh;
+				}
+			}
+		}
+
 		img {
 			max-width: 100%;
 			height: auto;

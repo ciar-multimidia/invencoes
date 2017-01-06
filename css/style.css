@@ -80,7 +80,7 @@ body.blockscroll, html.blockscroll {
 .container {
   position: relative; }
 
-h1, h2, h3, h4, h5, body.portal section .livros .volume .titulo, body.portal section .livros .volume .sinopse > div .acesso a, body.portal section .livros .volume .sinopse > div .acesso a:link, body.portal section .livros .volume .sinopse > div .acesso a:visited, body.portal section .livros .volume .sinopse > div .acesso a:active, article h1, article h2, article h3, article h4, article h5 {
+h1, h2, h3, h4, h5, body.portal section .livros .livros .volume .titulo, body.portal section .livros .livros .volume .sinopse > div .acesso a, body.portal section .livros .livros .volume .sinopse > div .acesso a:link, body.portal section .livros .livros .volume .sinopse > div .acesso a:visited, body.portal section .livros .livros .volume .sinopse > div .acesso a:active, article h1, article h2, article h3, article h4, article h5 {
   font-family: 'Sintony',sans-serif; }
 
 body, h6 {
@@ -103,6 +103,8 @@ body.portal {
   background: #aaa;
   position: relative;
   min-height: 100vh; }
+  body.portal p + p {
+    margin: 1.2em 0 0; }
   body.portal div.fundos-dinamicos {
     position: absolute;
     top: 0;
@@ -137,158 +139,205 @@ body.portal {
   body.portal section {
     width: 95%;
     max-width: 1200px;
+    min-height: 100vh;
     margin: 0 auto;
     position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
     z-index: 2; }
-    body.portal section .topo .marca {
-      position: relative;
-      cursor: pointer; }
-      body.portal section .topo .marca img {
-        width: 100%;
-        height: auto;
-        vertical-align: bottom;
-        border-bottom: 8px solid #222; }
-      body.portal section .topo .marca:after {
-        content: "\25be";
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-        font-size: 25px;
-        color: #666; }
-    body.portal section .topo .descricao {
-      display: none;
-      padding: 20px;
-      background: #fff; }
-    @media screen and (max-width: 450px) {
-      body.portal section .topo .marca:after {
-        bottom: 10px;
-        right: 10px; }
-      body.portal section .topo .descricao {
-        padding: 10px; } }
-    body.portal section .livros .volume {
-      background: #fff;
-      margin: 20px 0; }
-      body.portal section .livros .volume .titulo {
-        padding: 30px 60px 10px 20px;
-        border-bottom-width: 8px;
-        border-style: solid;
+    body.portal section .livros {
+      width: 100%; }
+      body.portal section .livros .topo .marca {
         position: relative;
-        cursor: pointer;
-        font-size: 1.7em;
-        color: #666;
-        line-height: 1.5; }
-        body.portal section .livros .volume .titulo div {
-          font-size: 0.6em;
-          display: inline-block; }
-          body.portal section .livros .volume .titulo div:before {
-            content: '\2022';
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 10px; }
-        body.portal section .livros .volume .titulo:after {
+        cursor: pointer; }
+        body.portal section .livros .topo .marca img {
+          width: 100%;
+          height: auto;
+          vertical-align: bottom;
+          border-bottom: 8px solid #222; }
+        body.portal section .livros .topo .marca:after {
           content: "\25be";
           position: absolute;
           right: 20px;
-          bottom: 10px;
-          font-size: 25px; }
-      body.portal section .livros .volume .sinopse {
+          bottom: 20px;
+          font-size: 25px;
+          color: #666; }
+      body.portal section .livros .topo .descricao {
         display: none;
-        padding: 20px; }
-        body.portal section .livros .volume .sinopse > div {
-          display: -webkit-box;
-          display: -moz-box;
-          display: box;
-          display: -webkit-flex;
-          display: -moz-flex;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-orient: horizontal;
-          -moz-box-orient: horizontal;
-          box-orient: horizontal;
-          -webkit-box-direction: normal;
-          -moz-box-direction: normal;
-          box-direction: normal;
-          -webkit-flex-direction: row;
-          -moz-flex-direction: row;
-          flex-direction: row;
-          -ms-flex-direction: row;
-          -webkit-box-lines: single;
-          -moz-box-lines: single;
-          box-lines: single;
-          -webkit-flex-wrap: nowrap;
-          -moz-flex-wrap: nowrap;
-          -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
-          -webkit-box-pack: justify;
-          -moz-box-pack: justify;
-          box-pack: justify;
-          -webkit-justify-content: space-between;
-          -moz-justify-content: space-between;
-          -ms-justify-content: space-between;
-          -o-justify-content: space-between;
-          justify-content: space-between;
-          -ms-flex-pack: justify; }
-          body.portal section .livros .volume .sinopse > div .texto {
-            width: 60%; }
-          body.portal section .livros .volume .sinopse > div .acesso {
-            -webkit-align-self: flex-end;
-            -moz-align-self: flex-end;
-            align-self: flex-end;
-            -ms-flex-item-align: end; }
-            body.portal section .livros .volume .sinopse > div .acesso a, body.portal section .livros .volume .sinopse > div .acesso a:link, body.portal section .livros .volume .sinopse > div .acesso a:visited, body.portal section .livros .volume .sinopse > div .acesso a:active {
+        padding: 20px;
+        background: #fff; }
+        body.portal section .livros .topo .descricao .texto {
+          width: 60%; }
+          @media screen and (max-width: 600px) {
+            body.portal section .livros .topo .descricao .texto {
+              width: 100%; } }
+      @media screen and (max-width: 450px) {
+        body.portal section .livros .topo .marca:after {
+          bottom: 10px;
+          right: 10px; }
+        body.portal section .livros .topo .descricao {
+          padding: 10px; } }
+      body.portal section .livros .livros .volume {
+        background: #fff;
+        margin: 20px 0; }
+        body.portal section .livros .livros .volume .titulo {
+          padding: 30px 60px 10px 20px;
+          border-bottom-width: 8px;
+          border-style: solid;
+          position: relative;
+          cursor: pointer;
+          font-size: 1.7em;
+          color: #666;
+          line-height: 1.5; }
+          body.portal section .livros .livros .volume .titulo div {
+            font-size: 0.6em;
+            display: inline-block; }
+            body.portal section .livros .livros .volume .titulo div:before {
+              content: '\2022';
+              display: inline-block;
+              vertical-align: middle;
+              margin: 0 10px; }
+          body.portal section .livros .livros .volume .titulo:after {
+            content: "\25be";
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            font-size: 25px; }
+        body.portal section .livros .livros .volume .sinopse {
+          display: none;
+          padding: 20px; }
+          body.portal section .livros .livros .volume .sinopse > div {
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -moz-box-direction: normal;
+            box-direction: normal;
+            -webkit-flex-direction: row;
+            -moz-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-direction: row;
+            -webkit-box-lines: single;
+            -moz-box-lines: single;
+            box-lines: single;
+            -webkit-flex-wrap: nowrap;
+            -moz-flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            align-items: center;
+            -ms-flex-align: center;
+            -webkit-box-pack: justify;
+            -moz-box-pack: justify;
+            box-pack: justify;
+            -webkit-justify-content: space-between;
+            -moz-justify-content: space-between;
+            -ms-justify-content: space-between;
+            -o-justify-content: space-between;
+            justify-content: space-between;
+            -ms-flex-pack: justify; }
+            body.portal section .livros .livros .volume .sinopse > div .texto {
+              width: 60%; }
+            body.portal section .livros .livros .volume .sinopse > div .acesso a, body.portal section .livros .livros .volume .sinopse > div .acesso a:link, body.portal section .livros .livros .volume .sinopse > div .acesso a:visited, body.portal section .livros .livros .volume .sinopse > div .acesso a:active {
               color: #fff;
               display: inline-block;
               padding: 10px 20px; }
-      @media screen and (max-width: 900px) {
-        body.portal section .livros .volume .titulo div {
-          display: block; }
-          body.portal section .livros .volume .titulo div:before {
-            display: none; } }
-      @media screen and (max-width: 650px) {
-        body.portal section .livros .volume .sinopse > div {
-          -webkit-box-lines: multiple;
-          -moz-box-lines: multiple;
-          box-lines: multiple;
-          -webkit-flex-wrap: wrap;
-          -moz-flex-wrap: wrap;
-          -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
-          body.portal section .livros .volume .sinopse > div .texto {
-            width: 100%; }
-          body.portal section .livros .volume .sinopse > div .acesso {
-            margin-top: 20px; } }
-      @media screen and (max-width: 450px) {
-        body.portal section .livros .volume .titulo {
-          font-size: 1.3em;
-          padding: 10px 50px 10px 10px; }
-          body.portal section .livros .volume .titulo:after {
-            right: 10px; }
-        body.portal section .livros .volume .sinopse {
-          padding: 10px; } }
-      body.portal section .livros .volume:nth-of-type(1) .titulo {
-        border-color: #e33825; }
-      body.portal section .livros .volume:nth-of-type(1) .sinopse > div .acesso a {
-        background: #e33825; }
-      body.portal section .livros .volume:nth-of-type(2) .titulo {
-        border-color: #3c3c3b; }
-      body.portal section .livros .volume:nth-of-type(2) .sinopse > div .acesso a {
-        background: #3c3c3b; }
-      body.portal section .livros .volume:nth-of-type(3) .titulo {
-        border-color: #1f4187; }
-      body.portal section .livros .volume:nth-of-type(3) .sinopse > div .acesso a {
-        background: #1f4187; }
-      body.portal section .livros .volume:nth-of-type(4) .titulo {
-        border-color: #86bc25; }
-      body.portal section .livros .volume:nth-of-type(4) .sinopse > div .acesso a {
-        background: #86bc25; }
-      body.portal section .livros .volume:nth-of-type(5) .titulo {
-        border-color: #5c002d; }
-      body.portal section .livros .volume:nth-of-type(5) .sinopse > div .acesso a {
-        background: #5c002d; }
-      body.portal section .livros .volume:nth-of-type(6) .titulo {
-        border-color: #ee7d00; }
-      body.portal section .livros .volume:nth-of-type(6) .sinopse > div .acesso a {
-        background: #ee7d00; }
+        @media screen and (max-width: 900px) {
+          body.portal section .livros .livros .volume .titulo div {
+            display: block; }
+            body.portal section .livros .livros .volume .titulo div:before {
+              display: none; } }
+        @media screen and (max-width: 650px) {
+          body.portal section .livros .livros .volume .sinopse > div {
+            -webkit-box-lines: multiple;
+            -moz-box-lines: multiple;
+            box-lines: multiple;
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+            body.portal section .livros .livros .volume .sinopse > div .texto {
+              width: 100%; }
+            body.portal section .livros .livros .volume .sinopse > div .acesso {
+              margin-top: 20px; } }
+        @media screen and (max-width: 450px) {
+          body.portal section .livros .livros .volume .titulo {
+            font-size: 1.3em;
+            padding: 10px 50px 10px 10px; }
+            body.portal section .livros .livros .volume .titulo:after {
+              right: 10px; }
+          body.portal section .livros .livros .volume .sinopse {
+            padding: 10px; } }
+        body.portal section .livros .livros .volume:nth-of-type(1) .titulo {
+          border-color: #e33825; }
+        body.portal section .livros .livros .volume:nth-of-type(1) .sinopse > div .acesso a {
+          background: #e33825; }
+        body.portal section .livros .livros .volume:nth-of-type(2) .titulo {
+          border-color: #3c3c3b; }
+        body.portal section .livros .livros .volume:nth-of-type(2) .sinopse > div .acesso a {
+          background: #3c3c3b; }
+        body.portal section .livros .livros .volume:nth-of-type(3) .titulo {
+          border-color: #1f4187; }
+        body.portal section .livros .livros .volume:nth-of-type(3) .sinopse > div .acesso a {
+          background: #1f4187; }
+        body.portal section .livros .livros .volume:nth-of-type(4) .titulo {
+          border-color: #86bc25; }
+        body.portal section .livros .livros .volume:nth-of-type(4) .sinopse > div .acesso a {
+          background: #86bc25; }
+        body.portal section .livros .livros .volume:nth-of-type(5) .titulo {
+          border-color: #5c002d; }
+        body.portal section .livros .livros .volume:nth-of-type(5) .sinopse > div .acesso a {
+          background: #5c002d; }
+        body.portal section .livros .livros .volume:nth-of-type(6) .titulo {
+          border-color: #ee7d00; }
+        body.portal section .livros .livros .volume:nth-of-type(6) .sinopse > div .acesso a {
+          background: #ee7d00; }
     body.portal section .marcas {
       display: -webkit-box;
       display: -moz-box;
@@ -324,11 +373,11 @@ body.portal {
       justify-content: space-around;
       -ms-flex-pack: distribute; }
       body.portal section .marcas img {
-        height: 70px;
+        height: 60px;
         margin: 10px; }
       @media screen and (max-width: 450px) {
         body.portal section .marcas img {
-          height: 50px; } }
+          height: 40px; } }
       @media screen and (max-width: 330px) {
         body.portal section .marcas img {
           flex-basis: 100%; } }
@@ -1144,6 +1193,13 @@ article {
     -o-align-items: center;
     align-items: center;
     -ms-flex-align: center; }
+    article figure.retrato img {
+      width: auto;
+      height: auto;
+      max-height: 45vh; }
+      @media screen and (max-width: 600px) {
+        article figure.retrato img {
+          max-height: 60vh; } }
     article figure img {
       max-width: 100%;
       height: auto;
