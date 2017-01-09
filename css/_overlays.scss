@@ -237,11 +237,11 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 							@include transform(translateX(6px));
 						}
 						h3.titulo{
-							font-size: 1.15em;
+							// font-size: 1.15em;
 						}
 						div.autores{
 							p{
-								font-size: 0.95em;
+								font-size: 0.9em;
 								font-style: italic;
 							}
 						}

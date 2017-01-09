@@ -9,7 +9,7 @@ $(document).ready(function() {
 	var numeroCapitulo;
 	if (nomePaginaAtual == 'capa') {
 		complementourl = '';
-	} else if(nomePaginaAtual == 'ficha-tecnica'){
+	} else if(nomePaginaAtual == 'fichatecnica'){
 		complementourl = '';
 	}else if (nomePaginaAtual == 'capitulos'){
 		var nomeCapitulo = caminhourl[indexCaminhoComum+3].split('.')[0].split('');
@@ -78,30 +78,38 @@ $(document).ready(function() {
 	');
 
 	// adicionando as camadas adicionais do article
-	article.children().wrapAll('<div class="main"></div>');
-	article.prepend('<div class="overlay-fechar"></div>');
-	article.append('<div class="aside"></div>');
+	if (nomePaginaAtual !== 'fichatecnica') {
+		article.children().wrapAll('<div class="main"></div>');
+		article.prepend('<div class="overlay-fechar"></div>');
+		article.append('<div class="aside"></div>');	
+	} else{
+		article.addClass('fichatecnica');
+	}
+	
 
 	// adicionando footer
-	article.after('\
-		<footer>\
-			<a class="anterior" href="">\
-				<img src="'+complementourl+'../../imagens/arrow-branco.svg" alt="">\
-				<div class="textonav">\
-					<p>Anterior</p>\
-				</div>\
-			</a>\
-			<a class="proximo" href="">\
-				<div class="textonav">\
-					<p>Próximo</p>\
-				</div>\
-				<img src="'+complementourl+'../../imagens/arrow-branco.svg" alt="">\
-			</a>\
-		</footer>\
-	');
+	if (nomePaginaAtual !== 'fichatecnica') {
+		corpo.append('\
+			<footer>\
+				<a class="anterior" href="">\
+					<img src="'+complementourl+'../../imagens/arrow-branco2.svg" alt="">\
+					<div class="textonav">\
+						<p></p>\
+					</div>\
+				</a>\
+				<a class="proximo" href="">\
+					<div class="textonav">\
+						<p></p>\
+					</div>\
+					<img src="'+complementourl+'../../imagens/arrow-branco2.svg" alt="">\
+				</a>\
+			</footer>\
+		');
+	}
+	
 
 	// adicionando overlay
-	$('footer').after('\
+	corpo.append('\
 		<div id="overlay">\
 			<div class="escurecer"></div>\
 			<div class="fechar-overlay">\
@@ -121,7 +129,7 @@ $(document).ready(function() {
 						<a class="invencoes" href="'+complementourl+'../../index.html">\
 							<img src="'+complementourl+'../../imagens/invencoes-mini.svg">\
 						</a>\
-						<a class="fichatecnica" href="'+complementourl+'capitulos/fichatecnica.html">Ficha técnica</a>\
+						<a class="fichatecnica" href="'+complementourl+'fichatecnica.html">Ficha técnica</a>\
 					</div>\
 					<ul>\
 						<li'+(nomePaginaAtual == 'capa' ? 
@@ -160,7 +168,6 @@ $(document).ready(function() {
 		minicurriculos = modais.filter('.minicurriculos').eq(0),
 		sumario = $('#sumario'),
 		botoesSumario = $('.btsumario'),
-		alturaHeader = header.innerHeight(),
 		titulo = header.find('.titulo').eq(0),
 		sinopseTitulo = titulo.find('.sinopse'),
 		headerfixo = $('#headerfixo'),
@@ -173,28 +180,9 @@ $(document).ready(function() {
 		rodapeRevelado = false,
 		indexRodapeClicado,
 		todoCorpo = $('html,body'),
-		alturaCorpo = todoCorpo.innerHeight(),
-		janela = $(window),
-		alturaJanela = janela.innerHeight(),
-		scrollTopMaximo = todoCorpo.innerHeight() - alturaJanela;
+		janela = $(window);
 
 
-	// atualizando a altura do header
-	janela.on('resize', function(event) {
-		alturaHeader = header.innerHeight();
-		alturaJanela = janela.innerHeight();
-		alturaCorpo = todoCorpo.innerHeight();
-		scrollTopMaximo = todoCorpo.innerHeight() - alturaJanela;
-		// revelando footer se conteudo é muito pequeno
-		if (alturaCorpo < janela.height()+header.innerHeight()) {
-			footer.addClass('visivel');
-		}
-	});
-
-	// deixando footer sempre fixo caso conteudo nao seja grande o suficiente
-	if (alturaCorpo < janela.height()+header.innerHeight()) {
-		footer.addClass('visivel');
-	}
 	
 
 	// pegando dados desse livro
@@ -239,25 +227,40 @@ $(document).ready(function() {
 	 	');
 	});
 
-	// links do footer
-	if (numeroCapitulo == dadosLivroAtual.capitulos.length) {
-		footer.find('a.proximo').addClass('esconder');
-	} else if (nomePaginaAtual == 'capa') {
-		footer.find('a.proximo').attr('href',complementourl+'capitulos/c01.html');
-		// footer.find('a.proximo div.textonav > h4').text(dadosLivroAtual.capitulos[0].titulo);
-	}else{
-		footer.find('a.proximo').attr('href', complementourl+'capitulos/c'+( (numeroCapitulo+1).toString().length>1 ? '' : "0" )+(numeroCapitulo+1)+'.html');
-		// footer.find('a.proximo div.textonav > h4').text(dadosLivroAtual.capitulos[numeroCapitulo+1].titulo);
+	// links do footer	
+	if (footer.length > 0) {
+		if (numeroCapitulo == dadosLivroAtual.capitulos.length) {
+			footer.find('a.proximo').addClass('esconder');
+		} else if (nomePaginaAtual == 'capa') {
+			footer.find('a.proximo').attr('href',complementourl+'capitulos/c01.html');
+			footer.find('a.proximo div.textonav > p').text(dadosLivroAtual.capitulos[0].titulo);
+		}else{
+			footer.find('a.proximo').attr('href', complementourl+'capitulos/c'+( (numeroCapitulo+1).toString().length>1 ? '' : "0" )+(numeroCapitulo+1)+'.html');
+			footer.find('a.proximo div.textonav > p').text(dadosLivroAtual.capitulos[numeroCapitulo].titulo);
+		}
+		if (nomePaginaAtual == 'capa') {
+			footer.find('a.anterior').addClass('esconder');
+		} else if (numeroCapitulo == 1) {
+			footer.find('a.anterior').attr('href', complementourl+'capa.html');
+			footer.find('a.anterior div.textonav > p').text('Capa do Livro');
+		}else{
+			footer.find('a.anterior').attr('href', complementourl+'capitulos/c'+( (numeroCapitulo-1).toString().length>1 ? '' : "0" )+(numeroCapitulo-1)+'.html');
+			footer.find('a.anterior div.textonav > p').text(dadosLivroAtual.capitulos[numeroCapitulo-2].titulo);
+		}
+
+		// encurtando titulos do footer para smartphones
+		var lengthMaxTitulo = 60;
+		footer.find('a div.textonav > p').each(function(index, el) {
+			elTitulo = $(el);
+			tituloTexto = elTitulo.text();
+			if (tituloTexto.length > lengthMaxTitulo) {
+				elTitulo.text( tituloTexto.substring(0, lengthMaxTitulo) );
+				elTitulo.append('<span>'+tituloTexto.substring(lengthMaxTitulo)+'</span>')
+				elTitulo.append('<span>...</span>');
+			}		
+		});
 	}
-	if (nomePaginaAtual == 'capa') {
-		footer.find('a.anterior').addClass('esconder');
-	} else if (numeroCapitulo == 1) {
-		footer.find('a.anterior').attr('href', complementourl+'capa.html');
-		// footer.find('a.anterior div.textonav > h4').text('Capa do Livro');
-	}else{
-		footer.find('a.anterior').attr('href', complementourl+'capitulos/c'+( (numeroCapitulo-1).toString().length>1 ? '' : "0" )+(numeroCapitulo-1)+'.html');
-		// footer.find('a.anterior div.textonav > h4').text(dadosLivroAtual.capitulos[numeroCapitulo-1].titulo);
-	}
+	
 
 
 	// envolvendo todas as tables com div rolável e colocando caption pra fora
@@ -277,7 +280,6 @@ $(document).ready(function() {
 	figuras.each(function(index, el) {
 		var imgInterna = $(el).find('img').eq(0);
 		var proporcaoImg = imgInterna.width()/imgInterna.height();
-		console.log(proporcaoImg);
 		if (proporcaoImg < proporcaoMaxima) {
 			$(el).addClass('retrato');
 		}
@@ -546,6 +548,30 @@ $(document).ready(function() {
 		
 	});
 
+	// varias variaveis para armazenar a altura dos elementos; eles precisam vir depois pq o codigo acima adiciona elementos na pagina que mudam a altura do documento, e dos variados elementos envolvidos!
+	var alturaHeader = header.innerHeight(),
+		alturaCorpo = todoCorpo.innerHeight(),
+		alturaJanela = janela.innerHeight(),
+		scrollTopMaximo = todoCorpo.innerHeight() - alturaJanela;
+
+
+	// atualizando variaveis de alturar ao ajustar dimensoes da janela do navegador
+	janela.on('resize', function(event) {
+		alturaHeader = header.innerHeight();
+		alturaJanela = janela.innerHeight();
+		alturaCorpo = todoCorpo.innerHeight();
+		scrollTopMaximo = todoCorpo.innerHeight() - alturaJanela;
+		// revelando footer se conteudo é muito pequeno
+		if (alturaCorpo < janela.height()+header.innerHeight()) {
+			footer.addClass('visivel');
+		}
+	});
+
+	// deixando footer sempre fixo caso conteudo nao seja grande o suficiente
+	if (alturaCorpo < janela.height()+header.innerHeight()) {
+		footer.addClass('visivel');
+	}
+
 
 	// Eventos de rolagem da página
 	var rolagemAtual = janela.scrollTop();
@@ -571,11 +597,11 @@ $(document).ready(function() {
 			}
 		}
 
-		// if (rolagemEvento > scrollTopMaximo - 10) {
-		// 	footer.addClass('final');
-		// } else {
-		// 	footer.removeClass('final');
-		// }
+		if (rolagemEvento > scrollTopMaximo - 10) {
+			footer.addClass('final');
+		} else {
+			footer.removeClass('final');
+		}
 	rolagemAtual = rolagemEvento;
 	});
 

@@ -4,7 +4,7 @@ article{
 	@include flex-wrap(nowrap);
 	@include justify-content(center);
 	width: $container-capa;
-	margin: 50px auto 220px;
+	margin: 50px auto 150px;
 	padding: 20px;
 	@media screen and (max-width: $container-capa) {
 		width: $container-capitulo;
@@ -13,10 +13,10 @@ article{
 		width: 100%;
 	}
 	@media screen and (max-width: 900px){
-		margin: 36px auto;
 	}
 	@media screen and (max-width: 600px){
 		@include display(block);
+		margin: 36px auto;
 	}
 
 	// div transparente para fechar a nota de rodape; APENAS MOBILE!
@@ -141,6 +141,28 @@ article{
 				margin-top: 0;
 			}
 			}
+		}
+	}
+
+	&.fichatecnica{
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+		div.dados{
+			width: calc(50% - 20px);
+			@media screen and (max-width: 600px) {
+				width: 100%;
+			}
+			h4{
+				margin-bottom: 0em;
+			}
+			p{
+				margin-top: 0em;
+				& + p{
+				}
+			}
+		}
+		div.logos{
+			width: 100%;
 		}
 	}
 

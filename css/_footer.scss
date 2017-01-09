@@ -18,53 +18,73 @@ footer{
 	}
 
 	&.final{
-		height: 200px;
-		div.textonav{
-
+		height: 135px;
+		a{
+			div.textonav{
+				overflow: auto;
+				p{
+					white-space: normal;
+					text-overflow: clip;
+					overflow: auto;
+				}
+			}
 		}
 	}
 
 	@media screen and (max-width: 600px) {
+		padding: 20px 0;
+		height: auto;
 		position: static;
+		@include align-items(center);
 		@include transform(translateY(0%));
 		@include transition(none 0s linear);
-
 		&.visivel{
 			@include transform(none);
-
+		}
+		&.final{
+			height: auto;
 		}
 	}
 
 	a{
+		font-size: 0.9em;
+		line-height: 1.3em;
 		color: white;
 		height: 100%;
+		width: 480px;
 		display: inline-block;
 		vertical-align: middle;
 		padding: 0 20px;
-		line-height: 0;
 		@include display(flex);
 		@include align-items(center);
+		@media screen and (max-width: 900px) {
+			width: 360px;
+			max-width: 50%;
 
-		img{
-			height: 35%;
-			width: auto;
-			vertical-align: middle;
 		}
-
-		div.textonav{
-			
+		@media screen and (max-width: 600px) {
+			height: auto;
+			width: 50%;
+			padding: 0 10px;
 		}
 		&.anterior{
 			img{
 				@include transform(rotate(180deg));
-				margin-right: 10px;
+				margin-right: 20px;
+				@media screen and (max-width: 600px) {
+					margin-right: 10px;
+				}
 			}
 		}
 
 		&.proximo{
 			text-align: right;
+			@include justify-content(flex-end);
 			img{
-				margin-left: 10px;
+				margin-left: 20px;
+				@media screen and (max-width: 600px) {
+					margin-left: 10px;
+				}
 			}
 		}
 		&.esconder{
@@ -72,6 +92,45 @@ footer{
 			cursor: default;
 			pointer-events: none;
 		}
+
+		img{
+			height: 16px;
+			width: auto;
+			vertical-align: middle;
+		}
+
+		div.textonav{
+			overflow: hidden;
+			@media screen and (max-width: 600px) {
+				overflow: auto;
+			}
+			p{
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				@media screen and (max-width: 600px) {
+					white-space: normal;
+					text-overflow: clip;
+					overflow: auto;
+				}
+				span{
+					&:nth-of-type(1){
+						display: inline;
+						@media screen and (max-width: 600px) {
+							display: none;
+						}
+					}
+					&:nth-of-type(2){
+						display: none;
+						@media screen and (max-width: 600px) {
+							display: inline;
+						}
+					}
+
+				}
+			}
+		}
+		
 	}
 
 	div.btsumario{
