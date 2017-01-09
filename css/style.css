@@ -56,7 +56,7 @@ table {
   box-sizing: border-box; }
 
 body {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.618;
   color: #333333;
   min-height: 100vh;
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, body.portal section .livros .livros .volume .titulo, body.po
   font-family: 'Sintony',sans-serif; }
 
 body, h6 {
-  font-family: 'Open Sans',sans-serif; }
+  font-family: 'PT Sans',sans-serif; }
 
 html.bloqueiarolagem, body.bloqueiarolagem {
   overflow: hidden; }
