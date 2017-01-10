@@ -152,17 +152,58 @@ article{
 			@media screen and (max-width: 600px) {
 				width: 100%;
 			}
-			h4{
+			h5{
+				margin-top: 1.4em;
 				margin-bottom: 0em;
 			}
 			p{
 				margin-top: 0em;
-				& + p{
+				& + h5{
+				}
+			}
+		}
+		div.titulo-livro{
+			margin-bottom: 3em;
+			h2{
+				font-weight: 400;
+				font-size: 2.4em;
+				span{
+					display: block;
+					font-size: 0.5em;
 				}
 			}
 		}
 		div.logos{
+			margin-top: 3em;
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(center);
+			@media screen and (max-width: 900px){
+				@include flex-wrap(wrap);
+			}
+
+			@media screen and (max-width: 600px){
+				@include flex-direction(column);
+			}
+
+			img{
+				width: auto;
+				margin: 1em 0.75em;
+				&:nth-of-type(1){height: 45px}
+				&:nth-of-type(2){height: 60px}
+				&:nth-of-type(3){height: 75px}
+				&:nth-of-type(4){height: 60px}
+			}
+		}
+
+		div.edicao{
+			margin-top: 3em;
+			color: $cinza-texto;
+			text-align: center;
+		}
+		div.logos, div.titulo-livro, div.edicao{
 			width: 100%;
+			
 		}
 	}
 
