@@ -276,6 +276,26 @@ article{
 		margin-top: 1.1em;
 	}
 
+	// paginacao
+	span.paginacao{
+		display: block;
+		text-align: right;
+		font-size: 0.9em;
+		font-weight: bold;
+		color: $cinza-paginacao;
+		border-bottom: 1px dotted;
+		margin-bottom: 0;
+		&:before{
+			content: 'p. ';
+			display: inline;
+			font-weight: normal;
+		}
+
+		& + *{
+			margin-top: 1em;
+		}
+
+	}
 
 	// blockquote / citacoes
 	blockquote {
