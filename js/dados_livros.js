@@ -185,4 +185,81 @@ var dadosLivros = [
 
 		]
 	},
+
+	{
+		"titulo": "Ignições",
+		"subtitulo": "",
+		"organizacao": [
+			"Cleomar Rocha",
+			"Lucia Santaella"
+		],
+		"tem_categorias": false,
+		"capitulos": [
+			{
+				"titulo":"Experiência social e ressonância cibernética: juventude e a onipresença na rede",
+				"autores": ["Cleomar Rocha", "Margarida do Amaral-Silva"]
+			},
+
+			{
+				"titulo":"Os jovens como termômetros do Zeitgeist",
+				"autores": ["Lucia Santaella"]
+			},
+
+			{
+				"titulo":"A gamificação do romance entre os jovens",
+				"autores": ["Marcelo de Mattos Salgado"]
+			},
+
+			{
+				"titulo":"Diluições entre o real-imaginário-simbólico nas postagens juvenis",
+				"autores": ["Maria Collier de Mendonça", "Mariane Cara"]
+			},
+
+			{
+				"titulo":"Cognição social e os jovens",
+				"autores": ["Patrícia Fonseca Fanaya"]
+			},
+
+			{
+				"titulo":"Diferenças cognitivas entre usuários jovens no ciberespaço",
+				"autores": ["Kalynka Cruz"]
+			},
+
+			{
+				"titulo":"A influência da tecnologia nos valores das gerações",
+				"autores": ["Patrícia Huelsen"]
+			},
+
+			{
+				"titulo":"De nativos digitais a fluentes digitais",
+				"autores": ["Hermano Cintra"]
+			},
+
+			{
+				"titulo":"Presença, vínculos e redes: uma pedagogia da conectividade",
+				"autores": ["Izabel Goudart", "Mariana Guimarães"]
+			},
+
+			{
+				"titulo":"O universitário conectado em sala de aula",
+				"autores": ["Magaly Prado"]
+			},
+
+			{
+				"titulo":"Redes sociais de fanfics entre os jovens",
+				"autores": ["Eduardo d’Ávila de Faria"]
+			},
+
+			{
+				"titulo":"Os selfies especulares dos jovens",
+				"autores": ["Patrícia Coelho", "Mariane Cara"]
+			},
+
+			{
+				"titulo":"O jovem leitor ubíquo e a narrativa transmídia",
+				"autores": ["Thiago Mittermayer"]
+			}
+
+		]
+	}
 ]
