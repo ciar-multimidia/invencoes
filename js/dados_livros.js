@@ -196,68 +196,53 @@ var dadosLivros = [
 		"tem_categorias": false,
 		"capitulos": [
 			{
-				"titulo":"Experiência social e ressonância cibernética: juventude e a onipresença na rede",
-				"autores": ["Cleomar Rocha", "Margarida do Amaral-Silva"]
+				"titulo":"Da experiência estética à teoria dos afetos",
+				"autores": ["Fernando Fogliano"]
 			},
 
 			{
-				"titulo":"Os jovens como termômetros do Zeitgeist",
+				"titulo":"Indagación en estética y poética en creaciones colaborativas",
+				"autores": ["Sean Igor Acosta"]
+			},
+
+			{
+				"titulo":"Ignição: a era da conectividade",
+				"autores": ["Cleomar Rocha"]
+			},
+
+			{
+				"titulo":"Ignições das artes contemporâneas na virada especulativa",
 				"autores": ["Lucia Santaella"]
 			},
 
 			{
-				"titulo":"A gamificação do romance entre os jovens",
-				"autores": ["Marcelo de Mattos Salgado"]
+				"titulo":"Perspetivas interdisciplinares: antropologia, arte e comunicação",
+				"autores": ["José da Silva Ribeiro"]
 			},
 
 			{
-				"titulo":"Diluições entre o real-imaginário-simbólico nas postagens juvenis",
-				"autores": ["Maria Collier de Mendonça", "Mariane Cara"]
+				"titulo":"Projeto de instalação \"15 Naranjos\"",
+				"autores": ["Gilbertto Prado"]
 			},
 
 			{
-				"titulo":"Cognição social e os jovens",
-				"autores": ["Patrícia Fonseca Fanaya"]
+				"titulo":"Paredão eletrônico: investigação, arte e inovação no Nordeste do Brasil",
+				"autores": ["Laurita Ricardo de Salles e equipe do Laboratório 10 Dimensões/DEART/CCHLA/UFRN"]
 			},
 
 			{
-				"titulo":"Diferenças cognitivas entre usuários jovens no ciberespaço",
-				"autores": ["Kalynka Cruz"]
+				"titulo":"La casa de cristal. Una gramática de la transparencia",
+				"autores": ["Martín Groisman"]
 			},
 
 			{
-				"titulo":"A influência da tecnologia nos valores das gerações",
-				"autores": ["Patrícia Huelsen"]
+				"titulo":"Ignições – modos operacionais dinamizando o processo criativo",
+				"autores": ["Andréia Machado Oliveira", "Hermes Renato Hildebrand"]
 			},
 
 			{
-				"titulo":"De nativos digitais a fluentes digitais",
-				"autores": ["Hermano Cintra"]
-			},
-
-			{
-				"titulo":"Presença, vínculos e redes: uma pedagogia da conectividade",
-				"autores": ["Izabel Goudart", "Mariana Guimarães"]
-			},
-
-			{
-				"titulo":"O universitário conectado em sala de aula",
-				"autores": ["Magaly Prado"]
-			},
-
-			{
-				"titulo":"Redes sociais de fanfics entre os jovens",
-				"autores": ["Eduardo d’Ávila de Faria"]
-			},
-
-			{
-				"titulo":"Os selfies especulares dos jovens",
-				"autores": ["Patrícia Coelho", "Mariane Cara"]
-			},
-
-			{
-				"titulo":"O jovem leitor ubíquo e a narrativa transmídia",
-				"autores": ["Thiago Mittermayer"]
+				"titulo":"Jardineiros: artificial_natural",
+				"autores": ["Suzete Venturelli", "Artur Cabral Reis", "Elias do Nascimento Melo Filho", "Tainá Luize Martins Ramos"]
 			}
 
 		]
