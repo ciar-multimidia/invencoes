@@ -160,11 +160,21 @@ article{
 				margin-top: 0em;
 				& + h5{
 				}
+
+				&.disclaimer{
+					font-style: italic;
+					margin-top: 1em;
+					padding: 1.5em 0;
+					border: 1px dotted grey;
+					border-left: none;
+					border-right: none;
+				}
 			}
 
 			.fichacatalografica{
 				border: 1px solid black;
-				margin-top: 3em;
+				margin-top: 1em;
+
 				.topo{
 					padding: 1em;
 					border-bottom: 1px solid black;
