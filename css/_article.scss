@@ -160,6 +160,54 @@ article{
 				margin-top: 0em;
 				& + h5{
 				}
+
+				&.disclaimer{
+					font-style: italic;
+					margin-top: 1em;
+					padding: 1.5em 0;
+					border: 1px dotted grey;
+					border-left: none;
+					border-right: none;
+				}
+			}
+
+			.fichacatalografica{
+				border: 1px solid black;
+				margin-top: 1em;
+
+				.topo{
+					padding: 1em;
+					border-bottom: 1px solid black;
+					h5{
+						margin-top: 0;
+					}	
+				}
+
+				.dados-ficha{
+					font-size: 0.9em;
+					margin: 0;
+					padding: 1em;
+					@include display(flex);
+					p.codigo{
+						margin: 0;
+						margin-right: 1em;
+						font-weight: bold;
+					}
+
+					.descricao{
+						margin: 0;
+						p{
+							margin-bottom: 1em;
+							&:last-child{
+								margin-bottom: 0;
+							}
+						}
+						p.cdu{
+							text-align: right;
+						}
+					}
+				}
+				
 			}
 		}
 		div.titulo-livro{

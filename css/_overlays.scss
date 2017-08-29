@@ -211,14 +211,14 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 				
 				li{
 					display: block;
-					border-bottom: 1px solid transparentize(white, 0.6);
-					border-top: 1px solid transparentize(white, 0.6);
+					border-bottom: 1px solid hsla(0,0,100%,0.5);
+					border-top: 1px solid hsla(0,0,100%,0.5);
 					padding-right: 20px;
 					@media screen and (max-width: 900px) {
 						padding-right: 12px;
 					}
 					& + li{
-						border-top: 0px solid transparent;
+						border-top: 0px solid hsla(0,0,100%,0);
 					}
 
 					& > a{
