@@ -243,7 +243,13 @@ var dadosLivros = [
 			{
 				"titulo":"Jardineiros: artificial_natural",
 				"autores": ["Suzete Venturelli", "Artur Cabral Reis", "Elias do Nascimento Melo Filho", "Tainá Luize Martins Ramos"]
+			},
+
+			{
+				"titulo":"A faísca dos lugares inquietos: redes e práticas artísticas",
+				"autores": ["Lilian Amaral", "Liliana Fracasso"]
 			}
+
 
 		]
 	}
