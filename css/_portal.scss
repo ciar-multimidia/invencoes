@@ -126,27 +126,39 @@ body.portal {
 					margin: 20px 0;
 
 					.titulo {
-						padding: 30px 60px 10px 20px;
+						padding: 15px 60px 10px 20px;
 						border-bottom-width: 8px;
 						border-style: solid;
 						position: relative;
 						cursor: pointer;
-						font-size: 1.7em;
 						color: $cinza-texto;
-						line-height: 1.5;
 						@extend %fonte-destaque;
 
-						div {
-							font-size: 0.6em;
-							display: inline-block;
+						p.autor{
+							@extend %fonte-texto;
+							color: $cinza-paginacao;
+							// font-size: 0.9em;
+							line-height: 1.2;
+						}
 
-							&:before {
-								content: '\2022';
+						h2{
+							margin-top: 0.3em;
+							font-size: 1.7em;
+							line-height: 1.2;
+							span {
+								font-size: 0.6em;
 								display: inline-block;
-								vertical-align: middle;
-								margin: 0 10px;
+
+								&:before {
+									content: '\2022';
+									display: inline-block;
+									vertical-align: middle;
+									margin: 0 10px;
+								}
 							}
 						}
+
+						
 
 						&:after {
 							content: "\25be";
@@ -185,7 +197,7 @@ body.portal {
 					}
 
 					@media screen and (max-width: 900px) {
-						.titulo div {
+						.titulo h2 span {
 							display: block;
 							&:before {display: none;}
 						}
@@ -203,7 +215,7 @@ body.portal {
 
 					@media screen and (max-width: 450px) {
 						.titulo {
-							font-size: 1.6em;
+							font-size: 0.9em;
 							padding: 10px 50px 10px 10px;
 							&:after {right: 10px}
 						}
