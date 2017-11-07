@@ -362,9 +362,9 @@ body.portal {
         body.portal section .livros .livros .volume:nth-of-type(3) .sinopse > div .acesso a {
           background: #1f4187; }
         body.portal section .livros .livros .volume:nth-of-type(4) .titulo {
-          border-color: #86bc25; }
+          border-color: #ABFF27; }
         body.portal section .livros .livros .volume:nth-of-type(4) .sinopse > div .acesso a {
-          background: #86bc25; }
+          background: #ABFF27; }
     body.portal section .marcas {
       display: -webkit-box;
       display: -moz-box;
@@ -1654,11 +1654,11 @@ body#livro3 #sumariofooter {
   background-color: #1f4187; }
 body#livro4 footer {
   background-image: url(../imagens/bgportal_4.jpg);
-  background-color: rgba(134, 188, 37, 0.9); }
+  background-color: rgba(171, 255, 39, 0.9); }
   body#livro4 footer div.btsumario {
     background-color: #486413; }
 body#livro4 #sumariofooter {
-  background-color: #86bc25; }
+  background-color: #ABFF27; }
 
 #overlay {
   position: fixed;
@@ -2011,7 +2011,7 @@ body#livro3 #sumario {
 body#livro4 #sumario {
   background-image: url(../imagens/bgportal_4.jpg); }
   body#livro4 #sumario div.color-overlay {
-    background-color: rgba(134, 188, 37, 0.5); }
+    background-color: rgba(171, 255, 39, 0.5); }
     body#livro4 #sumario div.color-overlay div.invencoes-ficha > a.invencoes {
       background-color: transparent; }
       body#livro4 #sumario div.color-overlay div.invencoes-ficha > a.invencoes:hover {
