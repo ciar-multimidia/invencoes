@@ -252,5 +252,73 @@ var dadosLivros = [
 
 
 		]
+	},
+
+	{
+		"titulo": "Tecnologias Assistivas e Imaginário Contemporâneo",
+		"subtitulo": "",
+		"organizacao": [
+			"Fulano",
+			"Clicano"
+		],
+		"tem_categorias": false,
+		"capitulos": [
+			{
+				"titulo":"Da experiência estética à teoria dos afetos",
+				"autores": ["Fernando Fogliano"]
+			},
+
+			{
+				"titulo":"Indagación en estética y poética en creaciones colaborativas",
+				"autores": ["Sean Igor Acosta"]
+			},
+
+			{
+				"titulo":"Ignição: a era da conectividade",
+				"autores": ["Cleomar Rocha"]
+			},
+
+			{
+				"titulo":"Ignições das artes contemporâneas na virada especulativa",
+				"autores": ["Lucia Santaella"]
+			},
+
+			{
+				"titulo":"Perspetivas interdisciplinares: antropologia, arte e comunicação",
+				"autores": ["José da Silva Ribeiro"]
+			},
+
+			{
+				"titulo":"Projeto de instalação \"15 Naranjos\"",
+				"autores": ["Gilbertto Prado"]
+			},
+
+			{
+				"titulo":"Paredão eletrônico: investigação, arte e inovação no Nordeste do Brasil",
+				"autores": ["Laurita Ricardo de Salles e equipe do Laboratório 10 Dimensões/DEART/CCHLA/UFRN"]
+			},
+
+			{
+				"titulo":"La casa de cristal. Una gramática de la transparencia",
+				"autores": ["Martín Groisman"]
+			},
+
+			{
+				"titulo":"Ignições – modos operacionais dinamizando o processo criativo",
+				"autores": ["Andréia Machado Oliveira", "Hermes Renato Hildebrand"]
+			},
+
+			{
+				"titulo":"Jardineiros: artificial_natural",
+				"autores": ["Suzete Venturelli", "Artur Cabral Reis", "Elias do Nascimento Melo Filho", "Tainá Luize Martins Ramos"]
+			},
+
+			{
+				"titulo":"A faísca dos lugares inquietos: redes e práticas artísticas",
+				"autores": ["Lilian Amaral", "Liliana Fracasso"]
+			}
+
+
+		]
 	}
 ]
