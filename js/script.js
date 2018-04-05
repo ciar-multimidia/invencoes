@@ -597,11 +597,11 @@ $(document).ready(function() {
 			}
 		}
 
-		if (rolagemEvento > scrollTopMaximo - 10) {
-			footer.addClass('final');
-		} else {
-			footer.removeClass('final');
-		}
+		// if (rolagemEvento > scrollTopMaximo - 10) {
+		// 	footer.addClass('final');
+		// } else {
+		// 	footer.removeClass('final');
+		// }
 	rolagemAtual = rolagemEvento;
 	});
 

@@ -129,6 +129,8 @@ body.portal {
         background-image: url("../imagens/bgportal_3.jpg"); }
       body.portal div.fundos-dinamicos div.livro4 {
         background-image: url("../imagens/bgportal_4.jpg"); }
+      body.portal div.fundos-dinamicos div.livro5 {
+        background-image: url("../imagens/bgportal_5.jpg"); }
   body.portal canvas.particles-js-canvas-el {
     position: absolute;
     top: 0;
