@@ -46,6 +46,9 @@ var dadosLivros = [
 		]
 	},
 
+
+
+
 	{
 		"titulo": "Tecnologia e Sociedade",
 		"subtitulo": "configuração, reconfiguração",
@@ -95,6 +98,9 @@ var dadosLivros = [
 			}
 		]
 	},
+
+
+
 
 	{
 		"titulo": "A Onipresença dos Jovens nas Redes",
@@ -186,6 +192,9 @@ var dadosLivros = [
 		]
 	},
 
+
+
+
 	{
 		"titulo": "Ignições",
 		"subtitulo": "",
@@ -254,71 +263,250 @@ var dadosLivros = [
 		]
 	},
 
+
+
+
 	{
 		"titulo": "Tecnologias Assistivas e Imaginário Contemporâneo",
 		"subtitulo": "",
 		"organizacao": [
-			"Fulano",
-			"Clicano"
+			"Ana Bandeira",
+			"Cleomar Rocha",
+			"Vanessa Santana"
 		],
 		"tem_categorias": false,
 		"capitulos": [
-			{
-				"titulo":"Da experiência estética à teoria dos afetos",
-				"autores": ["Fernando Fogliano"]
-			},
 
 			{
-				"titulo":"Indagación en estética y poética en creaciones colaborativas",
-				"autores": ["Sean Igor Acosta"]
-			},
-
-			{
-				"titulo":"Ignição: a era da conectividade",
+				"titulo": "Acessibilidade pra quem?",
 				"autores": ["Cleomar Rocha"]
 			},
 
 			{
-				"titulo":"Ignições das artes contemporâneas na virada especulativa",
-				"autores": ["Lucia Santaella"]
+				"titulo": "Centro Tecnológico de acessibilidade do IFRS - Produção de tecnologia assistiva de baixo custo",
+				"autores": ["Andréa Poletto Sonza", "Bruna Poletto Salton", "Lael Nervis", "Rodrigo Cainelli"]
 			},
 
 			{
-				"titulo":"Perspetivas interdisciplinares: antropologia, arte e comunicação",
-				"autores": ["José da Silva Ribeiro"]
+				"titulo": "Curso de edição de imagens digitais a distância para surdos",
+				"autores": ["Deived Oliveira", "Luciana Brito", "Sonia Maria Dechandt Brochado"]
 			},
 
 			{
-				"titulo":"Projeto de instalação \"15 Naranjos\"",
-				"autores": ["Gilbertto Prado"]
+				"titulo": "Desenvolvimento de cadeira de rodas residencial",
+				"autores": ["Angelina Chacur", "Bruna Milam", "Júlio Cezar Augusto da Silva"]
 			},
 
 			{
-				"titulo":"Paredão eletrônico: investigação, arte e inovação no Nordeste do Brasil",
-				"autores": ["Laurita Ricardo de Salles e equipe do Laboratório 10 Dimensões/DEART/CCHLA/UFRN"]
+				"titulo": "Entrevista de Regina Maria Thienne Colombo e Fabiana Fator Gouvêa Bonilha, da Divisão de Acompanhamento e Apoio a Políticas em Tecnologia social – DIPTS e responsáveis pelo Centro nacional Referência em Tecnologia assistiva – CNRTA",
+				"autores": ["Fabiana Fator Gouvêa Bonilha", "Regina Maria Thienne Colombo"]
 			},
 
 			{
-				"titulo":"La casa de cristal. Una gramática de la transparencia",
-				"autores": ["Martín Groisman"]
+				"titulo": "Entrevista: Tecnologias assistivas na Universidade Federal do Espírito Santo (UFES)",
+				"autores": ["Teodiano Freire Bastos Filho"]
 			},
 
 			{
-				"titulo":"Ignições – modos operacionais dinamizando o processo criativo",
-				"autores": ["Andréia Machado Oliveira", "Hermes Renato Hildebrand"]
+				"titulo": "Formação de professores por meio de tecnologias: O MOOC como estratégia na inclusão de pessoas com de ciência no ensino superior",
+				"autores": ["Cleomar Rocha", "Vanessa Helena Santana Dalla Déa"]
 			},
 
 			{
-				"titulo":"Jardineiros: artificial_natural",
-				"autores": ["Suzete Venturelli", "Artur Cabral Reis", "Elias do Nascimento Melo Filho", "Tainá Luize Martins Ramos"]
+				"titulo": "Galeria de Fotos sobre natureza: o olhar de uma pessoa com síndrome de Down",
+				"autores": ["Vanessa Helena Santana Dalla Déa", "Vicente Paulo Batista Dalla Déa"]
 			},
 
 			{
-				"titulo":"A faísca dos lugares inquietos: redes e práticas artísticas",
-				"autores": ["Lilian Amaral", "Liliana Fracasso"]
+				"titulo": "Humanos, Robôs e Deuses: Uma análise simbólica das origens na  ficção científica",
+				"autores": ["Martiniano Neto"]
+			},
+
+			{
+				"titulo": "Para além da eficiência: Tecnologias assistivas e a 245 construção do imaginário sobre pessoas com de ciência",
+				"autores": ["Ana Bandeira"]
+			},
+
+			{
+				"titulo": "Xenoblade Chronicles: Tecnologia, Coexistência e Humanidade",
+				"autores": ["José Antônio Loures Custódio"]
 			}
+		]
+	},
 
 
+
+
+	{
+		"titulo": "Políticas Públicas Culturais e Cultura de Fronteiras",
+		"subtitulo": "",
+		"organizacao": [
+			"Cleomar Rocha",
+			"Magali Guedes de Magela Moura"
+		],
+		"tem_categorias": true,
+		"capitulos": [
+			{
+				"titulo": "Políticas culturales y desarrollo: Una agenda pendiente",
+				"autores": ["Alfonso Antonio Gumucio Dagron"],
+				"categoria": "Políticas Públicas Culturais"
+			},
+			{
+				"titulo": "Pensamento sobre a cultura",
+				"autores": ["Cleomar Rocha"],
+				"categoria": "Políticas Públicas Culturais"
+			},
+			{
+				"titulo": "Políticas Culturales en la Sociedad de la Información desde la Perspectiva de la Universidad",
+				"autores": ["Daniel Alejandro Argente Raimondo"],
+				"categoria": "Políticas Públicas Culturais"
+			},
+			{
+				"titulo": "Las Políticas culturales de los organismos multilaterales en América Latina",
+				"autores": ["Diana Marcela Rey Vásquez"],
+				"categoria": "Políticas Públicas Culturais"
+			},
+			{
+				"titulo": "Políticas Culturais e estratégias territoriais em tempos sombrios",
+				"autores": ["Lia Calabre de Azevedo Felix"],
+				"categoria": "Políticas Públicas Culturais"
+			},
+			{
+				"titulo": "Sistema Nacional de Cultura/SNC como pilar da política pública da cultura - SADI/Minc",
+				"autores": ["Magali Guedes de Magela Moura"],
+				"categoria": "Políticas Públicas Culturais"
+			},
+			{
+				"titulo": "Arte e tecnologia: política cultural, sensibilidade e imaginação na criação artística",
+				"autores": ["Suzete Venturelli"],
+				"categoria": "Políticas Públicas Culturais"
+			},
+			{
+				"titulo": "La construcción de la frontera meridional: Uruguay – Brasil. La frontera, nuestra piel",
+				"autores": ["Eduardo Ramon Palermo Lopez"],
+				"categoria": "Cultura das Fronteiras"
+			},
+			{
+				"titulo": "Estudio nacional de participación cultural do Chile, re exiones sobre la participación cultural",
+				"autores": ["Juan Carlos Oyarzún Altamirano"],
+				"categoria": "Cultura das Fronteiras"
+			},
+			{
+				"titulo": "Conocimientos tradicionales y diversidad biocultural. Nuevos retos para la construcción de políticas locales",
+				"autores": ["Kelly Jose na Pottella Guevara"],
+				"categoria": "Cultura das Fronteiras"
+			},
+			{
+				"titulo": "Museu do Território. Cartogra as da memória em contexto urbano latinoamericado contemporâneo",
+				"autores": ["Lilian do Amaral Nunes"],
+				"categoria": "Cultura das Fronteiras"
+			},
+			{
+				"titulo": "Fronteiras culturais: metáforas ou realidades? ",
+				"autores": ["Ricardo Marques Almeida"],
+				"categoria": "Cultura das Fronteiras"
+			},
+		]
+	},
+
+
+
+
+	{
+		"titulo": "Cultura Digital e Economia da Cultura",
+		"subtitulo": "",
+		"organizacao": [
+			"Cleomar Rocha",
+			"Magali Guedes de Magela Moura"
+		],
+		"tem_categorias": true,
+		"capitulos": [
+			{
+				"titulo": "As práticas da cultura digital",
+				"autores": ["Dalton Martins"],
+				"categoria": "Cultura Digital"
+			},
+
+			{
+				"titulo": "Los medios audiovisuales y la gestión de la cultura digital",
+				"autores": ["Fernando Madedo"],
+				"categoria": "Cultura Digital"
+			},
+
+			{
+				"titulo": "Instituições de Memória na Cultura Digital: Qual o papel dos Museus?",
+				"autores": ["José Murilo Costa Carvalho Júnior"],
+				"categoria": "Cultura Digital"
+			},
+
+			{
+				"titulo": "Cultura digital, ideologia y proyectual",
+				"autores": ["Martin Pablo Groisman"],
+				"categoria": "Cultura Digital"
+			},
+
+			{
+				"titulo": "Contenidos digitales que fortalecen las representaciones culturales",
+				"autores": ["Nathalia María Restrepo Saldarriaga"],
+				"categoria": "Cultura Digital"
+			},
+
+			{
+				"titulo": "La Cultura Digital: Lecturas y formas de acción",
+				"autores": ["Simón Pérez Wilson"],
+				"categoria": "Cultura Digital"
+			},
+
+			{
+				"titulo": "A Secretaria do Audiovisual do Ministério da Cultura e a produção de conteúdos audiovisuais digitais",
+				"autores": ["Sorahia Maria Segall"],
+				"categoria": "Cultura Digital"
+			},
+
+			{
+				"titulo": "Os desafios das novas tecnologias e dos novos modelos de negócios para os Direitos Autorais",
+				"autores": ["Aline Iramina"],
+				"categoria": "Economia da Cultura"
+			},
+
+			{
+				"titulo": "Questões sobre avaliação de políticas públicas: construindo caminhos ou obstáculos para a sustentabilidade das políticas culturais? ",
+				"autores": ["Claudinéli Moreira Ramos"],
+				"categoria": "Economia da Cultura"
+			},
+
+			{
+				"titulo": "Políticas para a Economia da Cultura: questões para reflexão",
+				"autores": ["Daniela Ribas Ghezzi"],
+				"categoria": "Economia da Cultura"
+			},
+
+			{
+				"titulo": "Un Clúster para las Industrias Creativas con énfasis en el sector de contenidos digitales.",
+				"autores": ["Felipe Cesar Londoño Lopez"],
+				"categoria": "Economia da Cultura"
+			},
+
+			{
+				"titulo": "La Transversalidad de la cultura (O, qué hacer con y para la cultura desde un gobierno local)",
+				"autores": ["Jorge Humberto Melguizo Posada"],
+				"categoria": "Economia da Cultura"
+			},
+
+			{
+				"titulo": "El sentido de pertenencia y la globalización",
+				"autores": ["Jose Luis Patricio Luna Huerta"],
+				"categoria": "Economia da Cultura"
+			},
+
+			{
+				"titulo": "Cinema México digital una plataforma para promover y difundir el cine",
+				"autores": ["Jose Luis Patricio Luna Huerta"],
+				"categoria": "Economia da Cultura"
+			}
 		]
 	}
+
+
+
 ]
