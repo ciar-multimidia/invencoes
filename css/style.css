@@ -131,6 +131,16 @@ body.portal {
         background-image: url("../imagens/bgportal_4.jpg"); }
       body.portal div.fundos-dinamicos div.livro5 {
         background-image: url("../imagens/bgportal_5.jpg"); }
+      body.portal div.fundos-dinamicos div.livro6 {
+        background-image: url("../imagens/bgportal_6.jpg"); }
+      body.portal div.fundos-dinamicos div.livro7 {
+        background-image: url("../imagens/bgportal_7.jpg"); }
+      body.portal div.fundos-dinamicos div.livro8 {
+        background-image: url("../imagens/bgportal_8.jpg"); }
+      body.portal div.fundos-dinamicos div.livro9 {
+        background-image: url("../imagens/bgportal_9.jpg"); }
+      body.portal div.fundos-dinamicos div.livro10 {
+        background-image: url("../imagens/bgportal_10.jpg"); }
   body.portal canvas.particles-js-canvas-el {
     position: absolute;
     top: 0;
@@ -371,6 +381,14 @@ body.portal {
           border-color: #ed7600; }
         body.portal section .livros .livros .volume:nth-of-type(5) .sinopse > div .acesso a {
           background: #ed7600; }
+        body.portal section .livros .livros .volume:nth-of-type(6) .titulo {
+          border-color: #8100ED; }
+        body.portal section .livros .livros .volume:nth-of-type(6) .sinopse > div .acesso a {
+          background: #8100ED; }
+        body.portal section .livros .livros .volume:nth-of-type(7) .titulo {
+          border-color: #FFE23F; }
+        body.portal section .livros .livros .volume:nth-of-type(7) .sinopse > div .acesso a {
+          background: #FFE23F; }
     body.portal section .marcas {
       display: -webkit-box;
       display: -moz-box;
@@ -971,6 +989,26 @@ body#livro5 div#headerfixo div.header_mesmo {
     background-color: #633b14; }
 body#livro5 div#headerfixo div.barra-progresso > .progresso {
   background-color: #633b14; }
+body#livro6 header {
+  background-image: url(../imagens/bgportal_6.jpg); }
+  body#livro6 header .invencoes-sumario > div.btsumario {
+    background-color: #390068; }
+body#livro6 div#headerfixo div.header_mesmo {
+  background-image: url(../imagens/bgportal_6.jpg); }
+  body#livro6 div#headerfixo div.header_mesmo div.btsumario {
+    background-color: #390068; }
+body#livro6 div#headerfixo div.barra-progresso > .progresso {
+  background-color: #390068; }
+body#livro7 header {
+  background-image: url(../imagens/bgportal_7.jpg); }
+  body#livro7 header .invencoes-sumario > div.btsumario {
+    background-color: #9D8B26; }
+body#livro7 div#headerfixo div.header_mesmo {
+  background-image: url(../imagens/bgportal_7.jpg); }
+  body#livro7 div#headerfixo div.header_mesmo div.btsumario {
+    background-color: #9D8B26; }
+body#livro7 div#headerfixo div.barra-progresso > .progresso {
+  background-color: #9D8B26; }
 
 article {
   display: -webkit-box;
@@ -1682,6 +1720,20 @@ body#livro5 footer {
     background-color: #633b14; }
 body#livro5 #sumariofooter {
   background-color: #ed7600; }
+body#livro6 footer {
+  background-image: url(../imagens/bgportal_6.jpg);
+  background-color: rgba(129, 0, 237, 0.9); }
+  body#livro6 footer div.btsumario {
+    background-color: #390068; }
+body#livro6 #sumariofooter {
+  background-color: #8100ED; }
+body#livro7 footer {
+  background-image: url(../imagens/bgportal_7.jpg);
+  background-color: rgba(255, 226, 63, 0.9); }
+  body#livro7 footer div.btsumario {
+    background-color: #9D8B26; }
+body#livro7 #sumariofooter {
+  background-color: #FFE23F; }
 
 #overlay {
   position: fixed;
@@ -2059,6 +2111,34 @@ body#livro5 #sumario {
         background-color: #633b14; }
     body#livro5 #sumario div.color-overlay ul div.categoria {
       background-color: rgba(99, 59, 20, 0.25); }
+body#livro6 #sumario {
+  background-image: url(../imagens/bgportal_6.jpg); }
+  body#livro6 #sumario div.color-overlay {
+    background-color: rgba(129, 0, 237, 0.5); }
+    body#livro6 #sumario div.color-overlay div.invencoes-ficha > a.invencoes {
+      background-color: transparent; }
+      body#livro6 #sumario div.color-overlay div.invencoes-ficha > a.invencoes:hover {
+        background-color: transparent; }
+    body#livro6 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica {
+      background-color: #390068; }
+      body#livro6 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica:hover {
+        background-color: #390068; }
+    body#livro6 #sumario div.color-overlay ul div.categoria {
+      background-color: rgba(57, 0, 104, 0.25); }
+body#livro7 #sumario {
+  background-image: url(../imagens/bgportal_7.jpg); }
+  body#livro7 #sumario div.color-overlay {
+    background-color: rgba(255, 226, 63, 0.5); }
+    body#livro7 #sumario div.color-overlay div.invencoes-ficha > a.invencoes {
+      background-color: transparent; }
+      body#livro7 #sumario div.color-overlay div.invencoes-ficha > a.invencoes:hover {
+        background-color: transparent; }
+    body#livro7 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica {
+      background-color: #9D8B26; }
+      body#livro7 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica:hover {
+        background-color: #9D8B26; }
+    body#livro7 #sumario div.color-overlay ul div.categoria {
+      background-color: rgba(157, 139, 38, 0.25); }
 
 article {
   z-index: 1; }
