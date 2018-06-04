@@ -90,6 +90,9 @@ body, h6, body.portal section .livros .livros .volume .titulo p.autor {
 html.bloqueiarolagem, body.bloqueiarolagem {
   overflow: hidden; }
 
+b, strong {
+  font-weight: bold; }
+
 em, i {
   font-style: italic; }
 
