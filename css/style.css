@@ -1384,6 +1384,16 @@ article {
     margin: 1.2em 0 2.4em 2.4em;
     font-size: 0.9em;
     color: #666666; }
+  article ol, article ul {
+    margin: 1.2em 0 2.4em;
+    padding-left: 2.4em;
+    list-style-position: inside; }
+  article ul {
+    list-style-type: square; }
+  article ol {
+    list-style-type: decimal; }
+    article ol.latino {
+      list-style-type: lower-latin; }
   article table, article .containertable table {
     text-align: left;
     font-size: 0.9em;
