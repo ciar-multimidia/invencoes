@@ -127,6 +127,9 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 
 	// sumario
 	#sumario{
+		background-repeat: repeat; 
+		background-position: center center;
+		background-attachment: fixed; 
 		position: fixed;
 		width: 450px;
 		max-width: calc(100vw - 60px);
@@ -261,6 +264,21 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 		}
 	}
 }
+
+// tipo 2 de bg
+
+body.bg-type-2{
+	#sumario{
+		background-size: cover;
+		@media screen and (max-height: 1500px){
+			background-size: auto;
+		}
+	}
+}
+
+
+// variacao de paleta cromatica
+
 
 body{
 	@each $livros in $cores-livros{
