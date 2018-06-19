@@ -1,5 +1,7 @@
 footer{
 	// background-color: definido no loop de cores no final desse doc
+	background-position: center center;
+	background-repeat: repeat; 
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -50,6 +52,7 @@ footer{
 		font-size: 0.9em;
 		line-height: 1.3em;
 		color: white;
+		text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
 		height: 100%;
 		width: 480px;
 		display: inline-block;
@@ -157,8 +160,17 @@ footer{
 	}
 	
 }
-     
 
+// tipo 2 de bg
+
+body.bg-type-2{
+	footer{
+		background-size: cover;
+		@media screen and (max-width: 1500px){
+			background-size: auto;
+		}
+	}
+}
 
 
 // variacao de paleta cromatica
