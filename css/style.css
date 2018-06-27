@@ -117,6 +117,7 @@ body.portal {
       position: absolute;
       background-repeat: repeat;
       background-position: center center;
+      background-attachment: fixed;
       top: 0;
       right: 0;
       width: 100%;
@@ -264,7 +265,8 @@ body.portal {
           padding: 20px 10px; } }
       body.portal section .livros .livros .volume {
         background: #fff;
-        margin: 20px 0; }
+        margin: 20px 0;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3); }
         body.portal section .livros .livros .volume .titulo {
           padding: 15px 60px 10px 20px;
           border-bottom-width: 8px;
@@ -1009,13 +1011,13 @@ body#livro5 div#headerfixo div.barra-progresso > .progresso {
 body#livro6 header {
   background-image: url(../imagens/bgportal_6.jpg); }
   body#livro6 header .invencoes-sumario > div.btsumario {
-    background-color: #563c03; }
+    background-color: #735106; }
 body#livro6 div#headerfixo div.header_mesmo {
   background-image: url(../imagens/bgportal_6.jpg); }
   body#livro6 div#headerfixo div.header_mesmo div.btsumario {
-    background-color: #563c03; }
+    background-color: #735106; }
 body#livro6 div#headerfixo div.barra-progresso > .progresso {
-  background-color: #563c03; }
+  background-color: #735106; }
 body#livro7 header {
   background-image: url(../imagens/bgportal_7.jpg); }
   body#livro7 header .invencoes-sumario > div.btsumario {
@@ -1760,7 +1762,7 @@ body#livro6 footer {
   background-image: url(../imagens/bgportal_6.jpg);
   background-color: rgba(223, 185, 10, 0.9); }
   body#livro6 footer div.btsumario {
-    background-color: #563c03; }
+    background-color: #735106; }
 body#livro6 #sumariofooter {
   background-color: #DFB90A; }
 body#livro7 footer {
@@ -2165,11 +2167,11 @@ body#livro6 #sumario {
       body#livro6 #sumario div.color-overlay div.invencoes-ficha > a.invencoes:hover {
         background-color: transparent; }
     body#livro6 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica {
-      background-color: #563c03; }
+      background-color: #735106; }
       body#livro6 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica:hover {
-        background-color: #563c03; }
+        background-color: #735106; }
     body#livro6 #sumario div.color-overlay ul div.categoria {
-      background-color: rgba(86, 60, 3, 0.25); }
+      background-color: rgba(115, 81, 6, 0.25); }
 body#livro7 #sumario {
   background-image: url(../imagens/bgportal_7.jpg); }
   body#livro7 #sumario div.color-overlay {
