@@ -267,6 +267,8 @@ body.portal {
         background: #fff;
         margin: 20px 0;
         box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3); }
+        body.portal section .livros .livros .volume.desabilitado {
+          display: none; }
         body.portal section .livros .livros .volume .titulo {
           padding: 15px 60px 10px 20px;
           border-bottom-width: 8px;

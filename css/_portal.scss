@@ -141,6 +141,10 @@ body.portal {
 					margin: 20px 0;
 					box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
 
+					&.desabilitado{
+						display: none;
+					}
+
 
 					.titulo {
 						padding: 15px 60px 10px 20px;
