@@ -274,63 +274,76 @@ var dadosLivros = [
 			"Cleomar Rocha",
 			"Vanessa Santana"
 		],
-		"tem_categorias": false,
+		"tem_categorias": true,
 		"capitulos": [
 
 			{
 				"titulo": "Acessibilidade pra quem?",
-				"autores": ["Cleomar Rocha"]
+				"autores": ["Cleomar Rocha"],
+				"categoria": "Tecnologias Assistivas"
 			},
 
 			{
 				"titulo": "Centro Tecnológico de acessibilidade do IFRS - Produção de tecnologia assistiva de baixo custo",
-				"autores": ["Andréa Poletto Sonza", "Bruna Poletto Salton", "Lael Nervis", "Rodrigo Cainelli"]
+				"autores": ["Andréa Poletto Sonza", "Bruna Poletto Salton", "Lael Nervis", "Rodrigo Cainelli"],
+				"categoria": "Tecnologias Assistivas"
 			},
 
 			{
 				"titulo": "Curso de edição de imagens digitais a distância para surdos",
-				"autores": ["Deived Oliveira", "Luciana Brito", "Sonia Maria Dechandt Brochado"]
+				"autores": ["Deived Oliveira", "Luciana Brito", "Sonia Maria Dechandt Brochado"],
+				"categoria": "Tecnologias Assistivas"
 			},
 
 			{
 				"titulo": "Desenvolvimento de cadeira de rodas residencial",
-				"autores": ["Angelina Chacur", "Bruna Milam", "Júlio Cezar Augusto da Silva"]
+				"autores": ["Angelina Chacur", "Bruna Milam", "Júlio Cezar Augusto da Silva"],
+				"categoria": "Tecnologias Assistivas"
+			},		
+
+			{
+				"titulo": "Formação de professores por meio de tecnologias: O MOOC como estratégia na inclusão de pessoas com de ciência no ensino superior",
+				"autores": ["Cleomar Rocha", "Vanessa Helena Santana Dalla Déa"],
+				"categoria": "Tecnologias Assistivas"				
+			},
+	
+			{
+				"titulo": "Os Princípios do Design Universal na Interface Gráfica",
+				"autores": ["Ana Bandeira", "Wagner Bandeira"],
+				"categoria": "Tecnologias Assistivas"
 			},
 
 			{
 				"titulo": "Entrevista de Regina Maria Thienne Colombo e Fabiana Fator Gouvêa Bonilha, da Divisão de Acompanhamento e Apoio a Políticas em Tecnologia social – DIPTS e responsáveis pelo Centro nacional Referência em Tecnologia assistiva – CNRTA",
-				"autores": ["Fabiana Fator Gouvêa Bonilha", "Regina Maria Thienne Colombo"]
+				"autores": ["Fabiana Fator Gouvêa Bonilha", "Regina Maria Thienne Colombo"],
+				"categoria": "Entrevistas"
 			},
 
 			{
 				"titulo": "Entrevista: Tecnologias assistivas na Universidade Federal do Espírito Santo (UFES)",
-				"autores": ["Teodiano Freire Bastos Filho"]
-			},
-
-			{
-				"titulo": "Formação de professores por meio de tecnologias: O MOOC como estratégia na inclusão de pessoas com de ciência no ensino superior",
-				"autores": ["Cleomar Rocha", "Vanessa Helena Santana Dalla Déa"]
-			},
-
-			{
-				"titulo": "Galeria de Fotos sobre natureza: o olhar de uma pessoa com síndrome de Down",
-				"autores": ["Vanessa Helena Santana Dalla Déa", "Vicente Paulo Batista Dalla Déa"]
-			},
-
-			{
-				"titulo": "Humanos, Robôs e Deuses: Uma análise simbólica das origens na  ficção científica",
-				"autores": ["Martiniano Neto"]
-			},
-
-			{
-				"titulo": "Para além da eficiência: Tecnologias assistivas e a 245 construção do imaginário sobre pessoas com de ciência",
-				"autores": ["Ana Bandeira"]
+				"autores": ["Teodiano Freire Bastos Filho"],
+				"categoria": "Entrevistas"				
 			},
 
 			{
 				"titulo": "Xenoblade Chronicles: Tecnologia, Coexistência e Humanidade",
-				"autores": ["José Antônio Loures Custódio"]
-			}
+				"autores": ["José Antônio Loures Custódio"],
+				"categoria": "Práticas Culturais"				
+			},
+
+			{
+				"titulo": "Humanos, Robôs e Deuses: Uma análise simbólica das origens na  ficção científica",
+				"autores": ["Martiniano Neto"],
+				"categoria": "Práticas Culturais"				
+			},
+
+			{
+				"titulo": "Galeria de Fotos sobre natureza: o olhar de uma pessoa com síndrome de Down",
+				"autores": ["Vanessa Helena Santana Dalla Déa", "Vicente Paulo Batista Dalla Déa"],
+				"categoria": "Ensaio"
+			},
+
+
 		]
 	},
 
