@@ -242,6 +242,14 @@ article{
 				&:nth-of-type(3){height: 75px}
 				&:nth-of-type(4){height: 60px}
 			}
+
+			p{
+				font-weight: bold;
+				text-transform: uppercase;
+				margin: 0em 0.75em;
+				font-size: 1.2em;
+				@include hyphens(none);
+			}
 		}
 
 		div.edicao{

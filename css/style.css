@@ -1347,6 +1347,15 @@ article {
           height: 75px; }
         article.fichatecnica div.logos img:nth-of-type(4) {
           height: 60px; }
+      article.fichatecnica div.logos p {
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0em 0.75em;
+        font-size: 1.2em;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none; }
     article.fichatecnica div.edicao {
       margin-top: 3em;
       color: #666666;
