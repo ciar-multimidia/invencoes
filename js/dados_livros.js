@@ -272,7 +272,7 @@ var dadosLivros = [
 		"organizacao": [
 			"Ana Bandeira",
 			"Cleomar Rocha",
-			"Vanessa Santana"
+			"Vanessa Dalla Déa"
 		],
 		"tem_categorias": true,
 		"capitulos": [
@@ -314,13 +314,13 @@ var dadosLivros = [
 			},
 
 			{
-				"titulo": "Entrevista de Regina Maria Thienne Colombo e Fabiana Fator Gouvêa Bonilha, da Divisão de Acompanhamento e Apoio a Políticas em Tecnologia social – DIPTS e responsáveis pelo Centro nacional Referência em Tecnologia assistiva – CNRTA",
+				"titulo": "Centro nacional Referência em Tecnologia assistiva – CNRTA",
 				"autores": ["Fabiana Fator Gouvêa Bonilha", "Regina Maria Thienne Colombo"],
 				"categoria": "Entrevistas"
 			},
 
 			{
-				"titulo": "Entrevista: Tecnologias assistivas na Universidade Federal do Espírito Santo (UFES)",
+				"titulo": "Tecnologias assistivas na Universidade Federal do Espírito Santo (UFES)",
 				"autores": ["Teodiano Freire Bastos Filho"],
 				"categoria": "Entrevistas"				
 			},
