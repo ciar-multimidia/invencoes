@@ -266,89 +266,6 @@ var dadosLivros = [
 
 
 
-	{
-		"titulo": "Tecnologias Assistivas e Imaginário Contemporâneo",
-		"subtitulo": "",
-		"organizacao": [
-			"Ana Bandeira",
-			"Cleomar Rocha",
-			"Vanessa Dalla Déa"
-		],
-		"tem_categorias": true,
-		"capitulos": [
-
-			{
-				"titulo": "Acessibilidade pra quem?",
-				"autores": ["Cleomar Rocha"],
-				"categoria": "Tecnologias Assistivas"
-			},
-
-			{
-				"titulo": "Centro Tecnológico de acessibilidade do IFRS - Produção de tecnologia assistiva de baixo custo",
-				"autores": ["Andréa Poletto Sonza", "Bruna Poletto Salton", "Lael Nervis", "Rodrigo Cainelli"],
-				"categoria": "Tecnologias Assistivas"
-			},
-
-			{
-				"titulo": "Curso de edição de imagens digitais a distância para surdos",
-				"autores": ["Deived Oliveira", "Luciana Brito", "Sonia Maria Dechandt Brochado"],
-				"categoria": "Tecnologias Assistivas"
-			},
-
-			{
-				"titulo": "Desenvolvimento de cadeira de rodas residencial",
-				"autores": ["Angelina Chacur", "Bruna Milam", "Júlio Cezar Augusto da Silva"],
-				"categoria": "Tecnologias Assistivas"
-			},		
-
-			{
-				"titulo": "Formação de professores por meio de tecnologias: O MOOC como estratégia na inclusão de pessoas com de ciência no ensino superior",
-				"autores": ["Cleomar Rocha", "Vanessa Helena Santana Dalla Déa"],
-				"categoria": "Tecnologias Assistivas"				
-			},
-	
-			{
-				"titulo": "Os Princípios do Design Universal na Interface Gráfica",
-				"autores": ["Ana Bandeira", "Wagner Bandeira"],
-				"categoria": "Tecnologias Assistivas"
-			},
-
-			{
-				"titulo": "Centro nacional Referência em Tecnologia assistiva – CNRTA",
-				"autores": ["Fabiana Fator Gouvêa Bonilha", "Regina Maria Thienne Colombo"],
-				"categoria": "Entrevistas"
-			},
-
-			{
-				"titulo": "Tecnologias assistivas na Universidade Federal do Espírito Santo (UFES)",
-				"autores": ["Teodiano Freire Bastos Filho"],
-				"categoria": "Entrevistas"				
-			},
-
-			{
-				"titulo": "Xenoblade Chronicles: Tecnologia, Coexistência e Humanidade",
-				"autores": ["José Antônio Loures Custódio"],
-				"categoria": "Práticas Culturais"				
-			},
-
-			{
-				"titulo": "Humanos, Robôs e Deuses: Uma análise simbólica das origens na  ficção científica",
-				"autores": ["Martiniano Neto"],
-				"categoria": "Práticas Culturais"				
-			},
-
-			{
-				"titulo": "Galeria de Fotos sobre natureza: o olhar de uma pessoa com síndrome de Down",
-				"autores": ["Vanessa Helena Santana Dalla Déa", "Vicente Paulo Batista Dalla Déa"],
-				"categoria": "Ensaio"
-			},
-
-
-		]
-	},
-
-
-
 
 	{
 		"titulo": "Políticas Públicas Culturais e Cultura de Fronteiras",
@@ -516,6 +433,145 @@ var dadosLivros = [
 				"titulo": "Cinema México digital una plataforma para promover y difundir el cine",
 				"autores": ["Jose Luis Patricio Luna Huerta"],
 				"categoria": "Economia da Cultura"
+			}
+		]
+	},
+
+
+
+
+	{
+		"titulo": "Acessibilidade: práticas culturais e tecnologia assistiva para a cidadania",
+		"subtitulo": "",
+		"organizacao": [
+			"Ana Bandeira",
+			"Cleomar Rocha",
+			"Vanessa Dalla Déa"
+		],
+		"tem_categorias": true,
+		"capitulos": [
+
+			{
+				"titulo": "Acessibilidade pra quem?",
+				"autores": ["Cleomar Rocha"],
+				"categoria": "Tecnologias Assistivas"
+			},
+
+			{
+				"titulo": "Centro Tecnológico de acessibilidade do IFRS - Produção de tecnologia assistiva de baixo custo",
+				"autores": ["Andréa Poletto Sonza", "Bruna Poletto Salton", "Lael Nervis", "Rodrigo Cainelli"],
+				"categoria": "Tecnologias Assistivas"
+			},
+
+			{
+				"titulo": "Curso de edição de imagens digitais a distância para surdos",
+				"autores": ["Deived Oliveira", "Luciana Brito", "Sonia Maria Dechandt Brochado"],
+				"categoria": "Tecnologias Assistivas"
+			},
+
+			{
+				"titulo": "Desenvolvimento de cadeira de rodas residencial",
+				"autores": ["Angelina Chacur", "Bruna Milam", "Júlio Cezar Augusto da Silva"],
+				"categoria": "Tecnologias Assistivas"
+			},		
+
+			{
+				"titulo": "Formação de professores por meio de tecnologias: O MOOC como estratégia na inclusão de pessoas com de ciência no ensino superior",
+				"autores": ["Cleomar Rocha", "Vanessa Helena Santana Dalla Déa"],
+				"categoria": "Tecnologias Assistivas"				
+			},
+	
+			{
+				"titulo": "Os Princípios do Design Universal na Interface Gráfica",
+				"autores": ["Ana Bandeira", "Wagner Bandeira"],
+				"categoria": "Tecnologias Assistivas"
+			},
+
+			{
+				"titulo": "Centro nacional Referência em Tecnologia assistiva – CNRTA",
+				"autores": ["Fabiana Fator Gouvêa Bonilha", "Regina Maria Thienne Colombo"],
+				"categoria": "Entrevistas"
+			},
+
+			{
+				"titulo": "Tecnologias assistivas na Universidade Federal do Espírito Santo (UFES)",
+				"autores": ["Teodiano Freire Bastos Filho"],
+				"categoria": "Entrevistas"				
+			},
+
+			{
+				"titulo": "Xenoblade Chronicles: Tecnologia, Coexistência e Humanidade",
+				"autores": ["José Antônio Loures Custódio"],
+				"categoria": "Práticas Culturais"				
+			},
+
+			{
+				"titulo": "Humanos, Robôs e Deuses: Uma análise simbólica das origens na  ficção científica",
+				"autores": ["Martiniano Neto"],
+				"categoria": "Práticas Culturais"				
+			},
+
+			{
+				"titulo": "Galeria de Fotos sobre natureza: o olhar de uma pessoa com síndrome de Down",
+				"autores": ["Vanessa Helena Santana Dalla Déa", "Vicente Paulo Batista Dalla Déa"],
+				"categoria": "Ensaio"
+			},
+
+
+		]
+	},
+
+
+
+	{
+		"titulo": "Inquietações",
+		"subtitulo": "",
+		"organizacao": [
+			"Cleomar Rocha"
+		],
+		"tem_categorias": false,
+		"capitulos": [
+
+			{
+				"titulo": "Moses Broks",
+				"autores": "",
+				"subcapitulos": [
+					"Lexie Boccia", 
+					"Maud Gaslin", 
+					"Dallas Langlitz", 
+					"Lamont Frederickson", 
+					"Karry Fetterly"
+				]
+			},
+
+			{
+				"titulo": "Keila Merten",
+				"autores": "",
+				"subcapitulos": [
+					"Florencia Takenaka", 
+					"Shiela Lolar", 
+					"Nohemi Dirk", 
+					"Faith Stricklin", 
+					"Bruno Vanhouten",
+					"Marisela Kimbral",
+					"Aline Atanacio"
+				]
+			},
+
+			{
+				"titulo": "Art Cylkowski",
+				"autores": "",
+				"subcapitulos": [
+					"Homer Fuda", 
+					"Vivienne Aukamp", 
+					"Hershel Wekenmann", 
+					"Mellissa Frye", 
+					"Vita Saechao",
+					"Cathrine Akbar",
+					"Curt Todahl",
+					"Lorita Klinefelter",
+					"Marjory Breslawski"
+				]
 			}
 		]
 	}

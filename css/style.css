@@ -392,17 +392,21 @@ body.portal {
         body.portal section .livros .livros .volume:nth-of-type(4) .sinopse > div .acesso a {
           background: #679b2d; }
         body.portal section .livros .livros .volume:nth-of-type(5) .titulo {
-          border-color: #ed7600; }
-        body.portal section .livros .livros .volume:nth-of-type(5) .sinopse > div .acesso a {
-          background: #ed7600; }
-        body.portal section .livros .livros .volume:nth-of-type(6) .titulo {
           border-color: #DFB90A; }
-        body.portal section .livros .livros .volume:nth-of-type(6) .sinopse > div .acesso a {
+        body.portal section .livros .livros .volume:nth-of-type(5) .sinopse > div .acesso a {
           background: #DFB90A; }
-        body.portal section .livros .livros .volume:nth-of-type(7) .titulo {
+        body.portal section .livros .livros .volume:nth-of-type(6) .titulo {
           border-color: #3ba9aa; }
-        body.portal section .livros .livros .volume:nth-of-type(7) .sinopse > div .acesso a {
+        body.portal section .livros .livros .volume:nth-of-type(6) .sinopse > div .acesso a {
           background: #3ba9aa; }
+        body.portal section .livros .livros .volume:nth-of-type(7) .titulo {
+          border-color: #ed7600; }
+        body.portal section .livros .livros .volume:nth-of-type(7) .sinopse > div .acesso a {
+          background: #ed7600; }
+        body.portal section .livros .livros .volume:nth-of-type(8) .titulo {
+          border-color: #661492; }
+        body.portal section .livros .livros .volume:nth-of-type(8) .sinopse > div .acesso a {
+          background: #661492; }
     body.portal section .marcas {
       display: -webkit-box;
       display: -moz-box;
@@ -1003,33 +1007,43 @@ body#livro4 div#headerfixo div.barra-progresso > .progresso {
 body#livro5 header {
   background-image: url(../imagens/bgportal_5.jpg); }
   body#livro5 header .invencoes-sumario > div.btsumario {
-    background-color: #633b14; }
+    background-color: #735106; }
 body#livro5 div#headerfixo div.header_mesmo {
   background-image: url(../imagens/bgportal_5.jpg); }
   body#livro5 div#headerfixo div.header_mesmo div.btsumario {
-    background-color: #633b14; }
+    background-color: #735106; }
 body#livro5 div#headerfixo div.barra-progresso > .progresso {
-  background-color: #633b14; }
+  background-color: #735106; }
 body#livro6 header {
   background-image: url(../imagens/bgportal_6.jpg); }
   body#livro6 header .invencoes-sumario > div.btsumario {
-    background-color: #735106; }
+    background-color: #074e4e; }
 body#livro6 div#headerfixo div.header_mesmo {
   background-image: url(../imagens/bgportal_6.jpg); }
   body#livro6 div#headerfixo div.header_mesmo div.btsumario {
-    background-color: #735106; }
+    background-color: #074e4e; }
 body#livro6 div#headerfixo div.barra-progresso > .progresso {
-  background-color: #735106; }
+  background-color: #074e4e; }
 body#livro7 header {
   background-image: url(../imagens/bgportal_7.jpg); }
   body#livro7 header .invencoes-sumario > div.btsumario {
-    background-color: #074e4e; }
+    background-color: #633b14; }
 body#livro7 div#headerfixo div.header_mesmo {
   background-image: url(../imagens/bgportal_7.jpg); }
   body#livro7 div#headerfixo div.header_mesmo div.btsumario {
-    background-color: #074e4e; }
+    background-color: #633b14; }
 body#livro7 div#headerfixo div.barra-progresso > .progresso {
-  background-color: #074e4e; }
+  background-color: #633b14; }
+body#livro8 header {
+  background-image: url(../imagens/bgportal_8.jpg); }
+  body#livro8 header .invencoes-sumario > div.btsumario {
+    background-color: #2E0544; }
+body#livro8 div#headerfixo div.header_mesmo {
+  background-image: url(../imagens/bgportal_8.jpg); }
+  body#livro8 div#headerfixo div.header_mesmo div.btsumario {
+    background-color: #2E0544; }
+body#livro8 div#headerfixo div.barra-progresso > .progresso {
+  background-color: #2E0544; }
 
 article {
   display: -webkit-box;
@@ -1764,25 +1778,32 @@ body#livro4 #sumariofooter {
   background-color: #679b2d; }
 body#livro5 footer {
   background-image: url(../imagens/bgportal_5.jpg);
-  background-color: rgba(237, 118, 0, 0.9); }
+  background-color: rgba(223, 185, 10, 0.9); }
   body#livro5 footer div.btsumario {
-    background-color: #633b14; }
+    background-color: #735106; }
 body#livro5 #sumariofooter {
-  background-color: #ed7600; }
+  background-color: #DFB90A; }
 body#livro6 footer {
   background-image: url(../imagens/bgportal_6.jpg);
-  background-color: rgba(223, 185, 10, 0.9); }
+  background-color: rgba(59, 169, 170, 0.9); }
   body#livro6 footer div.btsumario {
-    background-color: #735106; }
+    background-color: #074e4e; }
 body#livro6 #sumariofooter {
-  background-color: #DFB90A; }
+  background-color: #3ba9aa; }
 body#livro7 footer {
   background-image: url(../imagens/bgportal_7.jpg);
-  background-color: rgba(59, 169, 170, 0.9); }
+  background-color: rgba(237, 118, 0, 0.9); }
   body#livro7 footer div.btsumario {
-    background-color: #074e4e; }
+    background-color: #633b14; }
 body#livro7 #sumariofooter {
-  background-color: #3ba9aa; }
+  background-color: #ed7600; }
+body#livro8 footer {
+  background-image: url(../imagens/bgportal_8.jpg);
+  background-color: rgba(102, 20, 146, 0.9); }
+  body#livro8 footer div.btsumario {
+    background-color: #2E0544; }
+body#livro8 #sumariofooter {
+  background-color: #661492; }
 
 #overlay {
   position: fixed;
@@ -2013,14 +2034,14 @@ body#livro7 #sumariofooter {
             -o-align-items: center;
             align-items: center;
             -ms-flex-align: center; }
-      #overlay #sumario div.color-overlay ul {
+      #overlay #sumario div.color-overlay > ul.capitulos {
         min-height: 100%;
         display: block;
         padding: 0 20px; }
         @media screen and (max-width: 600px) {
-          #overlay #sumario div.color-overlay ul {
+          #overlay #sumario div.color-overlay > ul.capitulos {
             padding: 0 12px; } }
-        #overlay #sumario div.color-overlay ul div.categoria {
+        #overlay #sumario div.color-overlay > ul.capitulos div.categoria {
           width: 100%;
           display: -webkit-box;
           display: -moz-box;
@@ -2039,23 +2060,23 @@ body#livro7 #sumariofooter {
           justify-content: center;
           -ms-flex-pack: center;
           padding: 6px 12px; }
-          #overlay #sumario div.color-overlay ul div.categoria h5 {
+          #overlay #sumario div.color-overlay > ul.capitulos div.categoria h5 {
             width: 100%;
             display: inline-block;
             font-size: 0.8em;
             color: white;
             text-align: center; }
-        #overlay #sumario div.color-overlay ul li {
+        #overlay #sumario div.color-overlay > ul.capitulos > li {
           display: block;
           border-bottom: 1px solid rgba(255, 255, 255, 0.5);
           border-top: 1px solid rgba(255, 255, 255, 0.5);
           padding-right: 20px; }
           @media screen and (max-width: 900px) {
-            #overlay #sumario div.color-overlay ul li {
+            #overlay #sumario div.color-overlay > ul.capitulos > li {
               padding-right: 12px; } }
-          #overlay #sumario div.color-overlay ul li + li {
+          #overlay #sumario div.color-overlay > ul.capitulos > li + li {
             border-top: 0px solid rgba(255, 255, 255, 0); }
-          #overlay #sumario div.color-overlay ul li > a {
+          #overlay #sumario div.color-overlay > ul.capitulos > li > a {
             -webkit-transition: background-color 0.2s linear;
             -moz-transition: background-color 0.2s linear;
             transition: background-color 0.2s linear;
@@ -2070,28 +2091,43 @@ body#livro7 #sumariofooter {
             -moz-transition-property: -moz-transform;
             transition-property: transform; }
             @media screen and (max-width: 900px) {
-              #overlay #sumario div.color-overlay ul li > a {
+              #overlay #sumario div.color-overlay > ul.capitulos > li > a {
                 padding: 12px 0; } }
-            #overlay #sumario div.color-overlay ul li > a:hover {
+            #overlay #sumario div.color-overlay > ul.capitulos > li > a:hover {
               cursor: pointer;
               -webkit-transform: translateX(6px);
               -moz-transform: translateX(6px);
               -ms-transform: translateX(6px);
               -o-transform: translateX(6px);
               transform: translateX(6px); }
-            #overlay #sumario div.color-overlay ul li > a div.autores p {
+            #overlay #sumario div.color-overlay > ul.capitulos > li > a div.autores p {
               font-size: 0.9em;
               font-style: italic; }
-          #overlay #sumario div.color-overlay ul li.pagina-atual > a {
+          #overlay #sumario div.color-overlay > ul.capitulos > li > ul.subcap {
+            padding-left: 30px;
+            padding-bottom: 20px; }
+            #overlay #sumario div.color-overlay > ul.capitulos > li > ul.subcap li {
+              margin-bottom: 5px; }
+              #overlay #sumario div.color-overlay > ul.capitulos > li > ul.subcap li a {
+                font-size: 0.9em;
+                color: white;
+                text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4); }
+                #overlay #sumario div.color-overlay > ul.capitulos > li > ul.subcap li a:before {
+                  content: '\21b3' ' '; }
+                #overlay #sumario div.color-overlay > ul.capitulos > li > ul.subcap li a:hover {
+                  text-decoration: underline; }
+          #overlay #sumario div.color-overlay > ul.capitulos > li.pagina-atual > a {
             padding-left: 12px;
             border-left: 6px solid white; }
-            #overlay #sumario div.color-overlay ul li.pagina-atual > a:hover {
+            #overlay #sumario div.color-overlay > ul.capitulos > li.pagina-atual > a:hover {
               cursor: default;
               -webkit-transform: none;
               -moz-transform: none;
               -ms-transform: none;
               -o-transform: none;
               transform: none; }
+          #overlay #sumario div.color-overlay > ul.capitulos > li.pagina-atual > ul.subcap {
+            border-left: 6px solid white; }
 
 body.bg-type-2 #sumario {
   background-size: cover; }
@@ -2158,45 +2194,59 @@ body#livro4 #sumario {
 body#livro5 #sumario {
   background-image: url(../imagens/bgportal_5.jpg); }
   body#livro5 #sumario div.color-overlay {
-    background-color: rgba(237, 118, 0, 0.5); }
+    background-color: rgba(223, 185, 10, 0.5); }
     body#livro5 #sumario div.color-overlay div.invencoes-ficha > a.invencoes {
       background-color: transparent; }
       body#livro5 #sumario div.color-overlay div.invencoes-ficha > a.invencoes:hover {
         background-color: transparent; }
     body#livro5 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica {
-      background-color: #633b14; }
+      background-color: #735106; }
       body#livro5 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica:hover {
-        background-color: #633b14; }
+        background-color: #735106; }
     body#livro5 #sumario div.color-overlay ul div.categoria {
-      background-color: rgba(99, 59, 20, 0.25); }
+      background-color: rgba(115, 81, 6, 0.25); }
 body#livro6 #sumario {
   background-image: url(../imagens/bgportal_6.jpg); }
   body#livro6 #sumario div.color-overlay {
-    background-color: rgba(223, 185, 10, 0.5); }
+    background-color: rgba(59, 169, 170, 0.5); }
     body#livro6 #sumario div.color-overlay div.invencoes-ficha > a.invencoes {
       background-color: transparent; }
       body#livro6 #sumario div.color-overlay div.invencoes-ficha > a.invencoes:hover {
         background-color: transparent; }
     body#livro6 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica {
-      background-color: #735106; }
+      background-color: #074e4e; }
       body#livro6 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica:hover {
-        background-color: #735106; }
+        background-color: #074e4e; }
     body#livro6 #sumario div.color-overlay ul div.categoria {
-      background-color: rgba(115, 81, 6, 0.25); }
+      background-color: rgba(7, 78, 78, 0.25); }
 body#livro7 #sumario {
   background-image: url(../imagens/bgportal_7.jpg); }
   body#livro7 #sumario div.color-overlay {
-    background-color: rgba(59, 169, 170, 0.5); }
+    background-color: rgba(237, 118, 0, 0.5); }
     body#livro7 #sumario div.color-overlay div.invencoes-ficha > a.invencoes {
       background-color: transparent; }
       body#livro7 #sumario div.color-overlay div.invencoes-ficha > a.invencoes:hover {
         background-color: transparent; }
     body#livro7 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica {
-      background-color: #074e4e; }
+      background-color: #633b14; }
       body#livro7 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica:hover {
-        background-color: #074e4e; }
+        background-color: #633b14; }
     body#livro7 #sumario div.color-overlay ul div.categoria {
-      background-color: rgba(7, 78, 78, 0.25); }
+      background-color: rgba(99, 59, 20, 0.25); }
+body#livro8 #sumario {
+  background-image: url(../imagens/bgportal_8.jpg); }
+  body#livro8 #sumario div.color-overlay {
+    background-color: rgba(102, 20, 146, 0.5); }
+    body#livro8 #sumario div.color-overlay div.invencoes-ficha > a.invencoes {
+      background-color: transparent; }
+      body#livro8 #sumario div.color-overlay div.invencoes-ficha > a.invencoes:hover {
+        background-color: transparent; }
+    body#livro8 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica {
+      background-color: #2E0544; }
+      body#livro8 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica:hover {
+        background-color: #2E0544; }
+    body#livro8 #sumario div.color-overlay ul div.categoria {
+      background-color: rgba(46, 5, 68, 0.25); }
 
 article {
   z-index: 1; }

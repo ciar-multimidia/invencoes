@@ -131,7 +131,7 @@ $(document).ready(function() {
 						</a>\
 						<a class="fichatecnica" href="'+complementourl+'fichatecnica.html">Ficha técnica</a>\
 					</div>\
-					<ul>\
+					<ul class="capitulos">\
 						<li'+(nomePaginaAtual == 'capa' ? 
 							' class="pagina-atual"' : 
 							'')
@@ -195,25 +195,20 @@ $(document).ready(function() {
 	if (dadosLivroAtual.tem_categorias == true) {
 		var categoriaAtual = '';
 	}
+
 	$.each(dadosLivroAtual.capitulos, function(index, val) {
+		 
 		 if (dadosLivroAtual.tem_categorias == true) {
 		 	if (val.categoria != categoriaAtual) {
 		 		categoriaAtual = val.categoria;
 		 		sumario.find('ul').eq(0).append('<div class="categoria"><h5>'+val.categoria+'</h5></div');
 		 	}
 		 }
-		 // console.log(index, numeroCapitulo);
-		 sumario.find('ul').eq(0).append('\
+
+		 sumario.find('ul.capitulos').append('\
 		 	<li'+(index+1 == numeroCapitulo ? ' class="pagina-atual"' : '')+'>\
-		 		<a'+(index+1 == numeroCapitulo ? 
-			 			'' : 
-			 			' href="'+complementourl+'capitulos/c'+( (index+1).toString().length>1 ? 
-			 				'' : 
-			 				'0')
-			 			+(index+1)+'.html"'
-		 			) 
-		 		+'>\
-		 			<h3 class="titulo">'+val.titulo+'</h3>'+
+		 		<a'+(index+1 == numeroCapitulo ? '' : ' href="'+complementourl+'capitulos/c'+( (index+1).toString().length>1 ? '' : '0')+(index+1)+'.html"') +'>'+
+		 			'<h3 class="titulo">'+val.titulo+'</h3>'+
 		 			(val.autores != '' ?
 		 				'<div class="autores">\
 		 					<p>'+
@@ -225,6 +220,17 @@ $(document).ready(function() {
 		 		+'</a>\
 		 	</li>\
 	 	');
+
+		 if (val.subcapitulos) {
+		 	var listaSubCap = $('<ul class="subcap"></ul>');
+
+		 	var subcapPath = complementourl+'capitulos/c'+( (index+1).toString().length>1 ? '' : '0')+(index+1)+'.html' + '#parte';
+		 	$.each(val.subcapitulos, function(index2, val2) {
+		 		 var linksubcap = $('<a></a>').attr('href', subcapPath + (index2+1)).text(val2);
+		 		 listaSubCap.append($('<li></li>').append(linksubcap));
+		 	});
+		 	sumario.find('ul.capitulos > li').eq(index+1).append(listaSubCap);
+		 }
 	});
 
 	// links do footer	

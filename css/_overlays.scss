@@ -186,7 +186,7 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 				}
 			}
 
-			ul{
+			& > ul.capitulos{
 				min-height: 100%;
 				display: block;
 				padding: 0 20px;
@@ -212,7 +212,7 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 					}
 				}
 				
-				li{
+				& > li{
 					display: block;
 					border-bottom: 1px solid hsla(0,0,100%,0.5);
 					border-top: 1px solid hsla(0,0,100%,0.5);
@@ -249,6 +249,27 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 							}
 						}
 					}
+
+					& > ul.subcap{
+						padding-left: 30px;
+						padding-bottom: 20px;
+						li{
+							margin-bottom: 5px;
+							a{
+								font-size: 0.9em;
+								color: white;
+								text-shadow: 0px 1px 4px rgba(0,0,0,0.4);
+								&:before{
+									content: '\21b3' ' ';
+								}
+
+								&:hover{
+									text-decoration: underline;
+								}
+
+							}
+						}
+					}
 					&.pagina-atual{
 						& > a{
 							padding-left: 12px;
@@ -257,6 +278,11 @@ $boxshadowpadrao: 0px 5px 10px 0px rgba(0,0,0,0.3);
 								cursor: default;
 								@include transform(none);
 							}
+						}
+
+						& > ul.subcap{
+							border-left: 6px solid white;
+
 						}
 					}
 				}
