@@ -533,45 +533,91 @@ var dadosLivros = [
 		"capitulos": [
 
 			{
-				"titulo": "Moses Broks",
+				"titulo": "Sociedade",
 				"autores": "",
 				"subcapitulos": [
-					"Lexie Boccia", 
-					"Maud Gaslin", 
-					"Dallas Langlitz", 
-					"Lamont Frederickson", 
-					"Karry Fetterly"
+					"Po(r)ética para as cidades", 
+					"Os gritos e o silêncio das urbes e tribos", 
+					"A arte está nua", 
+					"A cultura arde", 
+					"Necessidades humanas e o bem-estar nas cidades",
+					"Mobilidade e imobilidade nas cidades",
+					"Cibercidadania",
+					"A democracia e o palanque nas redes sociais",
+					"Quadrilha social",
+					"Cadê a comoção nacional?",
+					"E a culpa vai para…",
+					"Sobre modelos energéticos e as alternativas brasileiras",
+					"Inversões e contradições: a sociedade e o governo",
+					"Burocracia e a morosidade do serviço público",
+					"Transparência como princípio para a cidadania",
+					"Gostar do que faz ou fazer o que se gosta: perspectiva do mundo do trabalho",
+					"Saúde, tecnologia e cidadania",
+					"Governo e inovação",
+					"Uma sociedade em busca de salvadores da Pátria",
+					"Consciência da diversidade: um país chamado Brasil",
+					"Sobre diferenças e indiferenças",
+					"O gosto social por desenho animado",
+					"Declaração Universal dos Direitos Humanos"
 				]
 			},
 
 			{
-				"titulo": "Keila Merten",
+				"titulo": "Inteligência",
 				"autores": "",
 				"subcapitulos": [
-					"Florencia Takenaka", 
-					"Shiela Lolar", 
-					"Nohemi Dirk", 
-					"Faith Stricklin", 
-					"Bruno Vanhouten",
-					"Marisela Kimbral",
-					"Aline Atanacio"
+					"Civilidade e democracia", 
+					"Sobre inteligência nas cidades",
+					"Inteligências nas cidades",
+					"Inteligência e meio ambiente",
+					"Uma agenda para melhorar o mundo",
+					"Nem sempre insípida, inodora e incolor",
+					"Universidade e inovação",
+					"Liberdade de expressão, não de agressão",
+					"A Lógica nas redes",
+					"O córtex cerebral e tecnologia",
+					"Entre a inteligência e a subserviência tecnológica",
+					"Viagens no tempo",
+					"Apocalípticos e integrados",
+					"O pensamento e sua permanência na cultura",
+					"O modelo copista e a ausência de pensamento",
+					"Cegueira desatencional e eleição",
+					"A banalidade do mal"
+			},
+
+			{
+				"titulo": "Tecnologia",
+				"autores": "",
+				"subcapitulos": [
+					"A tecnologia e as bordas do humano",
+					"Tecnologias em serviços públicos",
+					"Tecnologia na/da educação",
+					"Tecnologia e emprego",
+					"Mobilidade e tecnologia",
+					"O que vemos e o que nos olha",
+					"Uma cidade laboratório",
+					"Mercado e inovação",
+					"A tríplice hélice da inovação",
+					"Ecossistemas de negócios",
+					"Gasto ou investimento: o canto da sereia tecnológica",
+					"Jogo dos sete erros",
+					"Tecnologia, virtualidades e uma batatinha",
+					"O gosto contemporâneo pela conectividade",
+					"Ética, moral e  tecnologia",
+					"Tiros pela culatra: a popularidade pela negação",
+					"A tecnologia da ficção",
+					"Tecnologia, mídia e verdade",
+					"A bola (tecnológica) da vez",
+					"Tecnologia da imagem",
+					"Definições e indefinições - HD TV, UHD TV, 4K",
+					"Museu Casa de Cora Coralina: uma casa de poesia",
+					"Conectividade: a cultura do acesso e do compartilhamento"
 				]
 			},
 
 			{
-				"titulo": "Art Cylkowski",
-				"autores": "",
-				"subcapitulos": [
-					"Homer Fuda", 
-					"Vivienne Aukamp", 
-					"Hershel Wekenmann", 
-					"Mellissa Frye", 
-					"Vita Saechao",
-					"Cathrine Akbar",
-					"Curt Todahl",
-					"Lorita Klinefelter",
-					"Marjory Breslawski"
-				]
+				"titulo": "Referências",
+				"autores": ""
 			}
 		]
 	}
