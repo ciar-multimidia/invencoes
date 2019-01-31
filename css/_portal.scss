@@ -110,7 +110,7 @@ body.portal {
 						}
 
 						.texto{
-							width: 50%;
+							width: 60%;
 							margin-right: 40px;
 							@media screen and (max-width: 600px) {
 								width: 100%;
@@ -261,39 +261,46 @@ body.portal {
 				}
 			}
 		}
-
-
 		
 
-		
+		// .marcas {
+		// 	@include display(flex);
+		// 	@include flex-direction(row);
+		// 	@include flex-wrap(wrap);
+		// 	@include align-items(center);
+		// 	@include justify-content(space-around);
 
-		.marcas {
-			@include display(flex);
-			@include flex-direction(row);
-			@include flex-wrap(wrap);
-			@include align-items(center);
-			@include justify-content(space-around);
+		// 	img {
+		// 		margin: 10px;
+		// 		&:nth-of-type(1){height: 45px}
+		// 		&:nth-of-type(2){height: 60px}
+		// 		&:nth-of-type(3){height: 75px}
+		// 		&:nth-of-type(4){height: 60px}
+		// 	} 
 
-			img {
-				margin: 10px;
-				&:nth-of-type(1){height: 45px}
-				&:nth-of-type(2){height: 60px}
-				&:nth-of-type(3){height: 75px}
-				&:nth-of-type(4){height: 60px}
-			} 
+		// 	@media screen and (max-width: 450px) {
+		// 		img {
+		// 			&:nth-of-type(1){height: 30px}
+		// 			&:nth-of-type(2){height: 40px}
+		// 			&:nth-of-type(3){height: 50px}
+		// 			&:nth-of-type(4){height: 40px}
+		// 		}
+		// 	}
 
-			@media screen and (max-width: 450px) {
-				img {
-					&:nth-of-type(1){height: 30px}
-					&:nth-of-type(2){height: 40px}
-					&:nth-of-type(3){height: 50px}
-					&:nth-of-type(4){height: 40px}
-				}
-			}
+		// 	@media screen and (max-width: 330px) {
+		// 		img {flex-basis: 100%}
+		// 	}
+		// }
 
-			@media screen and (max-width: 330px) {
-				img {flex-basis: 100%}
-			}
+
+		p.autoria{
+			margin-top: 60px;
+			margin-bottom: 10px;
+			font-size: 0.9em;
+			// font-weight: bold;
+			color: white;
+			text-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+			text-align: center;
 		}
 	}
 }
