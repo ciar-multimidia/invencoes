@@ -583,6 +583,7 @@ var dadosLivros = [
 					"O modelo copista e a ausência de pensamento",
 					"Cegueira desatencional e eleição",
 					"A banalidade do mal"
+				]
 			},
 
 			{

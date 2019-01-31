@@ -404,9 +404,9 @@ body.portal {
         body.portal section .livros .livros .volume:nth-of-type(7) .sinopse > div .acesso a {
           background: #ed7600; }
         body.portal section .livros .livros .volume:nth-of-type(8) .titulo {
-          border-color: #661492; }
+          border-color: #9D0449; }
         body.portal section .livros .livros .volume:nth-of-type(8) .sinopse > div .acesso a {
-          background: #661492; }
+          background: #9D0449; }
     body.portal section .marcas {
       display: -webkit-box;
       display: -moz-box;
@@ -1037,13 +1037,13 @@ body#livro7 div#headerfixo div.barra-progresso > .progresso {
 body#livro8 header {
   background-image: url(../imagens/bgportal_8.jpg); }
   body#livro8 header .invencoes-sumario > div.btsumario {
-    background-color: #2E0544; }
+    background-color: #350022; }
 body#livro8 div#headerfixo div.header_mesmo {
   background-image: url(../imagens/bgportal_8.jpg); }
   body#livro8 div#headerfixo div.header_mesmo div.btsumario {
-    background-color: #2E0544; }
+    background-color: #350022; }
 body#livro8 div#headerfixo div.barra-progresso > .progresso {
-  background-color: #2E0544; }
+  background-color: #350022; }
 
 article {
   display: -webkit-box;
@@ -1799,11 +1799,11 @@ body#livro7 #sumariofooter {
   background-color: #ed7600; }
 body#livro8 footer {
   background-image: url(../imagens/bgportal_8.jpg);
-  background-color: rgba(102, 20, 146, 0.9); }
+  background-color: rgba(157, 4, 73, 0.9); }
   body#livro8 footer div.btsumario {
-    background-color: #2E0544; }
+    background-color: #350022; }
 body#livro8 #sumariofooter {
-  background-color: #661492; }
+  background-color: #9D0449; }
 
 #overlay {
   position: fixed;
@@ -2236,17 +2236,17 @@ body#livro7 #sumario {
 body#livro8 #sumario {
   background-image: url(../imagens/bgportal_8.jpg); }
   body#livro8 #sumario div.color-overlay {
-    background-color: rgba(102, 20, 146, 0.5); }
+    background-color: rgba(157, 4, 73, 0.5); }
     body#livro8 #sumario div.color-overlay div.invencoes-ficha > a.invencoes {
       background-color: transparent; }
       body#livro8 #sumario div.color-overlay div.invencoes-ficha > a.invencoes:hover {
         background-color: transparent; }
     body#livro8 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica {
-      background-color: #2E0544; }
+      background-color: #350022; }
       body#livro8 #sumario div.color-overlay div.invencoes-ficha > a.fichatecnica:hover {
-        background-color: #2E0544; }
+        background-color: #350022; }
     body#livro8 #sumario div.color-overlay ul div.categoria {
-      background-color: rgba(46, 5, 68, 0.25); }
+      background-color: rgba(53, 0, 34, 0.25); }
 
 article {
   z-index: 1; }
