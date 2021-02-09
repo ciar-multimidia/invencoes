@@ -621,7 +621,71 @@ var dadosLivros = [
 				"autores": ""
 			}
 		]
-	}
+	},
+
+
+
+	{
+		"titulo": "Humanidades digitais",
+		"subtitulo": "performatividades na cultura digital",
+		"organizacao": [
+			"Cleomar Rocha",
+			"Hugo A. D. do Nascimento",
+			"Fabrízzio Alphonsus Alves de Melo Nunes Soares"
+		],
+		"tem_categorias": false,
+		"capitulos": [
+			{
+				"titulo": "Apresentação",
+				"autores": ["Cleomar Rocha", "Hugo Dantas Nascimento", "Fabrizzio Alphonsus Alves de Melo Nunes Soares"]
+			},
+
+			{
+				"titulo": "O metabolismo digital das humanidades",
+				"autores": ["Lucia Santaella"]
+			},
+
+			{
+				"titulo": "Experimentações Geopéticas. Paisagens Virais, 2020",
+				"autores": ["Lilian Amaral","Marcos Umpièrrez","Bia Santos","Laurita Salles","Liliana Fracasso","Francisco Cabanzo"]
+			},
+
+			{
+				"titulo": "Do objeto à imagem técnica: formulação de formas",
+				"autores": ["Luisa Paraguai"]
+			},
+
+			{
+				"titulo": "Um estudo das tecnologias de acessibilidade voltadas para deficientes visuais em museus",
+				"autores": ["Leonardo Eloi Soares de Carvalho","Hugo Alexandre Dantas do Nascimento"]
+			},
+
+			{
+				"titulo": "Orquestra dos pássaros, uma interferência poética na estrutura Paredão goiano",
+				"autores": ["Laurita Ricardo de Salles"]
+			},
+
+			{
+				"titulo": "Emergência digital em saúde",
+				"autores": ["Mayler Olombrada Nunes de Santos"]
+			},
+
+			{
+				"titulo": "O fone de ouvido como espaço de deriva – relações entre arte e tecnologia em abordagens expandidas do objeto.",
+				"autores": ["Ianni Barros Luna"]
+			},
+
+			{
+				"titulo": "As performances nos vlogs: um estudo de recepção",
+				"autores": ["João Victor Lima da Cunha e Souza","Lara Lima Satler","Ana Júlia de Freitas Carrijo"]
+			},
+
+			{
+				"titulo": "Tipografia nos títulos e créditos de filmes em realidade virtual",
+				"autores": ["Nelson Caramico","Suzete Venturelli"]
+			}
+		]
+	},
 
 
 
