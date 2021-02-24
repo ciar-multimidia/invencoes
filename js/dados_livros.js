@@ -635,19 +635,10 @@ var dadosLivros = [
 		],
 		"tem_categorias": false,
 		"capitulos": [
-			{
-				"titulo": "Apresentação",
-				"autores": ["Cleomar Rocha", "Hugo Dantas Nascimento", "Fabrizzio Alphonsus Alves de Melo Nunes Soares"]
-			},
 
 			{
 				"titulo": "O metabolismo digital das humanidades",
 				"autores": ["Lucia Santaella"]
-			},
-
-			{
-				"titulo": "Experimentações Geopéticas. Paisagens Virais, 2020",
-				"autores": ["Lilian Amaral","Marcos Umpièrrez","Bia Santos","Laurita Salles","Liliana Fracasso","Francisco Cabanzo"]
 			},
 
 			{
@@ -656,18 +647,18 @@ var dadosLivros = [
 			},
 
 			{
-				"titulo": "Um estudo das tecnologias de acessibilidade voltadas para deficientes visuais em museus",
-				"autores": ["Leonardo Eloi Soares de Carvalho","Hugo Alexandre Dantas do Nascimento"]
-			},
-
-			{
-				"titulo": "Orquestra dos pássaros, uma interferência poética na estrutura Paredão goiano",
-				"autores": ["Laurita Ricardo de Salles"]
-			},
-
-			{
 				"titulo": "Emergência digital em saúde",
 				"autores": ["Mayler Olombrada Nunes de Santos"]
+			},
+
+			{
+				"titulo": "Corpos exóticos dissonantes: retóricas visuais e a produção de visualidades",
+				"autores": ["Ana Bandeira", "Daniel Christino", ]
+			},
+
+			{
+				"titulo": "Um estudo das tecnologias de acessibilidade voltadas para deficientes visuais em museus",
+				"autores": ["Leonardo Eloi Soares de Carvalho","Hugo Alexandre Dantas do Nascimento"]
 			},
 
 			{
@@ -676,9 +667,27 @@ var dadosLivros = [
 			},
 
 			{
+				"titulo": "Experimentações Geopéticas. Paisagens Virais, 2020",
+				"autores": ["Lilian Amaral","Marcos Umpièrrez","Bia Santos","Laurita Salles","Liliana Fracasso","Francisco Cabanzo"]
+			},
+
+			{
 				"titulo": "As performances nos vlogs: um estudo de recepção",
 				"autores": ["João Victor Lima da Cunha e Souza","Lara Lima Satler","Ana Júlia de Freitas Carrijo"]
 			},
+
+
+			{
+				"titulo": "Orquestra dos pássaros, uma interferência poética na estrutura Paredão goiano",
+				"autores": ["Laurita Ricardo de Salles"]
+			},
+
+
+			{
+				"titulo": "O cinema dentro de um circuito: A produção cinematográfica em diálogo com aspectos socioculturais",
+				"autores": ["Juliana Junqueira","Lara Lima Satler",]
+			},
+
 
 			{
 				"titulo": "Tipografia nos títulos e créditos de filmes em realidade virtual",
