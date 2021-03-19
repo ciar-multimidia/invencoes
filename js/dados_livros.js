@@ -668,7 +668,7 @@ var dadosLivros = [
 
 			{
 				"titulo": "Experimentações Geopéticas. Paisagens Virais, 2020",
-				"autores": ["Lilian Amaral","Marcos Umpièrrez","Bia Santos","Laurita Salles","Liliana Fracasso","Francisco Cabanzo"]
+				"autores": ["Lilian Amaral","Marcos Umpièrrez","Emílio Martinez","Bia Santos","Laurita Salles","Liliana Fracasso","Francisco Cabanzo"]
 			},
 
 			{
